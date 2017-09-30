@@ -1,0 +1,103 @@
+{
+  "basics": {
+    "name": "Yiou Chen",
+    "label": "Frontend engineer",
+    "picture": "",
+    "email": "hi@yiou.me",
+    "phone": "",
+    "website": "https://yiou.me",
+    "summary":
+      "Frontend engineer at Veeva Systems UIPlatform with passions for JavaScript and anime.",
+    "location": {
+      "address": "Pleasanton, CA",
+      "postalCode": "",
+      "city": "",
+      "countryCode": "",
+      "region": ""
+    },
+    "profiles": [
+      {
+        "network": "github",
+        "icon": "icon-github",
+        "username": "yiochen",
+        "url": "https://github.com/yiochen"
+      },
+      {
+        "network": "linkedin",
+        "icon": "icon-linkedin",
+        "username": "yiouchen",
+        "url": "https://www.linkedin.com/in/yiouchen/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Veeva Systems",
+      "position": "Associate Frontend Engineer",
+      "website": "https://www.veeva.com/",
+      "startDate": "6/2017",
+      "endDate": "Present",
+      "summary":
+        "I work in the UIPlatform team. Our objective is to improve the foundation of our enterprise applications using the latest technologies and best practices. Some of the technologies we use everyday includes React, Webpack, Sass. Jest, Enzyme, and etc.",
+      "highlights": [
+        "Building a complex excel-like datagrid component with React",
+        "Refactoring the routing infrastructure of an enterprise app"
+      ]
+    },
+    {
+      "company": "CA Technologies",
+      "position": "Software Engineer Intern",
+      "website": "https://www.ca.com/",
+      "startDate": "5/2016",
+      "endDate": "5/2017",
+      "summary":
+        "I worked in a small fast-paced team that does prototyping for clients. We tried out various technologies and turned clients' idea into reality. As one of the frontend engineer in the team, I have experienced with Angular, React, Polymer, D3 and so on.",
+      "highlights": [
+        "Developed customizable data visualization components using D3.js and Angular 2",
+        "Maintained the Angular UI component library.",
+        "Created and intergrated an map widget that handled high-volume real-time data using leaflet."
+      ]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Stony Brook University",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "9/2013",
+      "endDate": "5/2017",
+      "gpa": "3.87",
+      "courses": [],
+      "schoolWebsite": "http://www.stonybrook.edu/",
+      "summary":
+        "I majored in Computer Science, minored in Digital art. In college I studied various topics in computer science, including database design,system programming, network programming, computer graphics, etc. I graduated from Computer Science Honor Program with Summa Cum Laude designation."
+    }
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "JavaScript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Full professional proficiency"
+    },
+    {
+      "language": "Mandarin Chinese",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [],
+  "references": []
+}

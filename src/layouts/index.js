@@ -1,22 +1,29 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
-import 'base.css/base.css'
-import './index.css'
+import globalStyle from '../globalStyle';
 
-const Header = (props) => (
-  <div style={{
-    width: '100%',
-    height: '10px',
-    background: 'skyblue',
-  }}></div>
-)
+import 'base.css/base.css';
+import '../../public/static/style.css';
+import '../../public/static/fonts/icomoon.ttf';
+import '../../public/static/fonts/icomoon.woff';
+import './index.css';
+
+const Header = props => (
+  <div
+    style={{
+      width: '100%',
+      height: '10px',
+      background: globalStyle.accent,
+    }}
+  />
+);
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="=Yiou="
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
@@ -34,10 +41,10 @@ const TemplateWrapper = ({ children }) => (
       {children()}
     </div>
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
-}
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;

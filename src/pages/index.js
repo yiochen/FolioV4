@@ -1,39 +1,50 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 import Section from '../components/Section';
 import TitleLabel from '../components/TitleLabel';
 import Jumbotron from '../components/Jumbotron';
 import Selfie from '../components/Selfie';
 import SplitPane from '../components/SplitPane';
+import Card from '../components/Card';
+import Contact from '../components/ContactLink';
+import Experience from '../components/Experience';
+import Education from '../components/Education';
 
+import data from './resume.json';
+
+console.log(data);
 const IndexPage = () => (
   <main>
     <Section>
       <Selfie />
       <SplitPane>
         <div style={{ textAlign: 'right' }}>
-          <h1>YIOU CHEN</h1>
-          <a href="mailto: hi@yiou.me">hi@yiou.me</a>
+          <h1>{data.basics.name.toUpperCase()}</h1>
+          <Contact icon="icon-home">{data.basics.location.address}</Contact>
+          <Contact icon="icon-envelop" href={`mailto:${data.basics.email}`}>
+            {data.basics.email}
+          </Contact>
+          {data.basics.profiles.map(profile => (
+            <Contact icon={profile.icon} href={profile.url} key={profile.network}>
+              {profile.username}
+            </Contact>
+          ))}
         </div>
-        Hi, I am Yiou (pronounced “EE-Oh”). I work at Veeva Systems in the Vault UI Platform team.
+        {data.basics.summary}
       </SplitPane>
     </Section>
 
-
+    <Section>
+      <TitleLabel>Experience</TitleLabel>
+      {data.work.map(experience => <Experience {...experience} key={experience.company} />)}
+      {data.education.map(education => <Education {...education} key={education.institution} />)}
+    </Section>
 
     <Section>
-      <TitleLabel>Work</TitleLabel>
-      We are a team of passionate developers, working on improving the foundation of our enterprise applications using the latest technologies and best practices. Some of the technologies we use everyday includes React, Webpack, Sass. Jest, Enzyme, and etc.</Section>
-
-    <Section>
-      <TitleLabel>Education</TitleLabel>
-      I graduated from Stony Brook University in May 2017 with Bachelor of Science in Computer Science. I also completed a minor in Digital Arts.Currently I am living in Pleasanton, a lovely town on the east bay California.</Section>
-
-    <Section>
-      <TitleLabel>Personal Projects</TitleLabel>
-      Most of my projects are on Github, with some exceptions on Bitbucket. I play with various front-end technologies such as Angular, React, Vue, Polymer and so on. I also fiddle with game development using Unity or Cocos2Dx. I am trying to keep the habit of writing down things I learned from daily work and personal project in my blog. Check it out :)</Section>
+      <TitleLabel>Skills</TitleLabel>
+    </Section>
     <Link to="/page-2/">Go to page 2</Link>
-  </main >
-)
+  </main>
+);
 
-export default IndexPage
+export default IndexPage;
