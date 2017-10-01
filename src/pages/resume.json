@@ -79,13 +79,50 @@
   "skills": [
     {
       "name": "JavaScript",
-      "level": "",
-      "keywords": []
+      "icon": "iconJavascript",
+      "usage":
+        "As a frontend engineer, I use JavaScript in my daily work. It is my most comfortable language."
     },
     {
       "name": "HTML",
-      "level": "",
-      "keywords": []
+      "icon": "iconHtml",
+      "usage":
+        "I am very comfortable with HTML. I contributed to component libraries in my internship and my current job. We hold a very high standard on the component semantics and accessibility."
+    },
+    {
+      "name": "CSS",
+      "icon": "iconCss",
+      "usage":
+        "I am confident with my CSS skill. While building React components at Veeva Systems, I need to make sure pixel perfect presentation according to the design document."
+    },
+    {
+      "name": "React",
+      "icon": "iconReact",
+      "usage":
+        "I use React in my current job. We are building a React component library. I worked on two complicated component, select and data grid."
+    },
+    {
+      "name": "Angular",
+      "icon": "iconAngular",
+      "usage":
+        "I use Angular 2 in my previous internship in which I develop a series of customizable data visualization (barchart, linechart, piechart) using Angular and D3"
+    },
+    {
+      "name": "Vue",
+      "icon": "iconVue",
+      "usage": "I build my previous personal website using Vue"
+    },
+    {
+      "name": "Java",
+      "icon": "iconJava",
+      "usage":
+        "Java was the introductory language in my college. I used it for school projects. I also need to deal with some Java in my current job when I work in backend."
+    },
+    {
+      "name": "C#",
+      "icon": "iconCsharp",
+      "usage":
+        "I used C# for Unity game programming for my Game Programming specialization in College. I built two complete games with Unity."
     }
   ],
   "languages": [

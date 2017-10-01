@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
+import Footer from '../components/Footer';
 import globalStyle from '../globalStyle';
 
 import 'base.css/base.css';
@@ -40,6 +41,7 @@ const TemplateWrapper = ({ children }) => (
     >
       {children()}
     </div>
+    <Footer />
   </div>
 );
 

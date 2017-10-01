@@ -9,10 +9,10 @@ import Card from '../components/Card';
 import Contact from '../components/ContactLink';
 import Experience from '../components/Experience';
 import Education from '../components/Education';
+import SkillCard from '../components/SkillCard';
 
 import data from './resume.json';
 
-console.log(data);
 const IndexPage = () => (
   <main>
     <Section>
@@ -42,8 +42,9 @@ const IndexPage = () => (
 
     <Section>
       <TitleLabel>Skills</TitleLabel>
+      <SkillCard skills={data.skills} />
     </Section>
-    <Link to="/page-2/">Go to page 2</Link>
+    {/* <Link to="/page-2/">Go to page 2</Link> */}
   </main>
 );
 
