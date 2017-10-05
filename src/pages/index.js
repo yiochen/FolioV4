@@ -10,11 +10,13 @@ import Contact from '../components/ContactLink';
 import Experience from '../components/Experience';
 import Education from '../components/Education';
 import SkillCard from '../components/SkillCard';
+import BlogButton from '../components/BlogButton';
 
 import data from './resume.json';
 
 const IndexPage = () => (
   <main>
+    <BlogButton />
     <Section>
       <Selfie />
       <SplitPane>
