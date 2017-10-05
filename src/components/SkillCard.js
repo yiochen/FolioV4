@@ -2,14 +2,14 @@ import React from 'react';
 import SkillIcon from './SkillIcon';
 import globalStyle from '../globalStyle';
 
-import iconHtml from '../../public/static/html.jpg';
-import iconCss from '../../public/static/css.jpg';
-import iconJavascript from '../../public/static/javascript.jpg';
-import iconAngular from '../../public/static/angular.jpg';
-import iconReact from '../../public/static/react.jpg';
-import iconVue from '../../public/static/vue.jpg';
-import iconJava from '../../public/static/java.jpg';
-import iconCsharp from '../../public/static/csharp.jpg';
+import iconHtml from '../static/html.jpg';
+import iconCss from '../static/css.jpg';
+import iconJavascript from '../static/javascript.jpg';
+import iconAngular from '../static/angular.jpg';
+import iconReact from '../static/react.jpg';
+import iconVue from '../static/vue.jpg';
+import iconJava from '../static/java.jpg';
+import iconCsharp from '../static/csharp.jpg';
 
 const iconMapper = {
   iconHtml,

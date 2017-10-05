@@ -1,8 +1,9 @@
 import React from 'react';
+import jumping from '../static/jumping-edited.png';
 
 const style = {
   paddingBottom: '60%',
-  background: 'url(static/jumping-edited.png)',
+  background: `url(${jumping})`,
   backgroundSize: 'cover',
   backgroundPosition: 'top',
   position: 'relative',

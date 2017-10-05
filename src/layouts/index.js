@@ -7,9 +7,9 @@ import Footer from '../components/Footer';
 import globalStyle from '../globalStyle';
 
 import 'base.css/base.css';
-import '../../public/static/style.css';
-import '../../public/static/fonts/icomoon.ttf';
-import '../../public/static/fonts/icomoon.woff';
+import '../static/style.css';
+import '../static/fonts/icomoon.ttf';
+import '../static/fonts/icomoon.woff';
 import './index.css';
 
 const Header = props => (
