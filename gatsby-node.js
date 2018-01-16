@@ -1,4 +1,6 @@
 const path = require('path');
+const chunk = require('lodash/chunk');
+
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
   return new Promise((resolve, reject) => {
@@ -44,11 +46,22 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         const postTemplate = path.resolve('./src/templates/post.js');
 
-        result.data.allContentfulPost.edges.forEach(edge => {
+        const edges = result.data.allContentfulPost.edges;
+        edges.forEach(edge => {
           createPage({
-            path: `/posts/${edge.node.path}/`,
+            path: `/blog/posts/${edge.node.path}/`,
             component: postTemplate,
             context: edge,
+          });
+        });
+
+        const blogPageTemplate = path.resolve('./src/templates/blogPage.js');
+        const chunks = chunk(edges, 10);
+        chunks.forEach((chunk, page) => {
+          createPage({
+            path: `/blog/${page}/`,
+            component: blogPageTemplate,
+            context: { chunk, page, hasNext: page < chunks.length - 1 },
           });
         });
         return;
