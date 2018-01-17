@@ -1,5 +1,7 @@
 import React from 'react';
 import globalStyle from '../globalStyle';
+import Link from 'gatsby-link';
+
 const anchorStyle = {
   height: '2em',
   position: 'absolute',
@@ -18,6 +20,8 @@ const style = {
   height: '100%',
   width: '5em',
   display: 'inline-block',
+  paddingLeft: '0.5em',
+  lineHeight: '2em',
 };
 
 const arrowStyle = {
@@ -31,8 +35,8 @@ const arrowStyle = {
 };
 
 export default props => (
-  <a href="https://yiochen.github.io/blog/" style={anchorStyle}>
-    <button style={style}>BLOG</button>
+  <Link to="/blog/0/" style={anchorStyle}>
+    <div style={style}>BLOG</div>
     <span style={arrowStyle} />
-  </a>
+  </Link>
 );

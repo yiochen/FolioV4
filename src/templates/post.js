@@ -4,15 +4,15 @@ import Link from 'gatsby-link';
 class PostTemplate extends React.Component {
   render() {
     const { node } = this.props.pathContext;
-    // const post = this.props.data.contentfulProduct;
-    // const {
-    //     productName: { productName }
-    // }
+
+    const { title, subtitle, publishDate, tags, updatedAt } = node;
+    const { html, timeToRead } = node.content.childMarkdownRemark;
     return (
       <div>
         <h1>{node.title}</h1>
         <h3>{node.subtitle}</h3>
-        <div>{node.content.content}</div>
+        <p>{publishDate || updatedAt}</p>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     );
   }

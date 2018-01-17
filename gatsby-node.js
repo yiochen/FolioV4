@@ -31,7 +31,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   draft
                   tags
                   content {
-                    content
+                    childMarkdownRemark {
+                      timeToRead
+                      html
+                      excerpt
+                    }
                   }
                   updatedAt(formatString: "M/D/YYYY")
                 }
