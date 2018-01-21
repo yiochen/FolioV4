@@ -53,13 +53,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const postTemplate = path.resolve('./src/templates/post.js');
 
         const edges = result.data.allContentfulPost.edges;
-        edges.forEach(edge => {
-          createPage({
-            path: `/blog/posts/${edge.node.path}/`,
-            component: postTemplate,
-            context: edge,
-          });
-        });
 
         const blogPageTemplate = path.resolve('./src/templates/blogPage.js');
         const chunks = chunk(edges, 10);
@@ -68,6 +61,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             path: `/blog/${page}/`,
             component: blogPageTemplate,
             context: { chunk, page, hasNext: page < chunks.length - 1 },
+          });
+          chunk.forEach(edge => {
+            createPage({
+              path: `/blog/posts/${edge.node.path}/`,
+              component: postTemplate,
+              context: Object.assign({}, edge, { backLink: `/blog/${page}/` }),
+            });
           });
         });
         return;

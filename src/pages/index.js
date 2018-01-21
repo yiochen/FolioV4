@@ -10,13 +10,14 @@ import Contact from '../components/ContactLink';
 import Experience from '../components/Experience';
 import Education from '../components/Education';
 import SkillCard from '../components/SkillCard';
-import BlogButton from '../components/BlogButton';
+import NavButton from '../components/NavButton';
 
 import data from './resume.json';
 
 const IndexPage = () => (
   <main>
-    <BlogButton />
+    <NavButton link="/blog/0" text="BLOG" direction="end" />
+
     <Section>
       <Selfie />
       <SplitPane>

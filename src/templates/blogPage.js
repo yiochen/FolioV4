@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import PostCard from '../components/PostCard';
+import NavButton from '../components/NavButton';
 
 const containerStyle = {
   paddingTop: '3em',
@@ -19,12 +20,14 @@ export default ({ pathContext }) => {
   const { chunk, page, hasNext } = pathContext;
   return (
     <section style={containerStyle}>
+      <NavButton link="/" text="HOME" direction="start" />
       {chunk.map(blog => {
-        const { title, subtitle, path, content, publishDate: date } = blog.node;
+        const { title, subtitle, path, content, publishDate: date, id } = blog.node;
 
         const { excerpt } = content.childMarkdownRemark;
         return (
           <PostCard
+            key={id}
             title={title}
             subtitle={subtitle}
             href={`/blog/posts/${path}`}

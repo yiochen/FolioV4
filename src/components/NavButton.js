@@ -10,7 +10,18 @@ const anchorStyle = {
   marginRight: '1em',
   cursor: 'pointer',
   display: 'flex',
+  zIndex: 10,
 };
+
+const startAnchorStyle = {
+  ...anchorStyle,
+  left: 0,
+  right: undefined,
+  marginLeft: '1em',
+  marginRight: undefined,
+  textAlign: 'right',
+};
+
 const style = {
   background: globalStyle.accent,
   border: 0,
@@ -20,7 +31,8 @@ const style = {
   height: '100%',
   width: '5em',
   display: 'inline-block',
-  paddingLeft: '0.5em',
+  padding: '0 0.5em',
+  textAlign: 'center',
   lineHeight: '2em',
 };
 
@@ -34,9 +46,16 @@ const arrowStyle = {
   boxSizing: 'border-box',
 };
 
-export default props => (
-  <Link to="/blog/0/" style={anchorStyle}>
-    <div style={style}>BLOG</div>
-    <span style={arrowStyle} />
+const startArrowStyle = {
+  ...arrowStyle,
+  borderRight: `10px solid ${globalStyle.accent}`,
+  borderLeft: undefined,
+};
+
+export default ({ link, text, direction }) => (
+  <Link to={link} style={direction === 'start' ? startAnchorStyle : anchorStyle}>
+    {direction === 'start' && <div style={startArrowStyle} />}
+    <div style={style}>{text}</div>
+    {direction === 'end' && <span style={arrowStyle} />}
   </Link>
 );
