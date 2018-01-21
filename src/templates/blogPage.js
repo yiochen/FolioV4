@@ -1,22 +1,44 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import PostCard from '../components/PostCard';
 
-class BlogPageTemplate extends React.Component {
-  render() {
-    const { chunk, page, hasNext } = this.props.pathContext;
-    return (
-      <div>
-        <h1>Site is still in development</h1>
-        {chunk.map(blog => (
-          <ul key={blog.node.id}>
-            <Link to={`/blog/posts/${blog.node.path}`}>{blog.node.title}</Link>
-          </ul>
-        ))}
+const containerStyle = {
+  paddingTop: '3em',
+};
+
+const paginationStyle = {
+  fontFamily: 'Arial, Helvetica, sans-serif',
+  display: 'flex',
+};
+
+const filler = {
+  flexGrow: 1,
+};
+
+export default ({ pathContext }) => {
+  const { chunk, page, hasNext } = pathContext;
+  return (
+    <section style={containerStyle}>
+      {chunk.map(blog => {
+        const { title, subtitle, path, content, publishDate: date } = blog.node;
+
+        const { excerpt } = content.childMarkdownRemark;
+        return (
+          <PostCard
+            title={title}
+            subtitle={subtitle}
+            href={`/blog/posts/${path}`}
+            excerpt={excerpt}
+            date={date}
+          />
+        );
+      })}
+
+      <div style={paginationStyle}>
         {page > 0 && <Link to={`/blog/${page - 1}/`}>Newer posts</Link>}
+        <span style={filler} />
         {hasNext && <Link to={`/blog/${page + 1}/`}>Older posts</Link>}
       </div>
-    );
-  }
-}
-
-export default BlogPageTemplate;
+    </section>
+  );
+};

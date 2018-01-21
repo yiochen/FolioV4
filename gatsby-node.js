@@ -8,7 +8,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       graphql(
         `
           {
-            allContentfulPost {
+            allContentfulPost(
+              filter: { draft: { eq: false } }
+              sort: { fields: [publishDate], order: DESC }
+            ) {
               edges {
                 previous {
                   id
@@ -37,7 +40,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                       excerpt
                     }
                   }
-                  updatedAt(formatString: "M/D/YYYY")
                 }
               }
             }

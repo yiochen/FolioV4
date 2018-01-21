@@ -21,7 +21,7 @@ const Header = props => (
     }}
   />
 );
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, location }) => (
   <div>
     <Helmet
       title="=Yiou="
@@ -37,11 +37,10 @@ const TemplateWrapper = ({ children }) => (
         maxWidth: 960,
         padding: '0px 1.0875rem 1.45rem',
         paddingTop: 0,
-      }}
-    >
+      }}>
       {children()}
     </div>
-    <Footer />
+    <Footer full={location.pathname === '/'} />
   </div>
 );
 

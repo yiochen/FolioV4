@@ -1,12 +1,19 @@
 import React from 'react';
 import jumping from '../static/jumping-edited.png';
 
-const style = {
+const styleFull = {
   paddingBottom: '60%',
   background: `url(${jumping})`,
   backgroundSize: 'cover',
   backgroundPosition: 'top',
   position: 'relative',
+  margin: 0,
+};
+
+const styleMini = {
+  height: '2em',
+  position: 'relative',
+  margin: 0,
 };
 
 const sloganStyle = {
@@ -25,9 +32,9 @@ const legalStyle = {
   transform: 'translateX(-50%)',
   margin: '0',
 };
-export default props => (
-  <footer style={style}>
-    <h1 style={sloganStyle}>Keep on hacking</h1>
+export default ({ full }) => (
+  <footer style={full ? styleFull : styleMini}>
+    {full && <h1 style={sloganStyle}>Keep on hacking</h1>}
     <p style={legalStyle}> @ 2017 Yiou Chen.</p>
   </footer>
 );
