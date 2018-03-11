@@ -19,9 +19,12 @@ export default ({
   return (
     <TimelineItem>
       <div>
-        <a href={website} target="_blank">
-          <h3 style={titleStyle}>{company}</h3>
-        </a>
+        <h3>
+          <a href={website} style={titleStyle} target="_blank">
+            {company}
+          </a>
+        </h3>
+
         <p>{position}</p>
         <p>
           {startDate} - {endDate}

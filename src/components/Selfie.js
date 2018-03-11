@@ -4,6 +4,8 @@ import me from '../static/me.png';
 const style = {
   height: '20em',
   width: '20em',
+  maxHeight: '80vw',
+  maxWidth: '80vw',
   backgroundImage: `url(${me})`,
   backgroundSize: 'cover',
   borderRadius: '50%',

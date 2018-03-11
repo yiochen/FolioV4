@@ -1,13 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
+import globalStyle from '../globalStyle';
 
-const style = {
-  marginBottom: '2em',
-  color: '#555',
-  overflow: 'hidden',
-  position: 'relative',
-};
-export default props => (
-  <section style={style} {...props}>
-    {props.children}
-  </section>
-);
+const Section = styled.section`
+  margin-bottom: 2em;
+  color: ${globalStyle.textColor};
+  position: relative;
+`;
+
+export default props => <Section {...props}>{props.children}</Section>;

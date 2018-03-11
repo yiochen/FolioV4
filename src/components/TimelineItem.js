@@ -1,56 +1,72 @@
 import React from 'react';
+import styled from 'styled-components';
+import Media from 'react-media';
 
-export const style = {
-  display: 'flex',
-  position: 'relative',
-  flexDirection: 'row',
-};
+const resolutionBreakpoint = '650px';
 
-export const leftPaneStyle = {
-  flex: '1',
-  textAlign: 'right',
-  marginRight: '1.5em',
-  boxSizing: 'border-box',
-  overflow: 'hidden',
-  paddingBottom: '5em',
-};
-
+const Container = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  @media (max-width: ${resolutionBreakpoint}) {
+    flex-direction: column;
+  }
+`;
 const timelineWidth = 5;
 
-export const rightPaneStyle = {
-  flex: '2',
-  position: 'relative',
-  paddingLeft: `calc(${timelineWidth}px + 1.5em)`,
-  borderLeft: `${timelineWidth}px dotted skyblue`,
-  boxSizing: 'border-box',
-  paddingBottom: '5em',
-};
+const LeftPane = styled.div`
+  flex: 1;
+  text-align: right;
+  margin-right: 1.5em;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 5em;
+  @media (max-width: ${resolutionBreakpoint}) {
+    text-align: left;
+    padding-bottom: inherit;
+    padding-left: calc(${timelineWidth}px + 1.5em);
+    border-left: ${timelineWidth}px dotted skyblue;
+  }
+`;
+
+const RightPane = styled.div`
+  flex: 2;
+  position: relative;
+  padding-left: calc(${timelineWidth}px + 1.5em);
+  border-left: ${timelineWidth}px dotted skyblue;
+  box-sizing: border-box;
+  padding-bottom: 5em;
+`;
 
 const dotSize = 30;
 
-export const dotStyle = {
-  display: 'block',
-  position: 'absolute',
-  top: '0',
-  left: '0',
-  width: `${dotSize}px`,
-  height: `${dotSize}px`,
-  marginLeft: `${-dotSize / 2 - timelineWidth / 2}px`,
-  backgroundColor: 'skyblue',
-  borderRadius: '50%',
-};
+const Dot = styled.span`
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: ${dotSize}px;
+  height: ${dotSize}px;
+  margin-left: ${-dotSize / 2 - timelineWidth / 2}px;
+  background-color: skyblue;
+  border-radius: 50%;
+`;
 
+const mediaForBreakpoint = `(max-width: ${resolutionBreakpoint})`;
 export default ({ children, ...props }) => {
   const childrenArray = React.Children.toArray(children);
   const [leftChild, rightChild] = childrenArray;
   return (
-    <div style={style} {...props}>
-      <div style={leftPaneStyle}>{leftChild}</div>
+    <Container {...props}>
+      <LeftPane>
+        <Media query={mediaForBreakpoint} render={() => <Dot />} />
+        {leftChild}
+      </LeftPane>
 
-      <div style={rightPaneStyle}>
-        <span style={dotStyle} />
+      <RightPane>
+        <Media query={mediaForBreakpoint}>{matches => !matches && <Dot />}</Media>
         {rightChild}
-      </div>
-    </div>
+      </RightPane>
+    </Container>
   );
 };

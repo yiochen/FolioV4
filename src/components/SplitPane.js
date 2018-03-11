@@ -1,27 +1,52 @@
 import React from 'react';
+import styled from 'styled-components';
+import globalStyle from '../globalStyle';
 
-const constainerStyle = {
-    postion: 'relative',
-    display: 'flex',
-    backgroundImage: 'linear-gradient(0deg, #000 0%,#000 100%)',
-    backgroundSize: '2px 100%',
-    backgroundPosition: '50% 0',
-    backgroundRepeat: 'no-repeat',
+const resolutionBreakpoint = '650px';
 
-}
+const Container = styled.div`
+  position: relative;
+  display: flex;
+  background-image: linear-gradient(0deg, #000 0%, #000 100%);
+  background-size: 2px 100%;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  @media (max-width: ${resolutionBreakpoint}) {
+    flex-direction: column;
+    background: none;
+  }
+`;
 
-const childStyle = {
-    flex: '1',
-    padding: '1em',
-    position: 'relative'
-}
+const Pane = styled.div`
+  flex: 1;
+  padding: 1em;
+  position: relative;
+`;
 
-export default (props) => {
-    const children = React.Children.toArray(props.children);
-    const left = children[0] || null;
-    const right = children[1] || null;
-    return (<div style={constainerStyle}>
-        <div style={childStyle}>{left}</div>
-        <div style={childStyle}>{right}</div>
-    </div>);
+const LeftPane = Pane.extend`
+  text-align: right;
+  @media (max-width: ${resolutionBreakpoint}) {
+    text-align: left;
+  }
+`;
+
+const RightPane = Pane.extend`
+  @media (max-width: ${resolutionBreakpoint}) {
+    margin-top: 0;
+    padding-top: 0;
+    color: ${globalStyle.textNoteColor};
+    font-size: 1.2em;
+  }
+`;
+
+export default props => {
+  const children = React.Children.toArray(props.children);
+  const left = children[0] || null;
+  const right = children[1] || null;
+  return (
+    <Container>
+      <LeftPane>{left}</LeftPane>
+      <RightPane>{right}</RightPane>
+    </Container>
+  );
 };

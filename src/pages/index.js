@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import styled from 'styled-components';
 import Section from '../components/Section';
 import TitleLabel from '../components/TitleLabel';
 import Jumbotron from '../components/Jumbotron';
@@ -14,6 +15,10 @@ import NavButton from '../components/NavButton';
 
 import data from './resume.json';
 
+// const IntroBasicInfo = styled.div`
+//   text-align: left;
+//   @media
+// `;
 const IndexPage = () => (
   <main>
     <NavButton link="/blog/0" text="BLOG" direction="end" />
@@ -21,7 +26,7 @@ const IndexPage = () => (
     <Section>
       <Selfie />
       <SplitPane>
-        <div style={{ textAlign: 'right' }}>
+        <div>
           <h1>{data.basics.name.toUpperCase()}</h1>
           <Contact icon="icon-home">{data.basics.location.address}</Contact>
           <Contact icon="icon-envelop" href={`mailto:${data.basics.email}`}>
