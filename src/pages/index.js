@@ -21,7 +21,7 @@ import data from './resume.json';
 // `;
 const IndexPage = () => (
   <main>
-    <NavButton link="/blog/0" text="BLOG" direction="end" />
+    <NavButton to="/blog/0">BLOG</NavButton>
 
     <Section>
       <Selfie />

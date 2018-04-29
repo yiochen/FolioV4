@@ -1,53 +1,52 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import styled from 'styled-components';
 import globalStyle from '../globalStyle';
 
-export const titleStyle = {
-  color: '#777',
-  fontFamily: 'Arial, Helvetica, sans-serif',
-  margin: 0,
-};
+export const Title = styled.h3`
+  color: #777;
+  font-family: ${globalStyle.secondaryFont};
+  margin: 0;
+`;
 
-export const subtitleStyle = {
-  color: '#777',
-  margin: 0,
-};
+export const SubTitle = styled.h5`
+  color: #777;
+  margin: 0;
+`;
 
-export const dateStyle = {
-  color: '#AAA',
-};
+export const DateLabel = styled.p`
+  color: #aaa;
+`;
 
-const excerptStyle = {
-  margin: 0,
-};
+export const Excerpt = styled.p`
+  margin: 0;
+`;
 
-const moarLink = {
-  fontFamily: 'Arial, Helvetica, sans-serif',
-  textAlign: 'right',
-};
+const MoarLinkSection = styled.section`
+  font-family: ${globalStyle.secondaryFont};
+  text-align: right;
+`;
 
-const moarLinkLink = {
-  color: globalStyle.accent,
-};
+const MoarLinkLink = styled(Link)`
+  color: ${globalStyle.accent};
+`;
 
-const cardStyle = {
-  borderBottom: '1px solid #DDD',
-  margin: '2em 0 0 0',
-  paddingBottom: '2em',
-};
+const Card = styled.section`
+  border-bottom: 1px solid #ddd;
+  margin: 2em 0 0 0;
+  padding-bottom: 2em;
+`;
 
 export default ({ title, subtitle, date, excerpt, href }) => (
-  <section style={cardStyle}>
+  <Card>
     <Link to={href}>
-      <h3 style={titleStyle}>{title}</h3>
-      {subtitle && <h5 style={subtitleStyle}>{subtitle}</h5>}
+      <Title>{title}</Title>
+      {subtitle && <SubTitle>{subtitle}</SubTitle>}
     </Link>
-    <p style={dateStyle}>Posted on {date}</p>
-    <p style={excerptStyle}>{excerpt}</p>
-    <section style={moarLink}>
-      <Link style={moarLinkLink} to={href}>
-        [ Read Moar ]
-      </Link>
-    </section>
-  </section>
+    <DateLabel>Posted on {date}</DateLabel>
+    <Excerpt>{excerpt}</Excerpt>
+    <MoarLinkSection>
+      <MoarLinkLink to={href}>[ Read Moar ]</MoarLinkLink>
+    </MoarLinkSection>
+  </Card>
 );

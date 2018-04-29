@@ -2,13 +2,14 @@ import React from 'react';
 import Link from 'gatsby-link';
 import PostCard from '../components/PostCard';
 import NavButton from '../components/NavButton';
+import globalStyle from '../globalStyle';
 
 const containerStyle = {
   paddingTop: '3em',
 };
 
 const paginationStyle = {
-  fontFamily: 'Arial, Helvetica, sans-serif',
+  fontFamily: globalStyle.secondaryFont,
   display: 'flex',
 };
 
@@ -20,7 +21,7 @@ export default ({ pathContext }) => {
   const { chunk, page, hasNext } = pathContext;
   return (
     <section style={containerStyle}>
-      <NavButton link="/" text="HOME" direction="start" />
+      <NavButton to="/">HOME</NavButton>
       {chunk.map(blog => {
         const { title, subtitle, path, content, publishDate: date, id } = blog.node;
 

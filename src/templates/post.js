@@ -1,20 +1,69 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import styled from 'styled-components';
 import NavButton from '../components/NavButton';
 
-import { titleStyle, subtitleStyle, dateStyle } from '../components/PostCard';
+import { Title, SubTitle, DateLabel } from '../components/PostCard';
 
-const timeToReadStyle = {
-  float: 'right',
-};
+const PrimaryTitle = Title.withComponent('h1');
 
-const clearFix = {
-  clear: 'both',
-};
+const PrimarySubTitle = SubTitle.withComponent('h5');
 
-const containerStyle = {
-  paddingTop: '3em',
-};
+const RelatedTitle = Title.withComponent('h5');
+
+const RelatedSubTitle = SubTitle.withComponent('h6');
+
+const RelatedPostLink = styled(Link)`
+  width: 40%;
+  display: block;
+`;
+
+RelatedPostLink.Left = RelatedPostLink.extend`
+  float: left;
+`;
+
+RelatedPostLink.Right = RelatedPostLink.extend`
+  float: right;
+`;
+
+const TimeToRead = styled.span`
+  float: 'right';
+`;
+
+const ClearFix = styled.div`
+  clear: both;
+`;
+
+const PostContainer = styled.section`
+  padding-top: 5em;
+`;
+
+const Post = styled.div`
+  margin-top: 4em;
+  margin-bottom: 4em;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  color: rgb(58, 58, 58);
+
+  blockquote {
+    background: #eee;
+    padding: 1em;
+    p {
+      margin: 0;
+    }
+  }
+
+  pre code {
+    overflow-x: auto;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
 class PostTemplate extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -24,53 +73,32 @@ class PostTemplate extends React.Component {
     const { title, subtitle, publishDate, tags } = node;
     const { html, timeToRead } = node.content.childMarkdownRemark;
 
-    let olderPostLink;
-    let newerPostLink;
-
-    if (previous) {
-      const { title, subtitle, path } = previous;
-      const style = {
-        width: '40%',
-        display: 'block',
-        float: 'right',
-      };
-      newerPostLink = (
-        <Link to={path} style={style}>
-          <h5 style={titleStyle}>{title}</h5>
-          {subtitle && <h6 style={subtitleStyle}>{subtitle}</h6>}
-        </Link>
-      );
-    }
-    if (next) {
-      const { title, subtitle, path } = next;
-      const style = {
-        width: '40%',
-        display: 'block',
-        float: 'left',
-      };
-      olderPostLink = (
-        <Link to={path} style={style}>
-          <h5 style={titleStyle}>{title}</h5>
-          {subtitle && <h6 style={subtitleStyle}>{subtitle}</h6>}
-        </Link>
-      );
-    }
-
     return (
-      <section style={containerStyle}>
-        <NavButton link={backLink} text="BLOG" direction="start" />
-        <h1 style={titleStyle}>{node.title}</h1>
-        {subtitle && <h5 style={subtitleStyle}>{node.subtitle}</h5>}
-        <p style={dateStyle}>
+      <PostContainer>
+        <NavButton to={backLink}>BLOG</NavButton>
+        <PrimaryTitle>{node.title}</PrimaryTitle>
+        {subtitle && <PrimarySubTitle>{node.subtitle}</PrimarySubTitle>}
+        <DateLabel>
           {publishDate}
-          <span style={timeToReadStyle}>Time to read: {timeToRead} min</span>
-        </p>
+          <TimeToRead>Time to read: {timeToRead} min</TimeToRead>
+        </DateLabel>
 
-        <div className="post" dangerouslySetInnerHTML={{ __html: html }} />
-        {newerPostLink}
-        {olderPostLink}
-        <div style={clearFix} />
-      </section>
+        <Post dangerouslySetInnerHTML={{ __html: html }} />
+
+        {previous && (
+          <RelatedPostLink.Right to={previous.path}>
+            <RelatedTitle>{previous.title}</RelatedTitle>
+            {previous.subtitle && <RelatedSubTitle>{previous.subtitle}</RelatedSubTitle>}
+          </RelatedPostLink.Right>
+        )}
+        {next && (
+          <RelatedPostLink.Left to={next.path}>
+            <RelatedTitle>{next.title}</RelatedTitle>
+            {next.subtitle && <RelatedSubTitle>{next.subtitle}</RelatedSubTitle>}
+          </RelatedPostLink.Left>
+        )}
+        <ClearFix />
+      </PostContainer>
     );
   }
 }
