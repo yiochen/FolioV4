@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import Section from '../components/Section';
 import TitleLabel from '../components/TitleLabel';
@@ -15,12 +16,12 @@ import NavButton from '../components/NavButton';
 
 import data from './resume.json';
 
-// const IntroBasicInfo = styled.div`
-//   text-align: left;
-//   @media
-// `;
 const IndexPage = () => (
   <main>
+    <Helmet>
+      <meta property="og:description" content={data.basics.summary} />
+      <meta property="og:type" content="website" />
+    </Helmet>
     <NavButton to="/blog/0">BLOG</NavButton>
 
     <Section>
@@ -52,7 +53,6 @@ const IndexPage = () => (
       <TitleLabel>Skills</TitleLabel>
       <SkillCard skills={data.skills} />
     </Section>
-    {/* <Link to="/page-2/">Go to page 2</Link> */}
   </main>
 );
 

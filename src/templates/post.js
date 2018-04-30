@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 import NavButton from '../components/NavButton';
 
 import { Title, SubTitle, DateLabel } from '../components/PostCard';
@@ -71,10 +72,17 @@ class PostTemplate extends React.Component {
   render() {
     const { node, backLink, previous, next } = this.props.pathContext;
     const { title, subtitle, publishDate, tags } = node;
-    const { html, timeToRead } = node.content.childMarkdownRemark;
+    const { html, timeToRead, excerpt } = node.content.childMarkdownRemark;
 
+    const documentTitle = `${title}${subtitle ? ` - ${subtitle}` : ''}`;
     return (
       <PostContainer>
+        <Helmet>
+          <title>documentTitle</title>
+          <meta property="og:title" content={documentTitle} />
+          <meta property="og:description" content={excerpt} />
+          <meta property="og:type" content="article" />
+        </Helmet>
         <NavButton to={backLink}>BLOG</NavButton>
         <PrimaryTitle>{node.title}</PrimaryTitle>
         {subtitle && <PrimarySubTitle>{node.subtitle}</PrimarySubTitle>}

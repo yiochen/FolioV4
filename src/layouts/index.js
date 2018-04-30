@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import Footer from '../components/Footer';
 import globalStyle from '../globalStyle';
+import me from '../static/me.png';
 
 import 'base.css/base.css';
 
@@ -40,6 +41,10 @@ const TemplateWrapper = ({ children, location }) => (
         rel="shortcut icon"
         href="https://github.com/yiochen/common/blob/master/favicon/favicon.png?raw=true"
       />
+      <meta property="og:title" content="Yiou Chen" />
+      <meta property="og:image" content={me} />
+      <meta property="og:image:height" content="300" />
+      <meta property="og:image:width" content="300" />
     </Helmet>
     <Header />
     <ContentContainer>{children()}</ContentContainer>

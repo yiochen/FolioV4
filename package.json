@@ -14,15 +14,13 @@
     "lodash": "^4.17.4",
     "react-media": "^1.8.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "clean": "rm -rf ./public",
-    "build:prod": "run-s clean build",
-    "build": "gatsby build",
+    "build": "run-s clean build:dev",
+    "build:dev": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
