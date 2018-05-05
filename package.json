@@ -4,17 +4,22 @@
   "version": "0.0.0",
   "author": "Yiou Chen <hi@yiou.me>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
     "base.css": "git+ssh://git@github.com/yiochen/base.css.git",
     "gatsby": "^1.9.155",
     "gatsby-link": "^1.6.15",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-sass": "^1.0.12",
+    "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-source-contentful": "^1.3.17",
     "gatsby-transformer-remark": "^1.7.16",
     "lodash": "^4.17.4",
-    "react-media": "^1.8.0"
+    "react-media": "^1.8.0",
+    "styled-components": "^3.2.6"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
