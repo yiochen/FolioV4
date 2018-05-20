@@ -1,5 +1,18 @@
 {
   "hosting": {
-    "public": "public"
+    "public": "public",
+    "redirects": [
+      {
+        "source": "/demo/:projectName*",
+        "destination": "https://yiochen.github.io/:projectName*",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }
