@@ -15,7 +15,8 @@
     "gatsby-transformer-remark": "^1.7.16",
     "lodash": "^4.17.4",
     "react-media": "^1.8.0",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "snyk": "^1.83.0"
   },
   "keywords": [
     "gatsby"
@@ -29,10 +30,13 @@
     "dev": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "firebase deploy --project yioume-a267d"
+    "deploy": "firebase deploy --project yioume-a267d",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.2",
     "prettier": "^1.6.1"
-  }
+  },
+  "snyk": true
 }
