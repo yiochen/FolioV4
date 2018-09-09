@@ -79,7 +79,7 @@ class PostTemplate extends React.Component {
     return (
       <PostContainer>
         <Helmet>
-          <title>documentTitle</title>
+          <title>{documentTitle}</title>
           <meta property="og:title" content={documentTitle} />
           <meta property="og:description" content={excerpt} />
           <meta property="og:type" content="article" />
