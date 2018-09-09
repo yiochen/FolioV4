@@ -1,14 +1,14 @@
-import React from "react";
-import trim from "lodash/trim";
+import React from 'react';
+import trim from 'lodash/trim';
 
 class NotFoundPage extends React.Component {
   state = {
-    possibleProjectName: ""
+    possibleProjectName: '',
   };
   componentDidMount() {
-    const possibleProjectName = trim(window.location.pathname, "/");
+    const possibleProjectName = trim(window.location.pathname, '/');
     this.setState({
-      possibleProjectName
+      possibleProjectName,
     });
   }
   render() {
@@ -20,7 +20,7 @@ class NotFoundPage extends React.Component {
         {possibleProjectName && (
           <p>
             Are you looking for my project called {possibleProjectName}, you can
-            head to{" "}
+            head to{' '}
             <a
               target="_blank"
               href={`https://yiochen.github.io/${possibleProjectName}`}

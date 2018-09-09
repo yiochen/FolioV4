@@ -17,9 +17,7 @@
     "react-media": "^1.8.0",
     "styled-components": "^3.2.6"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -27,12 +25,16 @@
     "build": "run-s clean build:dev",
     "build:dev": "gatsby build",
     "dev": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "firebase deploy --project yioume-a267d"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.2",
-    "prettier": "^1.6.1"
+    "prettier": "^1.14.2"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
   }
 }

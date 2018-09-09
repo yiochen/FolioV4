@@ -12,7 +12,9 @@ const blurStyle = {
 };
 
 export default ({ src, name, selected = false, onSelect }) => {
-  const style = selected ? defaultStyle : Object.assign({}, defaultStyle, blurStyle);
+  const style = selected
+    ? defaultStyle
+    : Object.assign({}, defaultStyle, blurStyle);
 
   return (
     <img

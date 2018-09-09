@@ -64,7 +64,9 @@ export default ({ children, ...props }) => {
       </LeftPane>
 
       <RightPane>
-        <Media query={mediaForBreakpoint}>{matches => !matches && <Dot />}</Media>
+        <Media query={mediaForBreakpoint}>
+          {matches => !matches && <Dot />}
+        </Media>
         {rightChild}
       </RightPane>
     </Container>

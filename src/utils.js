@@ -4,5 +4,5 @@ module.exports = {
   },
   toBlogPage(pageNumber) {
     return `/blog/${pageNumber}`;
-  }
+  },
 };

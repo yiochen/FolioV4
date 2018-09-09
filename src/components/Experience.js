@@ -32,7 +32,11 @@ export default ({
       </div>
       <div>
         <div>{summary}</div>
-        <ul>{highlights.map(highlight => <li key={highlight}>{highlight}</li>)}</ul>
+        <ul>
+          {highlights.map(highlight => (
+            <li key={highlight}>{highlight}</li>
+          ))}
+        </ul>
       </div>
     </TimelineItem>
   );

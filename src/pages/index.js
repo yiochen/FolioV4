@@ -34,7 +34,11 @@ const IndexPage = () => (
             {data.basics.email}
           </Contact>
           {data.basics.profiles.map(profile => (
-            <Contact icon={profile.icon} href={profile.url} key={profile.network}>
+            <Contact
+              icon={profile.icon}
+              href={profile.url}
+              key={profile.network}
+            >
               {profile.username}
             </Contact>
           ))}
@@ -45,8 +49,12 @@ const IndexPage = () => (
 
     <Section>
       <TitleLabel>Experience</TitleLabel>
-      {data.work.map(experience => <Experience {...experience} key={experience.company} />)}
-      {data.education.map(education => <Education {...education} key={education.institution} />)}
+      {data.work.map(experience => (
+        <Experience {...experience} key={experience.company} />
+      ))}
+      {data.education.map(education => (
+        <Education {...education} key={education.institution} />
+      ))}
     </Section>
 
     <Section>

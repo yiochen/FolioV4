@@ -1,21 +1,21 @@
-import React from "react";
-import Link from "gatsby-link";
-import PostCard from "../components/PostCard";
-import NavButton from "../components/NavButton";
-import globalStyle from "../globalStyle";
-import utils from "../utils";
+import React from 'react';
+import Link from 'gatsby-link';
+import PostCard from '../components/PostCard';
+import NavButton from '../components/NavButton';
+import globalStyle from '../globalStyle';
+import utils from '../utils';
 
 const containerStyle = {
-  paddingTop: "3em"
+  paddingTop: '3em',
 };
 
 const paginationStyle = {
   fontFamily: globalStyle.secondaryFont,
-  display: "flex"
+  display: 'flex',
 };
 
 const filler = {
-  flexGrow: 1
+  flexGrow: 1,
 };
 
 export default ({ pathContext }) => {
@@ -30,7 +30,7 @@ export default ({ pathContext }) => {
           path,
           content,
           publishDate: date,
-          id
+          id,
         } = blog.node;
 
         const { excerpt } = content.childMarkdownRemark;
