@@ -4,6 +4,28 @@ const utils = require('./src/utils');
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
+  const cover = `{
+    image {
+      title
+      full: resize(width: 1200, height: 800, jpegProgressive: false) {
+        src
+      }
+      thumbnail: resize(width: 360, height: 240, jpegProgressive: false) {
+        src
+      }
+    }
+    sourceLink
+    credit
+  }`;
+
+  const relatedPost = `
+  {
+    title
+    subtitle
+    path
+    cover ${cover}
+  }`;
+
   return new Promise((resolve, reject) => {
     resolve(
       graphql(
@@ -14,26 +36,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               sort: { fields: [publishDate], order: DESC }
             ) {
               edges {
-                previous {
-                  id
-                  title
-                  subtitle
-                  path
-                  cover {
-                    sourceLink
-                    credit
-                  }
-                }
-                next {
-                  id
-                  title
-                  subtitle
-                  path
-                  cover {
-                    sourceLink
-                    credit
-                  }
-                }
+                previous ${relatedPost}
+                next ${relatedPost}
                 node {
                   id
                   title
@@ -49,10 +53,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                       excerpt
                     }
                   }
-                  cover {
-                    sourceLink
-                    credit
-                  }
+                  cover ${cover}
                 }
               }
             }

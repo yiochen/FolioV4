@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import utils from '../utils';
 import NavButton from '../components/NavButton';
+import { NodeProvider } from '../components/NodeContext';
+import PostTitle from '../components/PostTitle';
 
 import { Title, SubTitle, DateLabel } from '../components/PostCard';
 
@@ -40,7 +42,7 @@ const PostContainer = styled.section`
   padding-top: 5em;
 `;
 
-const Post = styled.div`
+const PostContent = styled.div`
   margin-top: 4em;
   margin-bottom: 4em;
   border-bottom: 1px solid rgb(221, 221, 221);
@@ -66,13 +68,13 @@ const Post = styled.div`
   }
 `;
 
-class PostTemplate extends React.Component {
+class Post extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   render() {
     const { node, backLink, previous, next } = this.props.pathContext;
-    const { title, subtitle, publishDate, tags } = node;
+    const { title, subtitle, publishDate, tags, cover } = node;
     const { html, timeToRead, excerpt } = node.content.childMarkdownRemark;
 
     const documentTitle = `${title}${subtitle ? ` - ${subtitle}` : ''}`;
@@ -85,14 +87,18 @@ class PostTemplate extends React.Component {
           <meta property="og:type" content="article" />
         </Helmet>
         <NavButton to={backLink}>BLOG</NavButton>
-        <PrimaryTitle>{node.title}</PrimaryTitle>
-        {subtitle && <PrimarySubTitle>{node.subtitle}</PrimarySubTitle>}
-        <DateLabel>
-          {publishDate}
-          <TimeToRead>Time to read: {timeToRead} min</TimeToRead>
-        </DateLabel>
+        <NodeProvider value={node}>
+          <PostTitle />
+          <PrimaryTitle>{node.title}</PrimaryTitle>
+          {subtitle && <PrimarySubTitle>{node.subtitle}</PrimarySubTitle>}
+          {cover && <img src={cover.image.full.src} />}
+          <DateLabel>
+            {publishDate}
+            <TimeToRead>Time to read: {timeToRead} min</TimeToRead>
+          </DateLabel>
 
-        <Post dangerouslySetInnerHTML={{ __html: html }} />
+          <PostContent dangerouslySetInnerHTML={{ __html: html }} />
+        </NodeProvider>
 
         {previous && (
           <RelatedPostLink.Right to={utils.toPostPath(previous.path)}>
@@ -116,4 +122,4 @@ class PostTemplate extends React.Component {
   }
 }
 
-export default PostTemplate;
+export default Post;
