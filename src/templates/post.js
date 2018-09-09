@@ -1,43 +1,34 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import styled from 'styled-components';
-import Helmet from 'react-helmet';
-import NavButton from '../components/NavButton';
+import React from "react";
+import Link from "gatsby-link";
+import styled from "styled-components";
+import Helmet from "react-helmet";
+import utils from "../utils";
+import NavButton from "../components/NavButton";
 
-import { Title, SubTitle, DateLabel } from '../components/PostCard';
+import { Title, SubTitle, DateLabel } from "../components/PostCard";
 
-const PrimaryTitle = Title.withComponent('h1');
+const PrimaryTitle = Title.withComponent("h1");
 
-const PrimarySubTitle = SubTitle.withComponent('h5');
+const PrimarySubTitle = SubTitle.withComponent("h5");
 
-const RelatedTitle = Title.withComponent('h5');
+const RelatedTitle = Title.withComponent("h5");
 
-const RelatedSubTitle = SubTitle.withComponent('h6');
+const RelatedSubTitle = SubTitle.withComponent("h6");
 
 const RelatedPostLink = styled(Link)`
   width: 40%;
   display: block;
 `;
 
-RelatedPostLink.Left = RelatedPostLink.extend`
-  float: left;
-`;
+RelatedPostLink.Left = RelatedPostLink.extend`float: left;`;
 
-RelatedPostLink.Right = RelatedPostLink.extend`
-  float: right;
-`;
+RelatedPostLink.Right = RelatedPostLink.extend`float: right;`;
 
-const TimeToRead = styled.span`
-  float: 'right';
-`;
+const TimeToRead = styled.span`float: "right";`;
 
-const ClearFix = styled.div`
-  clear: both;
-`;
+const ClearFix = styled.div`clear: both;`;
 
-const PostContainer = styled.section`
-  padding-top: 5em;
-`;
+const PostContainer = styled.section`padding-top: 5em;`;
 
 const Post = styled.div`
   margin-top: 4em;
@@ -74,7 +65,7 @@ class PostTemplate extends React.Component {
     const { title, subtitle, publishDate, tags } = node;
     const { html, timeToRead, excerpt } = node.content.childMarkdownRemark;
 
-    const documentTitle = `${title}${subtitle ? ` - ${subtitle}` : ''}`;
+    const documentTitle = `${title}${subtitle ? ` - ${subtitle}` : ""}`;
     return (
       <PostContainer>
         <Helmet>
@@ -94,15 +85,19 @@ class PostTemplate extends React.Component {
         <Post dangerouslySetInnerHTML={{ __html: html }} />
 
         {previous && (
-          <RelatedPostLink.Right to={previous.path}>
+          <RelatedPostLink.Right to={utils.toPostPath(previous.path)}>
             <RelatedTitle>{previous.title}</RelatedTitle>
-            {previous.subtitle && <RelatedSubTitle>{previous.subtitle}</RelatedSubTitle>}
+            {previous.subtitle && (
+              <RelatedSubTitle>{previous.subtitle}</RelatedSubTitle>
+            )}
           </RelatedPostLink.Right>
         )}
         {next && (
-          <RelatedPostLink.Left to={next.path}>
+          <RelatedPostLink.Left to={utils.toPostPath(next.path)}>
             <RelatedTitle>{next.title}</RelatedTitle>
-            {next.subtitle && <RelatedSubTitle>{next.subtitle}</RelatedSubTitle>}
+            {next.subtitle && (
+              <RelatedSubTitle>{next.subtitle}</RelatedSubTitle>
+            )}
           </RelatedPostLink.Left>
         )}
         <ClearFix />

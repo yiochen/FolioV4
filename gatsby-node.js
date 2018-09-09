@@ -1,5 +1,6 @@
-const path = require('path');
-const chunk = require('lodash/chunk');
+const path = require("path");
+const chunk = require("lodash/chunk");
+const utils = require("./src/utils");
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
@@ -50,23 +51,24 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors);
         }
 
-        const postTemplate = path.resolve('./src/templates/post.js');
+        const postTemplate = path.resolve("./src/templates/post.js");
 
         const edges = result.data.allContentfulPost.edges;
 
-        const blogPageTemplate = path.resolve('./src/templates/blogPage.js');
+        const blogPageTemplate = path.resolve("./src/templates/blogPage.js");
         const chunks = chunk(edges, 10);
         chunks.forEach((chunk, page) => {
+          const blogPagePath = utils.toBlogPage(page);
           createPage({
-            path: `/blog/${page}/`,
+            path: blogPagePath,
             component: blogPageTemplate,
-            context: { chunk, page, hasNext: page < chunks.length - 1 },
+            context: { chunk, page, hasNext: page < chunks.length - 1 }
           });
           chunk.forEach(edge => {
             createPage({
-              path: `/blog/posts/${edge.node.path}/`,
+              path: utils.toPostPath(edge.node.path),
               component: postTemplate,
-              context: Object.assign({}, edge, { backLink: `/blog/${page}/` }),
+              context: Object.assign({}, edge, { backLink: blogPagePath })
             });
           });
         });
