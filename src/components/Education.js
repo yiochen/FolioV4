@@ -20,7 +20,7 @@ export default ({
   return (
     <TimelineItem>
       <div>
-        <a href={schoolWebsite} target="_blank">
+        <a href={schoolWebsite} target="_blank" rel="noopener noreferrer">
           <h3 style={titleStyle}>{institution}</h3>
         </a>
         <p>

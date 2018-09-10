@@ -1,14 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Title as TitleBase } from './PostCard';
 import { connect } from './NodeContext';
 const PostTitle = TitleBase.withComponent('h1');
-const PostSubTitle = TitleBase.withComponent('h5');
+const PostSubtitle = TitleBase.withComponent('h5');
 
-const Title = ({ title, subTitle }) => (
+const Title = ({ title, subtitle }) => (
   <React.Fragment>
     <PostTitle>{title}</PostTitle>
-    {subTitle && <PostSubTitle>{subTitle}</PostSubTitle>}
+    {subtitle && <PostSubtitle>{subtitle}</PostSubtitle>}
   </React.Fragment>
 );
 

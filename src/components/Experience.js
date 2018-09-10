@@ -20,7 +20,12 @@ export default ({
     <TimelineItem>
       <div>
         <h3>
-          <a href={website} style={titleStyle} target="_blank">
+          <a
+            href={website}
+            style={titleStyle}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {company}
           </a>
         </h3>

@@ -1,5 +1,6 @@
 import React from 'react';
 import trim from 'lodash/trim';
+import Layout from '../components/Layout';
 
 class NotFoundPage extends React.Component {
   state = {
@@ -12,24 +13,28 @@ class NotFoundPage extends React.Component {
     });
   }
   render() {
+    const { location } = this.props;
     const { possibleProjectName } = this.state;
     return (
-      <div>
-        <h1>NOT FOUND</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-        {possibleProjectName && (
-          <p>
-            Are you looking for my project called {possibleProjectName}, you can
-            head to{' '}
-            <a
-              target="_blank"
-              href={`https://yiochen.github.io/${possibleProjectName}`}
-            >
-              here
-            </a>
-          </p>
-        )}
-      </div>
+      <Layout location={location}>
+        <div>
+          <h1>NOT FOUND</h1>
+          <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+          {possibleProjectName && (
+            <p>
+              Are you looking for my project called {possibleProjectName}, you
+              can head to{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://yiochen.github.io/${possibleProjectName}`}
+              >
+                here
+              </a>
+            </p>
+          )}
+        </div>
+      </Layout>
     );
   }
 }

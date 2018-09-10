@@ -3,7 +3,6 @@ module.exports = {
     title: `Yiou`,
   },
   plugins: [
-    'gatsby-plugin-react-next',
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,

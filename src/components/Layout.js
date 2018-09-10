@@ -1,10 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
-import Footer from '../components/Footer';
+import Footer from './Footer';
 import globalStyle from '../globalStyle';
 import me from '../static/me.png';
 
@@ -22,9 +20,6 @@ const Header = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 0 1.0875rem;
   margin-bottom: 1.5em;
 `;
 
@@ -47,13 +42,9 @@ const TemplateWrapper = ({ children, location }) => (
       <meta property="og:image:width" content="300" />
     </Helmet>
     <Header />
-    <ContentContainer>{children()}</ContentContainer>
+    <ContentContainer>{children}</ContentContainer>
     <Footer full={location.pathname === '/'} />
   </MainPage>
 );
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-};
 
 export default TemplateWrapper;

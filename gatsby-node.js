@@ -2,8 +2,8 @@ const path = require('path');
 const chunk = require('lodash/chunk');
 const utils = require('./src/utils');
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
   const cover = `{
     image {
       title

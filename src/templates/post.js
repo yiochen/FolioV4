@@ -1,17 +1,14 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import utils from '../utils';
 import NavButton from '../components/NavButton';
 import { NodeProvider } from '../components/NodeContext';
-import PostTitle from '../components/PostTitle';
-
+import PostHeader from '../components/PostHeader';
+import Layout from '../components/Layout';
 import { Title, SubTitle, DateLabel } from '../components/PostCard';
-
-const PrimaryTitle = Title.withComponent('h1');
-
-const PrimarySubTitle = SubTitle.withComponent('h5');
+import PostHTMLHead from '../components/PostHtmlHead';
 
 const RelatedTitle = Title.withComponent('h5');
 
@@ -40,6 +37,9 @@ const ClearFix = styled.div`
 
 const PostContainer = styled.section`
   padding-top: 5em;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1.0875rem;
 `;
 
 const PostContent = styled.div`
@@ -73,51 +73,38 @@ class Post extends React.Component {
     window.scrollTo(0, 0);
   }
   render() {
-    const { node, backLink, previous, next } = this.props.pathContext;
-    const { title, subtitle, publishDate, tags, cover } = node;
-    const { html, timeToRead, excerpt } = node.content.childMarkdownRemark;
+    const { pageContext, location } = this.props;
+    const { node, backLink, previous, next } = pageContext;
+    const { html } = node.content.childMarkdownRemark;
 
-    const documentTitle = `${title}${subtitle ? ` - ${subtitle}` : ''}`;
     return (
-      <PostContainer>
-        <Helmet>
-          <title>{documentTitle}</title>
-          <meta property="og:title" content={documentTitle} />
-          <meta property="og:description" content={excerpt} />
-          <meta property="og:type" content="article" />
-        </Helmet>
+      <Layout location={location}>
         <NavButton to={backLink}>BLOG</NavButton>
         <NodeProvider value={node}>
-          <PostTitle />
-          <PrimaryTitle>{node.title}</PrimaryTitle>
-          {subtitle && <PrimarySubTitle>{node.subtitle}</PrimarySubTitle>}
-          {cover && <img src={cover.image.full.src} />}
-          <DateLabel>
-            {publishDate}
-            <TimeToRead>Time to read: {timeToRead} min</TimeToRead>
-          </DateLabel>
-
-          <PostContent dangerouslySetInnerHTML={{ __html: html }} />
+          <PostHTMLHead />
+          <PostHeader />
+          <PostContainer>
+            <PostContent dangerouslySetInnerHTML={{ __html: html }} />
+            {previous && (
+              <RelatedPostLink.Right to={utils.toPostPath(previous.path)}>
+                <RelatedTitle>{previous.title}</RelatedTitle>
+                {previous.subtitle && (
+                  <RelatedSubTitle>{previous.subtitle}</RelatedSubTitle>
+                )}
+              </RelatedPostLink.Right>
+            )}
+            {next && (
+              <RelatedPostLink.Left to={utils.toPostPath(next.path)}>
+                <RelatedTitle>{next.title}</RelatedTitle>
+                {next.subtitle && (
+                  <RelatedSubTitle>{next.subtitle}</RelatedSubTitle>
+                )}
+              </RelatedPostLink.Left>
+            )}
+            <ClearFix />
+          </PostContainer>
         </NodeProvider>
-
-        {previous && (
-          <RelatedPostLink.Right to={utils.toPostPath(previous.path)}>
-            <RelatedTitle>{previous.title}</RelatedTitle>
-            {previous.subtitle && (
-              <RelatedSubTitle>{previous.subtitle}</RelatedSubTitle>
-            )}
-          </RelatedPostLink.Right>
-        )}
-        {next && (
-          <RelatedPostLink.Left to={utils.toPostPath(next.path)}>
-            <RelatedTitle>{next.title}</RelatedTitle>
-            {next.subtitle && (
-              <RelatedSubTitle>{next.subtitle}</RelatedSubTitle>
-            )}
-          </RelatedPostLink.Left>
-        )}
-        <ClearFix />
-      </PostContainer>
+      </Layout>
     );
   }
 }
