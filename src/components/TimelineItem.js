@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Media from 'react-media';
-
-const resolutionBreakpoint = '650px';
+import globalStyle from '../globalStyle';
 
 const Container = styled.div`
   display: flex;
   position: relative;
   flex-direction: row;
-  @media (max-width: ${resolutionBreakpoint}) {
+  @media (max-width: ${globalStyle.experienceSplitBreakpoint}) {
     flex-direction: column;
   }
 `;
@@ -16,12 +14,13 @@ const timelineWidth = 5;
 
 const LeftPane = styled.div`
   flex: 1;
+  overflow-x: hidden;
   text-align: right;
   margin-right: 1.5em;
   box-sizing: border-box;
   position: relative;
   padding-bottom: 5em;
-  @media (max-width: ${resolutionBreakpoint}) {
+  @media (max-width: ${globalStyle.experienceSplitBreakpoint}) {
     text-align: left;
     padding-bottom: inherit;
     padding-left: calc(${timelineWidth}px + 1.5em);
@@ -41,32 +40,26 @@ const RightPane = styled.div`
 const dotSize = 30;
 
 const Dot = styled.span`
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: ${dotSize}px;
-  height: ${dotSize}px;
-  margin-left: ${-dotSize / 2 - timelineWidth / 2}px;
-  background-color: skyblue;
-  border-radius: 50%;
+  display: none;
+  @media (min-width: 650px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: ${dotSize}px;
+    height: ${dotSize}px;
+    margin-left: ${-dotSize / 2 - timelineWidth / 2}px;
+    background-color: skyblue;
+    border-radius: 50%;
+  }
 `;
 
-const mediaForBreakpoint = `(max-width: ${resolutionBreakpoint})`;
-export default ({ children, ...props }) => {
-  const childrenArray = React.Children.toArray(children);
-  const [leftChild, rightChild] = childrenArray;
+export default ({ leftChild, rightChild, ...props }) => {
   return (
     <Container {...props}>
-      <LeftPane>
-        <Media query={mediaForBreakpoint} render={() => <Dot />} />
-        {leftChild}
-      </LeftPane>
-
+      <LeftPane>{leftChild}</LeftPane>
       <RightPane>
-        <Media query={mediaForBreakpoint}>
-          {matches => !matches && <Dot />}
-        </Media>
+        <Dot />
         {rightChild}
       </RightPane>
     </Container>

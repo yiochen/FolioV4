@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Media from 'react-media';
 
 import PostTitle from './PostTitle';
 import { connect } from './NodeContext';
@@ -8,7 +7,6 @@ import { defaultCover } from '../utils';
 
 import PostDate from './PostDate';
 
-console.log(defaultCover);
 const FigureContainer = styled.figure`
   width: 100%;
   margin: 0;
@@ -50,20 +48,15 @@ const mapStateToProps = node => {
 
 const ConnectedCover = connect(mapStateToProps)(Cover);
 
-const BaseContainer = styled.div`
-  padding-top: 60px;
+const SplitedContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   @media (min-width: 1200px) {
-    padding-top: 100px;
+    padding-top: 50px;
+    flex-direction: row-reverse;
+    margin: 0 65px;
   }
 `;
-
-const SplitedContainer = styled(BaseContainer)`
-  margin: 0 65px;
-  display: flex;
-  flex-direction: row;
-`;
-
-const StackContainer = BaseContainer;
 
 const TitlePane = styled.div`
   max-width: 960px;
@@ -82,29 +75,15 @@ const CoverPane = styled.div`
 `;
 
 const PostHeader = () => (
-  <Media query="(min-width: 1200px)">
-    {matches =>
-      matches ? (
-        <SplitedContainer>
-          <TitlePane>
-            <PostTitle />
-            <PostDate />
-          </TitlePane>
-          <CoverPane>
-            <ConnectedCover />
-          </CoverPane>
-        </SplitedContainer>
-      ) : (
-        <StackContainer>
-          <ConnectedCover />
-          <TitlePane>
-            <PostTitle />
-            <PostDate />
-          </TitlePane>
-        </StackContainer>
-      )
-    }
-  </Media>
+  <SplitedContainer>
+    <CoverPane>
+      <ConnectedCover />
+    </CoverPane>
+    <TitlePane>
+      <PostTitle />
+      <PostDate />
+    </TitlePane>
+  </SplitedContainer>
 );
 
 export default PostHeader;

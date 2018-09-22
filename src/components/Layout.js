@@ -20,6 +20,7 @@ const Header = styled.div`
 `;
 
 const ContentContainer = styled.div`
+  margin-top: 7rem;
   margin-bottom: 1.5em;
 `;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import TimelineItem from './TimelineItem';
 import globalStyle from '../globalStyle';
+import CompanyTitle from './CompanyTitle';
 
 const titleStyle = {
   color: globalStyle.accent,
@@ -15,22 +16,23 @@ export default ({
   gpa,
   schoolWebsite,
   summary,
-  ...props
 }) => {
   return (
-    <TimelineItem>
-      <div>
-        <a href={schoolWebsite} target="_blank" rel="noopener noreferrer">
-          <h3 style={titleStyle}>{institution}</h3>
-        </a>
-        <p>
-          {area} - GPA {gpa}
-        </p>
-        <p>
-          {startDate} - {endDate}
-        </p>
-      </div>
-      <div>{summary}</div>
-    </TimelineItem>
+    <TimelineItem
+      leftChild={
+        <div>
+          <a href={schoolWebsite} target="_blank" rel="noopener noreferrer">
+            <CompanyTitle>{institution}</CompanyTitle>
+          </a>
+          <p>
+            {area} - GPA {gpa}
+          </p>
+          <p>
+            {startDate} - {endDate}
+          </p>
+        </div>
+      }
+      rightChild={<div>{summary}</div>}
+    />
   );
 };

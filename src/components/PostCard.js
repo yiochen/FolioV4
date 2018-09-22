@@ -15,7 +15,7 @@ export const SubTitle = styled.h5`
 `;
 
 export const DateLabel = styled.p`
-  color: #aaa;
+  color: ${globalStyle.textNoteColor};
 `;
 
 export const Excerpt = styled.p`

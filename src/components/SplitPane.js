@@ -11,7 +11,7 @@ const Container = styled.div`
   background-size: 2px 100%;
   background-position: 50% 0;
   background-repeat: no-repeat;
-  @media (max-width: ${resolutionBreakpoint}) {
+  @media (max-width: 650px) {
     flex-direction: column;
     background: none;
   }
@@ -25,13 +25,13 @@ const Pane = styled.div`
 
 const LeftPane = Pane.extend`
   text-align: right;
-  @media (max-width: ${resolutionBreakpoint}) {
+  @media (max-width: 650px) {
     text-align: left;
   }
 `;
 
 const RightPane = Pane.extend`
-  @media (max-width: ${resolutionBreakpoint}) {
+  @media (max-width: 650px) {
     margin-top: 0;
     padding-top: 0;
     color: ${globalStyle.textNoteColor};
