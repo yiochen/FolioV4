@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Helmet from 'react-helmet';
 import utils from '../utils';
 import NavButton from '../components/NavButton';
 import { NodeProvider } from '../components/NodeContext';
 import PostHeader from '../components/PostHeader';
 import Layout from '../components/Layout';
-import { Title, SubTitle, DateLabel } from '../components/PostCard';
+import { Title, SubTitle } from '../components/PostCard';
 import PostHTMLHead from '../components/PostHtmlHead';
 
 const RelatedTitle = Title.withComponent('h5');
@@ -25,10 +24,6 @@ RelatedPostLink.Left = RelatedPostLink.extend`
 
 RelatedPostLink.Right = RelatedPostLink.extend`
   float: right;
-`;
-
-const TimeToRead = styled.span`
-  float: 'right';
 `;
 
 const ClearFix = styled.div`

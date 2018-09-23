@@ -1,16 +1,10 @@
 import React from 'react';
 import TimelineItem from './TimelineItem';
-import globalStyle from '../globalStyle';
 import CompanyTitle from './CompanyTitle';
-
-const titleStyle = {
-  color: globalStyle.accent,
-};
 
 export default ({
   institution,
   area,
-  studyType,
   startDate,
   endDate,
   gpa,

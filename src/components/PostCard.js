@@ -46,7 +46,7 @@ export default ({ title, subtitle, date, excerpt, href }) => (
     <DateLabel>Posted on {date}</DateLabel>
     <Excerpt>{excerpt}</Excerpt>
     <MoarLinkSection>
-      <MoarLinkLink to={href}>[ Read Moar ]</MoarLinkLink>
+      <MoarLinkLink to={href}>[ Read More ]</MoarLinkLink>
     </MoarLinkSection>
   </Card>
 );

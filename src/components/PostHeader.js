@@ -6,6 +6,7 @@ import { connect } from './NodeContext';
 import { defaultCover } from '../utils';
 
 import PostDate from './PostDate';
+import globalStyle from '../globalStyle';
 
 const FigureContainer = styled.figure`
   width: 100%;
@@ -24,7 +25,10 @@ const CoverImage = styled.div`
 `;
 
 const Figcaption = styled.figcaption`
-  color: #aaa;
+  color: ${globalStyle.textNoteColor};
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  display: inline;
 `;
 
 const Cover = ({ src, coverTitle, credit, sourceLink }) => (

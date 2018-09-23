@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import globalStyle from '../globalStyle';
 
-const resolutionBreakpoint = '650px';
-
 const Container = styled.div`
   position: relative;
   display: flex;
