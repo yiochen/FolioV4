@@ -53,6 +53,7 @@ const PostContent = styled.div`
 
   pre code {
     overflow-x: auto;
+    border: none;
   }
 
   img {
