@@ -8,6 +8,7 @@ import PostHeader from '../components/PostHeader';
 import Layout from '../components/Layout';
 import { Title, SubTitle } from '../components/PostCard';
 import PostHTMLHead from '../components/PostHtmlHead';
+import Comment from '../components/Comment';
 
 const RelatedTitle = Title.withComponent('h5');
 
@@ -51,6 +52,7 @@ const PostContent = styled.div`
     }
   }
 
+  code,
   pre code {
     overflow-x: auto;
     border: none;
@@ -64,6 +66,7 @@ const PostContent = styled.div`
   }
 `;
 
+const getPostURL = path => `https://yiou.me/blog/posts/${path}`;
 class Post extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -71,8 +74,10 @@ class Post extends React.Component {
   render() {
     const { pageContext, location } = this.props;
     const { node, backLink, previous, next } = pageContext;
+    const { path, title, subtitle } = node;
     const { html } = node.content.childMarkdownRemark;
 
+    const postTitle = [title, subtitle].filter(Boolean).join(' - ');
     return (
       <Layout location={location}>
         <NavButton to={backLink}>BLOG</NavButton>
@@ -81,6 +86,11 @@ class Post extends React.Component {
           <PostHeader />
           <PostContainer>
             <PostContent dangerouslySetInnerHTML={{ __html: html }} />
+            <Comment
+              url={getPostURL(path)}
+              identifier={path}
+              title={postTitle}
+            />
             {previous && (
               <RelatedPostLink.Right to={utils.toPostPath(previous.path)}>
                 <RelatedTitle>{previous.title}</RelatedTitle>
