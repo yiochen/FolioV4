@@ -11,7 +11,7 @@ import SkillCard from '../components/SkillCard';
 import NavButton from '../components/NavButton';
 import Layout from '../components/Layout';
 
-import data from './resume.json';
+import data from '../resume.json';
 
 const IndexPage = ({ location }) => (
   <Layout location={location}>
