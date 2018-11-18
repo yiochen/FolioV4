@@ -21,14 +21,14 @@ const Pane = styled.div`
   position: relative;
 `;
 
-const LeftPane = Pane.extend`
+const LeftPane = styled(Pane)`
   text-align: right;
   @media (max-width: 650px) {
     text-align: left;
   }
 `;
 
-const RightPane = Pane.extend`
+const RightPane = styled(Pane)`
   @media (max-width: 650px) {
     margin-top: 0;
     padding-top: 0;

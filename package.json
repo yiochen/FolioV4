@@ -4,21 +4,21 @@
   "version": "0.0.0",
   "author": "Yiou Chen <hi@yiou.me>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.5.1",
+    "babel-plugin-styled-components": "^1.8.0",
     "base.css": "github:yiochen/base.css",
     "disqus-react": "^1.0.5",
-    "gatsby": "^2.0.0-rc.28",
-    "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
-    "gatsby-plugin-styled-components": "^3.0.0-rc.5",
-    "gatsby-remark-prismjs": "^3.0.0",
-    "gatsby-source-contentful": "^2.0.1-rc.9",
-    "gatsby-transformer-remark": "^2.1.1-rc.5",
-    "lodash": "^4.17.4",
+    "gatsby": "^2.0.50",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-styled-components": "^3.0.2",
+    "gatsby-remark-prismjs": "^3.0.3",
+    "gatsby-source-contentful": "^2.0.14",
+    "gatsby-transformer-remark": "^2.1.12",
+    "lodash": "^4.17.11",
     "prismjs": "^1.15.0",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
-    "styled-components": "^3.2.6"
+    "styled-components": "^4.1.1"
   },
   "keywords": [
     "gatsby"
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "npm-run-all": "^4.1.2",
-    "prettier": "^1.14.2"
+    "prettier": "^1.15.2"
   },
   "prettier": {
     "trailingComma": "all",

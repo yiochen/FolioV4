@@ -19,11 +19,11 @@ const RelatedPostLink = styled(Link)`
   display: block;
 `;
 
-RelatedPostLink.Left = RelatedPostLink.extend`
+RelatedPostLink.Left = styled(RelatedPostLink)`
   float: left;
 `;
 
-RelatedPostLink.Right = RelatedPostLink.extend`
+RelatedPostLink.Right = styled(RelatedPostLink)`
   float: right;
 `;
 

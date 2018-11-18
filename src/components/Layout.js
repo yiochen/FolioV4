@@ -32,7 +32,7 @@ const TemplateWrapper = ({ children, location }) => (
   <MainPage>
     <Helmet>
       <title> Yiou </title>
-      <meta name="theme-color" content="#87CEEB" />
+      <meta name="theme-color" content={globalStyle.accent} />
       <link
         rel="shortcut icon"
         href="https://github.com/yiochen/common/blob/master/favicon/favicon.png?raw=true"

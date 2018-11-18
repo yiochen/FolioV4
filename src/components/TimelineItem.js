@@ -24,7 +24,7 @@ const LeftPane = styled.div`
     text-align: left;
     padding-bottom: inherit;
     padding-left: calc(${timelineWidth}px + 1.5em);
-    border-left: ${timelineWidth}px dotted skyblue;
+    border-left: ${timelineWidth}px dotted ${globalStyle.accent};
   }
 `;
 
@@ -32,7 +32,7 @@ const RightPane = styled.div`
   flex: 2;
   position: relative;
   padding-left: calc(${timelineWidth}px + 1.5em);
-  border-left: ${timelineWidth}px dotted skyblue;
+  border-left: ${timelineWidth}px dotted ${globalStyle.accent};
   box-sizing: border-box;
   padding-bottom: 5em;
 `;
@@ -49,7 +49,7 @@ const Dot = styled.span`
     width: ${dotSize}px;
     height: ${dotSize}px;
     margin-left: ${-dotSize / 2 - timelineWidth / 2}px;
-    background-color: skyblue;
+    background-color: ${globalStyle.accent};
     border-radius: 50%;
   }
 `;
