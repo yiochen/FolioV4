@@ -1,5 +1,5 @@
 export default {
-  accent: '#87ceeb',
+  accent: '#F490A0',
   textColor: '#555',
   textNoteColor: '#999',
   textTitleColor: '#777',
