@@ -1,7 +1,8 @@
 import React from 'react';
-import TimelineItem from './TimelineItem';
+import TimelineItem, { TimelineAttribute } from './TimelineItem';
 import globalStyle from '../globalStyle';
 import CompanyTitle from './CompanyTitle';
+import ToolTag from './ToolTag';
 
 const titleStyle = {
   color: globalStyle.accent,
@@ -14,6 +15,7 @@ export default ({
   startDate,
   endDate,
   summary,
+  toolset,
   highlights,
 }) => {
   return (
@@ -28,11 +30,13 @@ export default ({
           >
             <CompanyTitle>{company}</CompanyTitle>
           </a>
-
-          <p>{position}</p>
-          <p>
+          <TimelineAttribute>{position}</TimelineAttribute>
+          <TimelineAttribute>
             {startDate} - {endDate}
-          </p>
+          </TimelineAttribute>
+          {toolset.map(tool => (
+            <ToolTag key={tool}>{tool}</ToolTag>
+          ))}
         </div>
       }
       rightChild={

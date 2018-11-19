@@ -1,15 +1,11 @@
-import React from 'react';
+import styled from 'styled-components';
+import globalStyle from '../globalStyle';
 
-const Tag = 'h2';
+const TitleLabel = styled.h2`
+  color: ${globalStyle.textDecorationColor};
+  font-size: 3em;
+  text-align: center;
+  margin: 1.5em 0;
+`;
 
-const style = {
-  color: 'rgb(245, 245, 245)',
-  fontSize: '3em',
-  textAlign: 'center',
-  margin: '1.5em 0',
-};
-export default props => (
-  <Tag style={style} {...props}>
-    {props.children}
-  </Tag>
-);
+export default TitleLabel;

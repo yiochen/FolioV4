@@ -6,8 +6,7 @@
     "email": "yiouc99@gmail.com",
     "phone": "",
     "website": "https://yiou.me",
-    "summary":
-      "Frontend engineer at Veeva Systems UIPlatform. Manga and anime lover.",
+    "summary": "Frontend engineer at Veeva Systems in Pleasanton, CA. Working in UIPlatform team. Doing JavaScript stuff.",
     "location": {
       "address": "Pleasanton, CA",
       "postalCode": "",
@@ -35,27 +34,37 @@
       "company": "Veeva Systems",
       "position": "Associate Frontend Engineer",
       "website": "https://www.veeva.com/",
-      "startDate": "6/2017",
+      "startDate": "06/2017",
       "endDate": "Present",
-      "summary":
-        "I work in the UIPlatform team. Our objective is to improve the foundation of our enterprise applications using the latest technologies and best practices. Some of the technologies we use every day includes React, Redux, Webpack, Sass. Jest, Enzyme, etc.",
+      "summary": "I work in the UIPlatform team for Veeva Vault. Our objective is to improve the foundation of our enterprise application using the latest technologies and best practices.",
+      "toolset": [
+        "React",
+        "Redux",
+        "Webpack",
+        "Babel",
+        "Jest",
+        "ESlint",
+        "Prettier",
+        "Storybook",
+        "Sass"
+      ],
       "highlights": [
-        "Rebuilt login page using React and Redux",
-        "Standardized the front-end routing system for our single page app",
-        "Built an Excel-like data grid component with React"
+        "Designed the architecture of a JavaScript expression engine",
+        "Rebuilt login flow using React and Redux",
+        "Standardized the front-end routing system for our single page app"
       ]
     },
     {
       "company": "CA Technologies",
       "position": "Software Engineer Intern",
       "website": "https://www.ca.com/",
-      "startDate": "5/2016",
-      "endDate": "5/2017",
-      "summary":
-        "I worked in a small fast-paced team that does prototyping for clients. We experimented with various technologies and turned clients' idea into reality. As one of the frontend engineers in the team, I have experienced with Angular, React, Polymer, D3 and so on.",
+      "startDate": "05/2016",
+      "endDate": "05/2017",
+      "summary": "I worked in a small fast-paced technology incubator. We experimented with various technologies and turned clients' idea into working prototype. As one of the frontend engineers in the team, I have experienced with Angular, React, Polymer, D3 and so on.",
+      "toolset": ["Angular", "Sass", "Jasmine", "JQuery", "D3"],
       "highlights": [
         "Developed customizable data visualization components using D3.js and Angular 2",
-        "Maintained the Angular UI component library",
+        "Maintained a Angular UI component library",
         "Created and integrated a map widget that handled high-volume real-time data using leaflet"
       ]
     }
@@ -66,66 +75,17 @@
       "institution": "Stony Brook University",
       "area": "Computer Science",
       "studyType": "Bachelor",
-      "startDate": "9/2013",
-      "endDate": "5/2017",
-      "gpa": "3.87",
+      "startDate": "09/2013",
+      "endDate": "05/2017",
+      "gpa": "3.87/4.00",
       "courses": [],
       "schoolWebsite": "http://www.stonybrook.edu/",
-      "summary":
-        "I majored in Computer Science, minored in Digital art. In college, I studied various topics in computer science, including database design, system programming, network programming, computer graphics, etc. I graduated from the Computer Science Honor Program with Summa Cum Laude designation."
+      "summary": "I majored in Computer Science, minored in Digital art. In college, I studied various topics in computer science, including database design, system programming, network programming, computer graphics, etc. I graduated from the Computer Science Honor Program with Summa Cum Laude designation."
     }
   ],
   "awards": [],
   "publications": [],
-  "skills": [
-    {
-      "name": "JavaScript",
-      "icon": "iconJavascript",
-      "usage":
-        "As a frontend engineer, I use JavaScript in my daily work. It is my most comfortable language."
-    },
-    {
-      "name": "HTML",
-      "icon": "iconHtml",
-      "usage":
-        "I am very comfortable with HTML. I contributed to component libraries in my internship and my current job. We hold a very high standard on the component semantics and accessibility."
-    },
-    {
-      "name": "CSS",
-      "icon": "iconCss",
-      "usage":
-        "I am confident with my CSS skill. While building React components at Veeva Systems, I need to make sure pixel perfect presentation according to the design document."
-    },
-    {
-      "name": "React",
-      "icon": "iconReact",
-      "usage":
-        "I use React in my current job. We are building a React component library. I worked on two complicated component, select and data grid."
-    },
-    {
-      "name": "Angular",
-      "icon": "iconAngular",
-      "usage":
-        "I use Angular 2 in my previous internship in which I develop a series of customizable data visualization (barchart, linechart, piechart) using Angular and D3"
-    },
-    {
-      "name": "Vue",
-      "icon": "iconVue",
-      "usage": "I build my previous personal website using Vue"
-    },
-    {
-      "name": "Java",
-      "icon": "iconJava",
-      "usage":
-        "Java was the introductory language in my college. I used it for school projects. I also need to deal with some Java in my current job when I work in backend."
-    },
-    {
-      "name": "C#",
-      "icon": "iconCsharp",
-      "usage":
-        "I used C# for Unity game programming for my Game Programming specialization in College. I built two complete games with Unity."
-    }
-  ],
+  "skills": [],
   "languages": [
     {
       "language": "English",

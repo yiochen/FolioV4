@@ -5,6 +5,7 @@ export default {
   textTitleColor: '#777',
   background: '#FFF',
   textInvertColor: '#FFF',
-  secondaryFont: 'Arial, Helvetica, sans-serif',
+  textDecorationColor: '#F5F5F5',
+  secondaryFont: 'Lato, Helvetica, sans-serif',
   experienceSplitBreakpoint: '650px',
 };

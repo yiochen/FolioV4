@@ -8,6 +8,7 @@ const CompanyTitle = styled.h3`
   position: relative;
   padding: 0 1rem;
   transform: translateX(-1rem);
+  font-family: ${globalStyle.secondaryFont};
   &::before {
     content: ' ';
     display: block;
@@ -23,8 +24,10 @@ const CompanyTitle = styled.h3`
     &::before {
       content: none;
     }
+    transform: none;
     color: ${globalStyle.accent};
     background: none;
+    padding: 0;
   }
 `;
 

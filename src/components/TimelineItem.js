@@ -2,6 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import globalStyle from '../globalStyle';
 
+export const TimelineAttribute = styled.p`
+  margin-bottom: 0;
+  font-family: ${globalStyle.secondaryFont};
+`;
+
 const Container = styled.div`
   display: flex;
   position: relative;
@@ -22,7 +27,7 @@ const LeftPane = styled.div`
   padding-bottom: 5em;
   @media (max-width: ${globalStyle.experienceSplitBreakpoint}) {
     text-align: left;
-    padding-bottom: inherit;
+    padding-bottom: 1em;
     padding-left: calc(${timelineWidth}px + 1.5em);
     border-left: ${timelineWidth}px dotted ${globalStyle.accent};
   }

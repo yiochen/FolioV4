@@ -5,7 +5,11 @@ import globalStyle from '../globalStyle';
 const Container = styled.div`
   position: relative;
   display: flex;
-  background-image: linear-gradient(0deg, #000 0%, #000 100%);
+  background-image: linear-gradient(
+    0deg,
+    ${globalStyle.textDecorationColor} 0%,
+    ${globalStyle.textDecorationColor} 100%
+  );
   background-size: 2px 100%;
   background-position: 50% 0;
   background-repeat: no-repeat;

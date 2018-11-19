@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import Section from '../components/Section';
 import TitleLabel from '../components/TitleLabel';
@@ -7,12 +8,15 @@ import SplitPane from '../components/SplitPane';
 import Contact from '../components/ContactLink';
 import Experience from '../components/Experience';
 import Education from '../components/Education';
-import SkillCard from '../components/SkillCard';
 import NavButton from '../components/NavButton';
 import Layout from '../components/Layout';
 
 import data from '../resume.json';
+import globalStyle from '../globalStyle';
 
+const Summary = styled.p`
+  font-family: ${globalStyle.secondaryFont};
+`;
 const IndexPage = ({ location }) => (
   <Layout location={location}>
     <main>
@@ -41,7 +45,7 @@ const IndexPage = ({ location }) => (
               </Contact>
             ))}
           </div>
-          {data.basics.summary}
+          <Summary>{data.basics.summary}</Summary>
         </SplitPane>
       </Section>
 
@@ -53,11 +57,6 @@ const IndexPage = ({ location }) => (
         {data.education.map(education => (
           <Education {...education} key={education.institution} />
         ))}
-      </Section>
-
-      <Section>
-        <TitleLabel>Skills</TitleLabel>
-        <SkillCard skills={data.skills} />
       </Section>
     </main>
   </Layout>

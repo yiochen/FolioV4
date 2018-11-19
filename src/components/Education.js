@@ -1,5 +1,5 @@
 import React from 'react';
-import TimelineItem from './TimelineItem';
+import TimelineItem, { TimelineAttribute } from './TimelineItem';
 import CompanyTitle from './CompanyTitle';
 
 export default ({
@@ -18,12 +18,11 @@ export default ({
           <a href={schoolWebsite} target="_blank" rel="noopener noreferrer">
             <CompanyTitle>{institution}</CompanyTitle>
           </a>
-          <p>
-            {area} - GPA {gpa}
-          </p>
-          <p>
+          <TimelineAttribute>{area}</TimelineAttribute>
+          <TimelineAttribute>GPA {gpa}</TimelineAttribute>
+          <TimelineAttribute>
             {startDate} - {endDate}
-          </p>
+          </TimelineAttribute>
         </div>
       }
       rightChild={<div>{summary}</div>}
