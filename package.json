@@ -5,7 +5,6 @@
   "author": "Yiou Chen <hi@yiou.me>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
-    "base.css": "github:yiochen/base.css",
     "disqus-react": "^1.0.5",
     "gatsby": "^2.0.84",
     "gatsby-plugin-react-helmet": "^3.0.2",
@@ -18,7 +17,8 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
-    "styled-components": "^4.1.1"
+    "styled-components": "^4.1.1",
+    "yiou-css-base": "^0.1.0"
   },
   "keywords": [
     "gatsby"

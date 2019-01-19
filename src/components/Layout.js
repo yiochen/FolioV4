@@ -6,7 +6,7 @@ import Footer from './Footer';
 import globalStyle from '../globalStyle';
 import me from '../static/me.png';
 
-import 'base.css/base.css';
+import 'yiou-css-base';
 
 // icons
 import '../static/style.css';
