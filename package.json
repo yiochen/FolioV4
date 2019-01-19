@@ -7,7 +7,7 @@
     "babel-plugin-styled-components": "^1.8.0",
     "base.css": "github:yiochen/base.css",
     "disqus-react": "^1.0.5",
-    "gatsby": "^2.0.84",
+    "gatsby": "^2.0.91",
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-styled-components": "^3.0.2",
     "gatsby-remark-prismjs": "^3.0.3",
