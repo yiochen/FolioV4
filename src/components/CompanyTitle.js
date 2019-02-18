@@ -1,31 +1,31 @@
-import styled from 'styled-components';
-import globalStyle from '../globalStyle';
+import styled from 'astroturf';
 
-const CompanyTitle = styled.h3`
-  color: ${globalStyle.textInvertColor};
-  background-color: ${globalStyle.accent};
+const CompanyTitle = styled('h3')`
+  @import '../globalStyle';
+  color: $textInvertColor;
+  background-color: $accent;
   display: inline-block;
   position: relative;
   padding: 0 1rem;
   transform: translateX(-1rem);
-  font-family: ${globalStyle.secondaryFont};
+  font-family: $secondaryFont;
   &::before {
     content: ' ';
     display: block;
     border-left: 1rem solid transparent;
-    border-top: 1rem solid ${globalStyle.accent};
+    border-top: 1rem solid $accent;
     height: 100%;
     box-sizing: border-box;
     position: absolute;
     left: -10px;
     top: 0px;
   }
-  @media (min-width: ${globalStyle.experienceSplitBreakpoint}) {
+  @media (min-width: $experienceSplitBreakpoint) {
     &::before {
       content: none;
     }
     transform: none;
-    color: ${globalStyle.accent};
+    color: $accent;
     background: none;
     padding: 0;
   }

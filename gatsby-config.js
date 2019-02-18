@@ -24,6 +24,17 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        implementation: require('sass'),
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-astroturf',
+      options: {
+        extension: '.module.scss',
+      },
+    },
   ],
 };

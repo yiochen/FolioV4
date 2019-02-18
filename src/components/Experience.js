@@ -1,12 +1,13 @@
 import React from 'react';
+import styled from 'astroturf';
 import TimelineItem, { TimelineAttribute } from './TimelineItem';
-import globalStyle from '../globalStyle';
 import CompanyTitle from './CompanyTitle';
 import ToolTag from './ToolTag';
 
-const titleStyle = {
-  color: globalStyle.accent,
-};
+const Title = styled('a')`
+  @import '../globalStyle';
+  color: $accent;
+`;
 
 export default ({
   company,
@@ -22,14 +23,9 @@ export default ({
     <TimelineItem
       leftChild={
         <div>
-          <a
-            href={website}
-            style={titleStyle}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Title href={website} target="_blank" rel="noopener noreferrer">
             <CompanyTitle>{company}</CompanyTitle>
-          </a>
+          </Title>
           <TimelineAttribute>{position}</TimelineAttribute>
           <TimelineAttribute>
             {startDate} - {endDate}

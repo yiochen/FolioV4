@@ -1,11 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
-import MainContent from './MainContent';
-import globalStyle from '../globalStyle';
+import styled from 'astroturf';
 
-const Section = styled(MainContent.withComponent('section'))`
+const Section = styled('section')`
+  @import '../globalStyle';
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1.0875rem;
   margin-bottom: 2em;
-  color: ${globalStyle.textColor};
+  color: $textColor;
   position: relative;
 `;
 

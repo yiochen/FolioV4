@@ -1,13 +1,14 @@
-import styled from 'styled-components';
-import globalStyle from '../globalStyle';
+import styled from 'astroturf';
 
-const ToolTag = styled.span`
-  border: 1px solid ${globalStyle.accent};
+const ToolTag = styled('span')`
+  @import '../globalStyle';
+
+  border: 1px solid $accent;
   padding: 0 4px;
   border-radius: 4px;
-  font-family: ${globalStyle.secondaryFont};
+  font-family: $secondaryFont;
   font-size: 0.75em;
-  color: ${globalStyle.accent};
+  color: $accent;
   display: inline-block;
   font-weight: bold;
   margin: 0 2px 2px 2px;

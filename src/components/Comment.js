@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'astroturf';
 import Disqus from 'disqus-react';
 
 const disqusShortname = 'code-z';
 
-const CommentContainer = styled.div`
+const CommentContainer = styled('div')`
   padding-bottom: 5rem;
 `;
 

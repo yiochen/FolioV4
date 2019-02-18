@@ -1,20 +1,20 @@
-import styled from 'styled-components';
+import styled from 'astroturf';
 import { Link } from 'gatsby';
-import globalStyle from '../globalStyle';
 
 const NavButton = styled(Link)`
-  background: ${globalStyle.accent};
+  @import '../globalStyle';
+  background: $accent;
   border: 0;
   box-sizing: border-box;
   top: 2em;
-  color: ${globalStyle.textInvertColor};
+  color: $textInvertColor;
   width: 5em;
   height: 2em;
   line-height: 2em;
   display: block;
   padding: 0 0.5em;
   text-align: center;
-  font-family: ${globalStyle.secondaryFont};
+  font-family: $secondaryFont;
   position: absolute;
   top: 1em;
   margin-right: 1em;
