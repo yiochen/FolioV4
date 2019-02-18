@@ -1,29 +1,32 @@
 import React from 'react';
-import globalStyle from '../globalStyle';
+import styled from 'astroturf';
 
-const style = {
-  display: 'inline-block',
-  marginLeft: '10px',
-};
+const Link = styled('span')`
+  display: inline-block;
+  margin-left: 10px;
+`;
 
-const iconStyle = {
-  marginRight: '5px',
-  color: globalStyle.accent,
-};
+const Icon = styled('span')`
+  @import '../globalStyle';
+  margin-right: 5px;
+  color: $accent;
+`;
 
 export default ({ icon, href, ...props }) => {
-  let Tag = 'span';
   let hrefProps = {};
   if (typeof href === 'string') {
-    Tag = 'a';
     hrefProps = {
       href,
     };
   }
   return (
-    <Tag style={style} {...hrefProps} {...props}>
-      <span className={icon} style={iconStyle} />
+    <Link
+      as={typeof href === 'string' ? 'a' : 'span'}
+      {...hrefProps}
+      {...props}
+    >
+      <Icon className={icon} />
       {props.children}
-    </Tag>
+    </Link>
   );
 };

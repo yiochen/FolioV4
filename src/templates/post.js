@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled from 'astroturf';
 import utils from '../utils';
 import NavButton from '../components/NavButton';
 import { NodeProvider } from '../components/NodeContext';
@@ -27,18 +27,18 @@ RelatedPostLink.Right = styled(RelatedPostLink)`
   float: right;
 `;
 
-const ClearFix = styled.div`
+const ClearFix = styled('div')`
   clear: both;
 `;
 
-const PostContainer = styled.section`
+const PostContainer = styled('section')`
   padding-top: 5em;
   margin: 0 auto;
   max-width: 960px;
   padding: 0 1.0875rem;
 `;
 
-const PostContent = styled.div`
+const PostContent = styled('div')`
   margin-top: 4em;
   margin-bottom: 4em;
   border-bottom: 1px solid rgb(221, 221, 221);

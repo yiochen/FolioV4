@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import styled from 'astroturf';
 
 import Footer from './Footer';
 import globalStyle from '../globalStyle';
@@ -13,19 +13,21 @@ import '../static/style.css';
 import '../static/fonts/icomoon.ttf';
 import '../static/fonts/icomoon.woff';
 
-const Header = styled.div`
+const Header = styled('div')`
+  @import '../globalStyle';
   width: 100%;
   height: 10px;
-  background: ${globalStyle.accent};
+  background: $accent;
 `;
 
-const ContentContainer = styled.div`
+const ContentContainer = styled('div')`
   margin-top: 7rem;
   margin-bottom: 1.5em;
 `;
 
-const MainPage = styled.div`
-  background: ${globalStyle.background};
+const MainPage = styled('div')`
+  @import '../globalStyle';
+  background: $background;
 `;
 
 const TemplateWrapper = ({ children, location }) => (

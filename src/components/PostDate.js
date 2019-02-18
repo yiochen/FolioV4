@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'astroturf';
 import { DateLabel } from './PostCard';
 import { connect } from './NodeContext';
 
-const TimeToRead = styled.span`
+const TimeToRead = styled('span')`
   margin-left: 20px;
 `;
 const PostDate = ({ publishDate, timeToRead }) => (

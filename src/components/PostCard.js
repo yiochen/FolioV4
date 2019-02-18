@@ -1,37 +1,40 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
-import globalStyle from '../globalStyle';
+import styled from 'astroturf';
 
-export const Title = styled.h3`
+export const Title = styled('h3')`
+  @import '../globalStyle';
   color: #777;
-  font-family: ${globalStyle.secondaryFont};
+  font-family: $secondaryFont;
   margin: 0;
 `;
 
-export const SubTitle = styled.h5`
+export const SubTitle = styled('h5')`
   color: #777;
   margin: 0;
 `;
 
-export const DateLabel = styled.p`
-  color: ${globalStyle.textNoteColor};
+export const DateLabel = styled('p')`
+  @import '../globalStyle';
+  color: $textNoteColor;
 `;
 
-export const Excerpt = styled.p`
+export const Excerpt = styled('p')`
   margin: 0;
 `;
 
-const MoarLinkSection = styled.section`
-  font-family: ${globalStyle.secondaryFont};
+const MoarLinkSection = styled('section')`
+  @import '../globalStyle';
+  font-family: $secondaryFont;
   text-align: right;
 `;
 
 const MoarLinkLink = styled(Link)`
-  color: ${globalStyle.accent};
+  @import '../globalStyle';
+  color: $accent;
 `;
 
-const Card = styled.section`
+const Card = styled('section')`
   border-bottom: 1px solid #ddd;
   margin: 2em 0 0 0;
   padding-bottom: 2em;

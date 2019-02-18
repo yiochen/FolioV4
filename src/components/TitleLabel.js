@@ -1,8 +1,9 @@
-import styled from 'styled-components';
-import globalStyle from '../globalStyle';
+import styled from 'astroturf';
 
-const TitleLabel = styled.h2`
-  color: ${globalStyle.textDecorationColor};
+const TitleLabel = styled('h2')`
+  @import '../globalStyle';
+
+  color: $textDecorationColor;
   font-size: 3em;
   text-align: center;
   margin: 1.5em 0;

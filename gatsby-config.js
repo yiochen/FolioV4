@@ -36,7 +36,5 @@ module.exports = {
         extension: '.module.scss',
       },
     },
-    'gatsby-plugin-astroturf',
-    'gatsby-plugin-styled-components',
   ],
 };

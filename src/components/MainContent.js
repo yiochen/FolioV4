@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled from 'astroturf';
 
-const MainContent = styled.div`
-  padding-top: 5em;
+const MainContent = styled('div')`
   margin: 0 auto;
   max-width: 960px;
   padding: 0 1.0875rem;

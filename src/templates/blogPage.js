@@ -1,15 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'astroturf';
 import { Link } from 'gatsby';
 import PostCard from '../components/PostCard';
 import NavButton from '../components/NavButton';
 import Layout from '../components/Layout';
-import globalStyle from '../globalStyle';
 import MainContent from '../components/MainContent';
 import utils from '../utils';
 
-const Pagination = styled.div`
-  font-family: ${globalStyle.secondaryFont};
+const Pagination = styled('div')`
+  @import '../globalStyle';
+
+  font-family: $secondaryFont;
   display: flex;
 `;
 

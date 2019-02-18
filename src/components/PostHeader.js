@@ -1,19 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'astroturf';
 
 import PostTitle from './PostTitle';
 import { connect } from './NodeContext';
 import { defaultCover } from '../utils';
 
 import PostDate from './PostDate';
-import globalStyle from '../globalStyle';
 
-const FigureContainer = styled.figure`
+const FigureContainer = styled('figure')`
   width: 100%;
   margin: 0;
 `;
 
-const CoverImage = styled.div`
+const CoverImage = styled('div')`
   width: 100%;
   height: auto;
   min-height: 400px;
@@ -24,8 +23,9 @@ const CoverImage = styled.div`
   }
 `;
 
-const Figcaption = styled.figcaption`
-  color: ${globalStyle.textNoteColor};
+const Figcaption = styled('figcaption')`
+  @import '../globalStyle';
+  color: $textNoteColor;
   font-size: 1.5rem;
   padding: 0 1rem;
   display: inline;
@@ -52,7 +52,7 @@ const mapStateToProps = node => {
 
 const ConnectedCover = connect(mapStateToProps)(Cover);
 
-const SplitedContainer = styled.div`
+const SplitedContainer = styled('div')`
   display: flex;
   flex-direction: column;
   @media (min-width: 1200px) {
@@ -62,7 +62,7 @@ const SplitedContainer = styled.div`
   }
 `;
 
-const TitlePane = styled.div`
+const TitlePane = styled('div')`
   max-width: 960px;
   margin: auto;
   padding: 30px 0 0 0;
@@ -74,7 +74,7 @@ const TitlePane = styled.div`
   }
 `;
 
-const CoverPane = styled.div`
+const CoverPane = styled('div')`
   flex-grow: 1;
 `;
 

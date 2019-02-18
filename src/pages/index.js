@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'astroturf';
 import Helmet from 'react-helmet';
 import Section from '../components/Section';
 import TitleLabel from '../components/TitleLabel';
@@ -12,10 +12,11 @@ import NavButton from '../components/NavButton';
 import Layout from '../components/Layout';
 
 import data from '../resume.json';
-import globalStyle from '../globalStyle';
 
-const Summary = styled.p`
-  font-family: ${globalStyle.secondaryFont};
+const Summary = styled('p')`
+  @import '../globalStyle';
+
+  font-family: $secondaryFont;
 `;
 const IndexPage = ({ location }) => (
   <Layout location={location}>

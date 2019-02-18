@@ -1,14 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-import globalStyle from '../globalStyle';
+import styled from 'astroturf';
 
-const Container = styled.div`
+const Container = styled('div')`
+  @import '../globalStyle';
   position: relative;
   display: flex;
   background-image: linear-gradient(
     0deg,
-    ${globalStyle.textDecorationColor} 0%,
-    ${globalStyle.textDecorationColor} 100%
+    $textDecorationColor 0%,
+    $textDecorationColor 100%
   );
   background-size: 2px 100%;
   background-position: 50% 0;
@@ -19,7 +19,7 @@ const Container = styled.div`
   }
 `;
 
-const Pane = styled.div`
+const Pane = styled('div')`
   flex: 1;
   padding: 1em;
   position: relative;
@@ -33,10 +33,11 @@ const LeftPane = styled(Pane)`
 `;
 
 const RightPane = styled(Pane)`
+  @import '../globalStyle';
   @media (max-width: 650px) {
     margin-top: 0;
     padding-top: 0;
-    color: ${globalStyle.textNoteColor};
+    color: $textNoteColor;
     font-size: 1.2em;
   }
 `;
