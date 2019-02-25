@@ -1,16 +1,15 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('./fonts/icomoon.eot?vknxxe');
-  src: url('./fonts/icomoon.eot?vknxxe#iefix') format('embedded-opentype'),
-    url('./fonts/icomoon.ttf?vknxxe') format('truetype'),
-    url('./fonts/icomoon.woff?vknxxe') format('woff'),
-    url('./fonts/icomoon.svg?vknxxe#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?4ic84k');
+  src:  url('fonts/icomoon.eot?4ic84k#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?4ic84k') format('truetype'),
+    url('fonts/icomoon.woff?4ic84k') format('woff'),
+    url('fonts/icomoon.svg?4ic84k#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^='icon-'],
-[class*=' icon-'] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -25,27 +24,39 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-graduation-cap:before {
+  content: "\e900";
+}
+.icon-mortar-board:before {
+  content: "\e900";
+}
 .icon-home:before {
-  content: '\e900';
+  content: "\e901";
+}
+.icon-books:before {
+  content: "\e920";
+}
+.icon-phone:before {
+  content: "\e942";
 }
 .icon-envelop:before {
-  content: '\e945';
+  content: "\e945";
 }
-.icon-github:before {
-  content: '\eab0';
-}
-.icon-linkedin:before {
-  content: '\eac9';
-}
-.icon-linkedin2:before {
-  content: '\eaca';
+.icon-briefcase:before {
+  content: "\e9ae";
 }
 .icon-menu:before {
-  content: '\e9bd';
+  content: "\e9bd";
 }
 .icon-cancel-circle:before {
-  content: '\ea0d';
+  content: "\ea0d";
 }
 .icon-cross:before {
-  content: '\ea0f';
+  content: "\ea0f";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-linkedin:before {
+  content: "\eac9";
 }

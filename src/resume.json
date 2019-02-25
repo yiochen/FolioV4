@@ -1,11 +1,14 @@
 {
   "basics": {
     "name": "Yiou Chen",
+    "firstname": "Yiou",
+    "lastname": "Chen",
     "label": "Frontend engineer",
     "picture": "",
     "email": "yiouc99@gmail.com",
     "phone": "",
     "website": "https://yiou.me",
+    "objective": "Looking for front end engineering opportunies in Greater New York area",
     "summary": "Frontend engineer at Veeva Systems in Pleasanton, CA. Working in UIPlatform team. Doing JavaScript stuff.",
     "location": {
       "address": "Pleasanton, CA",
@@ -16,13 +19,13 @@
     },
     "profiles": [
       {
-        "network": "github",
+        "network": "Github",
         "icon": "icon-github",
         "username": "yiochen",
         "url": "https://github.com/yiochen"
       },
       {
-        "network": "linkedin",
+        "network": "Linkedin",
         "icon": "icon-linkedin",
         "username": "yiouchen",
         "url": "https://www.linkedin.com/in/yiouchen/"
