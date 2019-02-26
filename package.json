@@ -6,6 +6,7 @@
   "author": "Yiou Chen <yioucc@gmail.com>",
   "dependencies": {
     "astroturf": "^0.8.5",
+    "core-js": "^2.6.5",
     "disqus-react": "^1.0.5",
     "gatsby": "^2.0.84",
     "gatsby-plugin-astroturf": "^0.2.0",
