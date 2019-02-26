@@ -52,9 +52,11 @@
         "Sass"
       ],
       "highlights": [
-        "Designed the architecture of a JavaScript expression engine",
-        "Rebuilt login flow using React and Redux",
-        "Standardized the front-end routing system for our single page app"
+        "Created a runtime architecture for a domain specific language using JavaScript.",
+        "UI component development in React.",
+        "Designed a suite of routing utilities for managing front end routing of our single page app.",
+        "Evaluated and integrated various UI development tools such as package-lock, prettier, storybook.",
+        "Rebuilt login/password reset flow using React, Redux, Redux Thunk."
       ]
     },
     {
@@ -68,6 +70,7 @@
       "highlights": [
         "Developed customizable data visualization components using D3.js and Angular 2",
         "Maintained a Angular UI component library",
+        "Developed a search engine front end using Angular 2",
         "Created and integrated a map widget that handled high-volume real-time data using leaflet"
       ]
     }
@@ -88,7 +91,22 @@
   ],
   "awards": [],
   "publications": [],
-  "skills": [],
+  "skills": {
+    "languages": ["JavaScript", "TypeScript", "HTML", "CSS", "Sass"],
+    "libaries": ["react", "redux", "immer", "gatsby"],
+    "utilities": [
+      "webpack",
+      "parcel",
+      "rollup",
+      "storybook",
+      "jest",
+      "enzyme",
+      "react-testing-library",
+      "lerna",
+      "prettier",
+      "eslint"
+    ]
+  },
   "languages": [
     {
       "language": "English",

@@ -27,7 +27,7 @@ const ContentContainer = styled('div')`
 
 const MainPage = styled('div')`
   @import '../globalStyle';
-  background: $background;
+  background-color: $background;
 `;
 
 const TemplateWrapper = ({ children, location }) => (

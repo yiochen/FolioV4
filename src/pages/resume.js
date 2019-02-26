@@ -6,30 +6,6 @@ import Experience from '../components/ResumeExperience';
 
 const ACCENT = '#373d48';
 
-css`
-  :global(html) {
-    font-size: 12pt;
-  }
-  :global(body) {
-    @import url('https://fonts.googleapis.com/css?family=Arimo:400,700');
-    background-color: #ececec;
-    font-family: 'Arimo', sans-serif;
-  }
-
-  :global(p) {
-    margin-bottom: 0.5rem;
-  }
-
-  :global(h1),
-  :global(h2),
-  :global(h3),
-  :global(h4),
-  :global(h5),
-  :global(h6) {
-    letter-spacing: 0;
-  }
-`;
-
 const sharable = css`
   .inlineBlock {
     display: inline-block;
@@ -39,7 +15,22 @@ const sharable = css`
   }
 `;
 
+css`
+  @page {
+    size: letter portrait;
+    margin: 0;
+  }
+
+  :global(body) {
+    background-color: #ececec;
+  }
+`;
+
 const Page = styled.main`
+  @import './resume';
+  @import url('https://fonts.googleapis.com/css?family=Arimo:400,700');
+  font-family: 'Arimo', serif;
+  font-size: $fontSize;
   width: 8.5in;
   height: 11in;
   background: white;
@@ -49,54 +40,58 @@ const Page = styled.main`
 `;
 
 const Header = styled.header`
+  @import './resume';
   width: 100%;
   color: white;
   background: ${ACCENT};
-  padding: 2.5rem;
+  padding: 2.5 * $fontSize;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
 `;
 
-const Name = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-`;
+const Name = styled.h1``;
 
 const FirstName = styled.span`
   font-weight: normal;
 `;
 const LastName = styled.span`
+  @import './resume';
   font-weight: bold;
-  margin-left: 1rem;
+  margin-left: $fontSize;
 `;
 
-const SubTitle = styled.p`
-  font-size: 1.2rem;
+const SubTitle = styled.h2`
+  @import './resume';
+  @include h2;
 `;
 
 const Contact = styled.p`
-  font-size: 1rem;
+  @import './resume';
+  @include p;
+  margin-bottom: 0;
 `;
 
 const contactStyle = css`
+  @import './resume';
   .icon {
     vertical-align: text-bottom;
   }
   .info {
-    margin-left: 1rem;
+    margin-left: $fontSize;
     color: white;
     text-decoration: none;
   }
 `;
 
 const Section = styled.section`
-  margin: 1rem 2.5rem;
+  @import './resume';
+  margin: $fontSize 2.5 * $fontSize;
   display: block;
   position: relative;
   line-height: normal;
   &.timeline {
-    margin: 0 2.5rem;
+    margin: 0 2.5 * $fontSize;
     &::before {
       content: '';
       display: inline-block;
@@ -104,23 +99,38 @@ const Section = styled.section`
       left: 0;
       top: 0;
       height: 100%;
-      width: 1rem;
+      width: $fontSize;
       border-right: 1pt solid ${ACCENT};
     }
   }
 `;
 
 const Objective = styled.p`
+  @import './resume';
+  @include p;
   text-align: center;
-  font-size: 1rem;
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 1.2rem;
+  @import './resume';
+  @include h2;
   font-weight: 800;
-  margin-bottom: 2rem;
+  margin-bottom: $fontSize;
   display: inline-block;
-  margin-left: 1rem;
+  margin-left: $fontSize;
+`;
+
+const Skills = styled.ul`
+  @import './resume';
+  list-style: none;
+  margin: 0;
+  margin-top: 0.5 * $fontSize;
+`;
+
+const Skill = styled.li`
+  @import './resume';
+  display: inline-block;
+  margin-right: 0.5 * $fontSize;
 `;
 
 const ResumePage = () => (
@@ -135,6 +145,12 @@ const ResumePage = () => (
       </div>
 
       <div className={sharable.inlineBlock}>
+        <Contact>
+          <span className={join('icon-earth', contactStyle.icon)} />
+          <a className={contactStyle.info} href={resume.basics.website}>
+            {resume.basics.website}
+          </a>
+        </Contact>
         <Contact>
           <span className={join('icon-envelop', contactStyle.icon)} />
           <a
@@ -182,6 +198,17 @@ const ResumePage = () => (
           startDate={education.startDate}
           endDate={education.endDate}
         />
+      ))}
+    </Section>
+    <Section timeline={true}>
+      <SquareDot icon="icon-magic-wand" />
+      <SectionTitle>TOOLS</SectionTitle>
+      {Object.values(resume.skills).map((skills, index) => (
+        <Skills key={index}>
+          {skills.map(skill => (
+            <Skill key={skill}>{skill}</Skill>
+          ))}
+        </Skills>
       ))}
     </Section>
   </Page>

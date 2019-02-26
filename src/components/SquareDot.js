@@ -1,17 +1,16 @@
 import React from 'react';
 import styled from 'astroturf';
 
-const SIZE = '2rem';
 const Square = styled.span`
   @import '../pages/resume';
 
-  height: calc(${SIZE} + 1pt);
-  width: calc(${SIZE} + 1pt);
-  line-height: calc(${SIZE} + 1pt);
+  height: 2 * $fontSize + 1pt;
+  width: 2 * $fontSize + 1pt;
+  line-height: 2 * $fontSize + 1pt;
   text-align: center;
   color: $resumeAccent;
   display: inline-block;
-  font-size: 1rem;
+  font-size: $fontSize;
   position: relative;
   box-sizing: border-box;
   z-index: 0;
