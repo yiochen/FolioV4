@@ -8,7 +8,7 @@
     "email": "yiouc99@gmail.com",
     "phone": "",
     "website": "https://yiou.me",
-    "objective": "Looking for front end engineering opportunies in Greater New York area",
+    "objective": "Looking for front end engineering opportunies in Greater New York area.",
     "summary": "Frontend engineer at Veeva Systems in Pleasanton, CA. Working in UIPlatform team. Doing JavaScript stuff.",
     "location": {
       "address": "Pleasanton, CA",
@@ -68,10 +68,10 @@
       "summary": "I worked in a small fast-paced technology incubator. We experimented with various technologies and turned clients' idea into working prototype. As one of the frontend engineers in the team, I have experienced with Angular, React, Polymer, D3 and so on.",
       "toolset": ["Angular", "Sass", "Jasmine", "JQuery", "D3"],
       "highlights": [
-        "Developed customizable data visualization components using D3.js and Angular 2",
-        "Maintained a Angular UI component library",
-        "Developed a search engine front end using Angular 2",
-        "Created and integrated a map widget that handled high-volume real-time data using leaflet"
+        "Developed customizable data visualization components using D3 and Angular.",
+        "Maintained a Angular UI component library.",
+        "Developed a search engine front end using Angular.",
+        "Created and integrated a map widget that handled high-volume real-time data using leaflet."
       ]
     }
   ],

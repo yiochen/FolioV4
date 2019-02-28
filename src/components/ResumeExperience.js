@@ -57,8 +57,11 @@ const SubTitle = styled.h4`
 `;
 
 const Highlights = styled.ul`
+  @import '../pages/resume';
   margin: 0;
   line-height: 1.5;
+  padding-inline-start: $fontSize;
+  list-style-type: disc;
 `;
 
 const Experience = ({
@@ -73,7 +76,7 @@ const Experience = ({
     <Time>{`${startDate} - ${endDate}`}</Time>
     <Detail>
       <Title>{title}</Title>
-      <SubTitle>{subTitle}</SubTitle>
+      {subTitle && <SubTitle>{subTitle}</SubTitle>}
       <Highlights>
         {highlights.map(highlight => (
           <li key={highlight}>{highlight}</li>

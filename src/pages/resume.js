@@ -115,7 +115,7 @@ const SectionTitle = styled.h2`
   @import './resume';
   @include h2;
   font-weight: 800;
-  margin-bottom: $fontSize;
+  margin-bottom: 1.5 * $fontSize;
   display: inline-block;
   margin-left: $fontSize;
 `;
@@ -124,7 +124,9 @@ const Skills = styled.ul`
   @import './resume';
   list-style: none;
   margin: 0;
-  margin-top: 0.5 * $fontSize;
+  padding: 0;
+  margin-bottom: 0.5 * $fontSize;
+  margin-left: 3 * $fontSize + 1pt;
 `;
 
 const Skill = styled.li`
