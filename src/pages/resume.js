@@ -186,6 +186,7 @@ const ResumePage = () => (
           startDate={work.startDate}
           endDate={work.endDate}
           highlights={work.highlights}
+          address={work.address}
         />
       ))}
     </Section>
@@ -199,6 +200,7 @@ const ResumePage = () => (
           subTitle={`${education.studyType} of ${education.area}`}
           startDate={education.startDate}
           endDate={education.endDate}
+          address={education.address}
         />
       ))}
     </Section>

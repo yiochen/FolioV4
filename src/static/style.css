@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?x8xfw');
-  src:  url('fonts/icomoon.eot?x8xfw#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?x8xfw') format('truetype'),
-    url('fonts/icomoon.woff?x8xfw') format('woff'),
-    url('fonts/icomoon.svg?x8xfw#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?elfakp');
+  src:  url('fonts/icomoon.eot?elfakp#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?elfakp') format('truetype'),
+    url('fonts/icomoon.woff?elfakp') format('woff'),
+    url('fonts/icomoon.svg?elfakp#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -36,11 +36,20 @@
 .icon-books:before {
   content: "\e920";
 }
+.icon-file-text2:before {
+  content: "\e926";
+}
 .icon-phone:before {
   content: "\e942";
 }
 .icon-envelop:before {
   content: "\e945";
+}
+.icon-location:before {
+  content: "\e947";
+}
+.icon-location2:before {
+  content: "\e948";
 }
 .icon-magic-wand:before {
   content: "\e997";
@@ -65,4 +74,7 @@
 }
 .icon-linkedin:before {
   content: "\eac9";
+}
+.icon-linkedin2:before {
+  content: "\eaca";
 }

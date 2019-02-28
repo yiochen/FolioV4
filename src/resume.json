@@ -8,7 +8,7 @@
     "email": "yiouc99@gmail.com",
     "phone": "",
     "website": "https://yiou.me",
-    "objective": "Looking for front end engineering opportunies in Greater New York area.",
+    "objective": "Looking for front end engineering opportunies in California Bay Area.",
     "summary": "Frontend engineer at Veeva Systems in Pleasanton, CA. Working in UIPlatform team. Doing JavaScript stuff.",
     "location": {
       "address": "Pleasanton, CA",
@@ -26,7 +26,7 @@
       },
       {
         "network": "Linkedin",
-        "icon": "icon-linkedin",
+        "icon": "icon-linkedin2",
         "username": "yiouchen",
         "url": "https://www.linkedin.com/in/yiouchen/"
       }
@@ -39,6 +39,7 @@
       "website": "https://www.veeva.com/",
       "startDate": "06/2017",
       "endDate": "Present",
+      "address": "Pleasanton, CA",
       "summary": "I work in the UIPlatform team for Veeva Vault. Our objective is to improve the foundation of our enterprise application using the latest technologies and best practices.",
       "toolset": [
         "React",
@@ -65,6 +66,7 @@
       "website": "https://www.ca.com/",
       "startDate": "05/2016",
       "endDate": "05/2017",
+      "address": "Stony Brook, NY",
       "summary": "I worked in a small fast-paced technology incubator. We experimented with various technologies and turned clients' idea into working prototype. As one of the frontend engineers in the team, I have experienced with Angular, React, Polymer, D3 and so on.",
       "toolset": ["Angular", "Sass", "Jasmine", "JQuery", "D3"],
       "highlights": [
@@ -80,6 +82,7 @@
     {
       "institution": "Stony Brook University",
       "area": "Computer Science",
+      "address": "Stony Brook, NY",
       "studyType": "Bachelor",
       "startDate": "09/2013",
       "endDate": "05/2017",
