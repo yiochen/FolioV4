@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'astroturf';
 
+const Icon = styled.span`
+  @import '../pages/resume';
+  vertical-align: text-bottom;
+  margin-right: 0.5 * $fontSize;
+`;
+
 const Container = styled.div`
   @import '../pages/resume';
   display: flex;
@@ -47,6 +53,14 @@ const Title = styled.h3`
   @import '../pages/resume';
   @include h3;
   font-weight: bold;
+  display: inline-block;
+`;
+
+const Address = styled.p`
+  @import '../pages/resume';
+  @include p;
+  display: inline-block;
+  float: right;
 `;
 
 const SubTitle = styled.h4`
@@ -70,12 +84,19 @@ const Experience = ({
   startDate,
   endDate,
   highlights = [],
+  address,
 } = {}) => (
   <Container>
     <Dot />
     <Time>{`${startDate} - ${endDate}`}</Time>
     <Detail>
       <Title>{title}</Title>
+      {address && (
+        <Address>
+          <Icon className="icon-location" />
+          {address}
+        </Address>
+      )}
       {subTitle && <SubTitle>{subTitle}</SubTitle>}
       <Highlights>
         {highlights.map(highlight => (
