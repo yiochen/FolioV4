@@ -8,7 +8,7 @@
     "email": "yiouc99@gmail.com",
     "phone": "",
     "website": "https://yiou.me",
-    "objective": "Looking for front end engineering opportunies in California Bay Area.",
+    "objective": "Looking for frontend engineering opportunies in California Bay Area.",
     "summary": "Frontend engineer at Veeva Systems in Pleasanton, CA. Working in UIPlatform team. Doing JavaScript stuff.",
     "location": {
       "address": "Pleasanton, CA",
@@ -35,7 +35,7 @@
   "work": [
     {
       "company": "Veeva Systems",
-      "position": "Associate Frontend Engineer",
+      "position": "Associate Engineer",
       "website": "https://www.veeva.com/",
       "startDate": "06/2017",
       "endDate": "Present",
