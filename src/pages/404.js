@@ -3,9 +3,12 @@ import trim from 'lodash/trim';
 import Layout from '../components/Layout';
 
 class NotFoundPage extends React.Component {
-  state = {
-    possibleProjectName: '',
-  };
+  constructor() {
+    super();
+    this.state = {
+      possibleProjectName: '',
+    };
+  }
   componentDidMount() {
     const possibleProjectName = trim(window.location.pathname, '/');
     this.setState({
