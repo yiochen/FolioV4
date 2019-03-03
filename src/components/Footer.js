@@ -32,9 +32,11 @@ const legalStyle = {
   transform: 'translateX(-50%)',
   margin: '0',
 };
-export default ({ full }) => (
+const Footer = ({ full }) => (
   <footer style={full ? styleFull : styleMini}>
     {full && <h1 style={sloganStyle}>Keep on hacking</h1>}
     <p style={legalStyle}> @ 2019 Yiou Chen.</p>
   </footer>
 );
+
+export default Footer;

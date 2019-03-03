@@ -59,7 +59,7 @@ const Dot = styled('span')`
   }
 `;
 
-export default ({ leftChild, rightChild, ...props }) => {
+const TimelineItem = ({ leftChild, rightChild, ...props }) => {
   return (
     <Container {...props}>
       <LeftPane>{leftChild}</LeftPane>
@@ -70,3 +70,5 @@ export default ({ leftChild, rightChild, ...props }) => {
     </Container>
   );
 };
+
+export default TimelineItem;

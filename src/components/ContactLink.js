@@ -12,7 +12,7 @@ const Icon = styled.span`
   color: ${theme.accent};
 `;
 
-export default ({ icon, href, ...props }) => {
+const ContactLink = ({ icon, href, ...props }) => {
   let hrefProps = {};
   if (typeof href === 'string') {
     hrefProps = {
@@ -30,3 +30,5 @@ export default ({ icon, href, ...props }) => {
     </Link>
   );
 };
+
+export default ContactLink;

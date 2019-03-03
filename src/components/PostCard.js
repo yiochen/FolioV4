@@ -37,7 +37,7 @@ const Card = styled('section')`
   padding-bottom: 2em;
 `;
 
-export default ({ title, subtitle, date, excerpt, href }) => (
+const PostCard = ({ title, subtitle, date, excerpt, href }) => (
   <Card>
     <Link to={href}>
       <Title>{title}</Title>
@@ -50,3 +50,5 @@ export default ({ title, subtitle, date, excerpt, href }) => (
     </MoarLinkSection>
   </Card>
 );
+
+export default PostCard;

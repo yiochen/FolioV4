@@ -9,4 +9,6 @@ const style = {
   padding: '1em',
 };
 
-export default props => <section style={style}>{props.children}</section>;
+const Jumbotron = props => <section style={style}>{props.children}</section>;
+
+export default Jumbotron;
