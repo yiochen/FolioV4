@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
 
 import PostTitle from './PostTitle';
 import { connect } from './NodeContext';
 import { defaultCover } from '../utils';
+import theme from '../globalStyle';
 
 import PostDate from './PostDate';
 
@@ -24,8 +25,7 @@ const CoverImage = styled('div')`
 `;
 
 const Figcaption = styled('figcaption')`
-  @import '../globalStyle';
-  color: $textNoteColor;
+  color: ${theme.textNoteColor};
   font-size: 1.5rem;
   padding: 0 1rem;
   display: inline;

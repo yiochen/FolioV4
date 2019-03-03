@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
 import utils from '../utils';
 import NavButton from '../components/NavButton';
 import { NodeProvider } from '../components/NodeContext';
@@ -9,10 +9,6 @@ import Layout from '../components/Layout';
 import { Title, SubTitle } from '../components/PostCard';
 import PostHTMLHead from '../components/PostHtmlHead';
 import Comment from '../components/Comment';
-
-const RelatedTitle = Title.withComponent('h5');
-
-const RelatedSubTitle = SubTitle.withComponent('h6');
 
 const RelatedPostLink = styled(Link)`
   width: 40%;
@@ -93,18 +89,16 @@ class Post extends React.Component {
             />
             {previous && (
               <RelatedPostLink.Right to={utils.toPostPath(previous.path)}>
-                <RelatedTitle>{previous.title}</RelatedTitle>
+                <Title as="h5">{previous.title}</Title>
                 {previous.subtitle && (
-                  <RelatedSubTitle>{previous.subtitle}</RelatedSubTitle>
+                  <SubTitle as="h6">{previous.subtitle}</SubTitle>
                 )}
               </RelatedPostLink.Right>
             )}
             {next && (
               <RelatedPostLink.Left to={utils.toPostPath(next.path)}>
-                <RelatedTitle>{next.title}</RelatedTitle>
-                {next.subtitle && (
-                  <RelatedSubTitle>{next.subtitle}</RelatedSubTitle>
-                )}
+                <Title as="h5">{next.title}</Title>
+                {next.subtitle && <SubTitle as="h6">{next.subtitle}</SubTitle>}
               </RelatedPostLink.Left>
             )}
             <ClearFix />

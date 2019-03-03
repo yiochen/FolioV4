@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
 
 import Footer from './Footer';
-import globalStyle from '../globalStyle';
+import theme from '../globalStyle';
 import me from '../static/me.png';
 
 import 'yiou-css-base';
@@ -13,28 +13,26 @@ import '../static/style.css';
 import '../static/fonts/icomoon.ttf';
 import '../static/fonts/icomoon.woff';
 
-const Header = styled('div')`
-  @import '../globalStyle';
+const Header = styled.div`
   width: 100%;
   height: 10px;
-  background: $accent;
+  background: ${theme.accent};
 `;
 
-const ContentContainer = styled('div')`
+const ContentContainer = styled.div`
   margin-top: 7rem;
   margin-bottom: 1.5em;
 `;
 
 const MainPage = styled('div')`
-  @import '../globalStyle';
-  background-color: $background;
+  background-color: ${theme.background};
 `;
 
 const TemplateWrapper = ({ children, location }) => (
   <MainPage>
     <Helmet>
       <title> Yiou </title>
-      <meta name="theme-color" content={globalStyle.accent} />
+      <meta name="theme-color" content={theme.accent} />
       <link
         rel="shortcut icon"
         href="https://github.com/yiochen/common/blob/master/favicon/favicon.png?raw=true"

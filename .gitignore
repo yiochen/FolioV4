@@ -10,3 +10,4 @@ yarn.lock
 npm-debug.log
 .vscode
 *.code-workspace
+.linaria-cache

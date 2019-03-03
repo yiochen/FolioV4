@@ -1,20 +1,20 @@
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
+import theme from '../globalStyle';
 
 const NavButton = styled(Link)`
-  @import '../globalStyle';
-  background: $accent;
+  background: ${theme.accent};
   border: 0;
   box-sizing: border-box;
   top: 2em;
-  color: $textInvertColor;
+  color: ${theme.textInvertColor};
   width: 5em;
   height: 2em;
   line-height: 2em;
   display: block;
   padding: 0 0.5em;
   text-align: center;
-  font-family: $secondaryFont;
+  font-family: ${theme.secondaryFont};
   position: absolute;
   top: 1em;
   margin-right: 1em;

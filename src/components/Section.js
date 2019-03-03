@@ -1,13 +1,13 @@
 import React from 'react';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
+import theme from '../globalStyle';
 
 const Section = styled('section')`
-  @import '../globalStyle';
   margin: 0 auto;
   max-width: 960px;
   padding: 0 1.0875rem;
   margin-bottom: 2em;
-  color: $textColor;
+  color: ${theme.textColor};
   position: relative;
 `;
 

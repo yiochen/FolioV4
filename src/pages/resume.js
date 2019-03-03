@@ -1,36 +1,33 @@
 import React from 'react';
-import styled, { css } from 'astroturf';
+import { css } from 'linaria';
+import { styled } from 'linaria/react';
 import resume from '../resume.json';
 import SquareDot from '../components/SquareDot';
 import Experience from '../components/ResumeExperience';
+import theme, { rem } from '../resumeTheme';
 
 const ACCENT = '#373d48';
 
-const sharable = css`
-  .inlineBlock {
-    display: inline-block;
-  }
-  .verticalTop {
-    vertical-align: top;
-  }
+const inlineBlock = css`
+  display: inline-block;
 `;
 
-css`
-  @page {
-    size: letter portrait;
-    margin: 0;
-  }
-
-  :global(body) {
-    background-color: #ececec;
+export const global = css`
+  :global() {
+    body {
+      background-color: #ececec;
+      @page {
+        size: letter portrait;
+        margin: 0;
+      }
+    }
   }
 `;
 
 const Page = styled.main`
-  @import './resume';
   @import url('https://fonts.googleapis.com/css?family=Arimo:400,700');
   font-family: 'Arimo', serif;
-  font-size: $fontSize;
+  font-size: ${theme.fontSize};
   width: 8.5in;
   height: 11in;
   background: white;
@@ -40,11 +37,10 @@ const Page = styled.main`
 `;
 
 const Header = styled.header`
-  @import './resume';
   width: 100%;
   color: white;
-  background: ${ACCENT};
-  padding: 2.5 * $fontSize;
+  background: ${theme.resumeAccent};
+  padding: ${rem(2.5)};
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -56,42 +52,35 @@ const FirstName = styled.span`
   font-weight: normal;
 `;
 const LastName = styled.span`
-  @import './resume';
   font-weight: bold;
-  margin-left: $fontSize;
+  margin-left: ${rem(1)};
 `;
 
 const SubTitle = styled.h2`
-  @import './resume';
-  @include h2;
+  ${theme.h2};
 `;
 
 const Contact = styled.p`
-  @import './resume';
-  @include p;
+  ${theme.p};
   margin-bottom: 0;
 `;
 
-const contactStyle = css`
-  @import './resume';
-  .icon {
-    vertical-align: text-bottom;
-  }
-  .info {
-    margin-left: $fontSize;
-    color: white;
-    text-decoration: none;
-  }
+const contactIcon = css`
+  vertical-align: text-bottom;
+`;
+const contactInfo = css`
+  margin-left: ${rem(1)};
+  color: white;
+  text-decoration: none;
 `;
 
 const Section = styled.section`
-  @import './resume';
-  margin: $fontSize 2.5 * $fontSize;
+  margin: ${rem(1)} ${rem(2.5)};
   display: block;
   position: relative;
   line-height: normal;
   &.timeline {
-    margin: 0 2.5 * $fontSize;
+    margin: 0 ${rem(2.5)};
     &::before {
       content: '';
       display: inline-block;
@@ -99,46 +88,42 @@ const Section = styled.section`
       left: 0;
       top: 0;
       height: 100%;
-      width: $fontSize;
-      border-right: 1pt solid ${ACCENT};
+      width: ${rem(1)};
+      border-right: 1pt solid ${theme.resumeAccent};
     }
   }
 `;
 
 const Objective = styled.p`
-  @import './resume';
-  @include p;
+  ${theme.p};
   text-align: center;
 `;
 
 const SectionTitle = styled.h2`
-  @import './resume';
-  @include h2;
+  ${theme.h2};
   font-weight: 800;
-  margin-bottom: 1.5 * $fontSize;
+  margin-bottom: ${rem(1.5)};
   display: inline-block;
-  margin-left: $fontSize;
+  margin-left: ${rem(1)};
 `;
 
 const Skills = styled.ul`
-  @import './resume';
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 0.5 * $fontSize;
-  margin-left: 3 * $fontSize + 1pt;
+  margin-bottom: ${rem(0.5)};
+  margin-left: calc(${rem(3)} + 1pt);
 `;
 
 const Skill = styled.li`
-  @import './resume';
   display: inline-block;
-  margin-right: 0.5 * $fontSize;
+  margin-right: ${rem(0.5)};
 `;
 
 const ResumePage = () => (
   <Page>
     <Header>
-      <div className={sharable.inlineBlock}>
+      <div className={inlineBlock}>
         <Name>
           <FirstName>{resume.basics.firstname}</FirstName>
           <LastName>{resume.basics.lastname}</LastName>
@@ -146,26 +131,23 @@ const ResumePage = () => (
         <SubTitle>{resume.basics.label}</SubTitle>
       </div>
 
-      <div className={sharable.inlineBlock}>
+      <div className={inlineBlock}>
         <Contact>
-          <span className={join('icon-earth', contactStyle.icon)} />
-          <a className={contactStyle.info} href={resume.basics.website}>
+          <span className={join('icon-earth', contactIcon)} />
+          <a className={contactInfo} href={resume.basics.website}>
             {resume.basics.website}
           </a>
         </Contact>
         <Contact>
-          <span className={join('icon-envelop', contactStyle.icon)} />
-          <a
-            className={contactStyle.info}
-            href={`mailto:${resume.basics.email}`}
-          >
+          <span className={join('icon-envelop', contactIcon)} />
+          <a className={contactInfo} href={`mailto:${resume.basics.email}`}>
             {resume.basics.email}
           </a>
         </Contact>
         {resume.basics.profiles.map(profile => (
           <Contact key={profile.network}>
-            <span className={join(profile.icon, contactStyle.icon)} />
-            <a className={contactStyle.info} href={profile.url}>
+            <span className={join(profile.icon, contactIcon)} />
+            <a className={contactInfo} href={profile.url}>
               {profile.username}
             </a>
           </Contact>
@@ -175,7 +157,7 @@ const ResumePage = () => (
     <Section>
       <Objective>{resume.basics.objective}</Objective>
     </Section>
-    <Section timeline={true}>
+    <Section className="timeline">
       <SquareDot icon="icon-briefcase" />
       <SectionTitle>EXPERIENCE</SectionTitle>
       {resume.work.map(work => (
@@ -190,7 +172,7 @@ const ResumePage = () => (
         />
       ))}
     </Section>
-    <Section timeline={true}>
+    <Section className="timeline">
       <SquareDot icon="icon-books" />
       <SectionTitle>EDUCATION</SectionTitle>
       {resume.education.map(education => (
@@ -204,7 +186,7 @@ const ResumePage = () => (
         />
       ))}
     </Section>
-    <Section timeline={true}>
+    <Section className="timeline">
       <SquareDot icon="icon-magic-wand" />
       <SectionTitle>TOOLS</SectionTitle>
       {Object.values(resume.skills).map((skills, index) => (

@@ -1,29 +1,27 @@
 import React from 'react';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
+import theme, { rem } from '../resumeTheme';
 
 const Icon = styled.span`
-  @import '../pages/resume';
   vertical-align: text-bottom;
-  margin-right: 0.5 * $fontSize;
+  margin-right: ${rem(0.5)};
 `;
 
 const Container = styled.div`
-  @import '../pages/resume';
   display: flex;
   align-items: flex-start;
-  padding-bottom: $fontSize;
+  padding-bottom: ${rem(1)};
 `;
 
 const Dot = styled.span`
-  @import '../pages/resume';
-  width: 2 * $fontSize + 1pt;
-  min-width: 2 * $fontSize + 1pt;
+  width: calc(${rem(2)} + 1pt);
+  min-width: calc(${rem(2)} + 1pt);
   display: block;
   text-align: center;
   &::before {
     content: '';
-    height: 0.5 * $fontSize;
-    width: 0.5 * $fontSize;
+    height: ${rem(0.5)};
+    width: ${rem(0.5)};
     overflow: hidden;
     display: inline-block;
     vertical-align: baseline;
@@ -33,48 +31,42 @@ const Dot = styled.span`
 `;
 
 const Time = styled.span`
-  @import '../pages/resume';
   font-weight: bold;
-  margin-left: $fontSize;
-  font-size: $fontSize;
-  width: 5 * $fontSize;
-  min-width: 5 * $fontSize;
+  margin-left: ${rem(1)};
+  font-size: ${theme.fontSize};
+  width: ${rem(5)};
+  min-width: ${rem(5)};
   line-height: 1.2;
 `;
 
 const Detail = styled.div`
-  @import '../pages/resume';
-  margin-left: $fontSize;
+  margin-left: ${rem(1)};
   flex-grow: 1;
-  font-size: $fontSize;
+  font-size: ${theme.fontSize};
 `;
 
 const Title = styled.h3`
-  @import '../pages/resume';
-  @include h3;
+  ${theme.h3};
   font-weight: bold;
   display: inline-block;
 `;
 
 const Address = styled.p`
-  @import '../pages/resume';
-  @include p;
+  ${theme.p};
   display: inline-block;
   float: right;
 `;
 
 const SubTitle = styled.h4`
-  @import '../pages/resume';
-  @include h4;
+  ${theme.h4};
   font-weight: normal;
   font-style: italic;
 `;
 
 const Highlights = styled.ul`
-  @import '../pages/resume';
   margin: 0;
   line-height: 1.5;
-  padding-inline-start: $fontSize;
+  padding-inline-start: ${rem(1)};
   list-style-type: disc;
 `;
 

@@ -1,14 +1,14 @@
 import React from 'react';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
+import theme from '../globalStyle';
 
 const Container = styled('div')`
-  @import '../globalStyle';
   position: relative;
   display: flex;
   background-image: linear-gradient(
     0deg,
-    $textDecorationColor 0%,
-    $textDecorationColor 100%
+    ${theme.textDecorationColor} 0%,
+    ${theme.textDecorationColor} 100%
   );
   background-size: 2px 100%;
   background-position: 50% 0;
@@ -33,11 +33,10 @@ const LeftPane = styled(Pane)`
 `;
 
 const RightPane = styled(Pane)`
-  @import '../globalStyle';
   @media (max-width: 650px) {
     margin-top: 0;
     padding-top: 0;
-    color: $textNoteColor;
+    color: ${theme.textNoteColor};
     font-size: 1.2em;
   }
 `;
