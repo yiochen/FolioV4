@@ -1,4 +1,6 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+import me from '../static/me.png';
 import { css } from 'linaria';
 import { styled } from 'linaria/react';
 import resume from '../resume.json';
@@ -120,6 +122,18 @@ const Skill = styled.li`
 
 const ResumePage = () => (
   <Page>
+    <Helmet>
+      <title> Yiou Resume </title>
+      <meta name="theme-color" content={theme.resumeAccent} />
+      <link
+        rel="shortcut icon"
+        href="https://github.com/yiochen/common/blob/master/favicon/favicon.png?raw=true"
+      />
+      <meta property="og:title" content="Yiou Chen Resume" />
+      <meta property="og:image" content={me} />
+      <meta property="og:image:height" content="300" />
+      <meta property="og:image:width" content="300" />
+    </Helmet>
     <Header>
       <div className={inlineBlock}>
         <Name>
