@@ -1,14 +1,12 @@
-import styled from 'astroturf';
-
+import { styled } from 'linaria/react';
+import theme from '../globalStyle';
 const ToolTag = styled('span')`
-  @import '../globalStyle';
-
-  border: 1px solid $accent;
+  border: 1px solid ${theme.accent};
   padding: 0 4px;
   border-radius: 4px;
-  font-family: $secondaryFont;
+  font-family: ${theme.secondaryFont};
   font-size: 0.75em;
-  color: $accent;
+  color: ${theme.accent};
   display: inline-block;
   font-weight: bold;
   margin: 0 2px 2px 2px;

@@ -1,27 +1,23 @@
 import React from 'react';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
+import theme from '../globalStyle';
 
 export const TimelineAttribute = styled('p')`
-  @import '../globalStyle';
   margin-bottom: 0;
-  font-family: $secondaryFont;
+  font-family: ${theme.secondaryFont};
 `;
 
 const Container = styled('div')`
-  @import '../globalStyle';
-
   display: flex;
   position: relative;
   flex-direction: row;
-  @media (max-width: $experienceSplitBreakpoint) {
+  @media (max-width: ${theme.experienceSplitBreakpoint}) {
     flex-direction: column;
   }
 `;
 const timelineWidth = 5;
 
 const LeftPane = styled('div')`
-  @import '../globalStyle';
-
   flex: 1;
   overflow-x: hidden;
   text-align: right;
@@ -29,21 +25,19 @@ const LeftPane = styled('div')`
   box-sizing: border-box;
   position: relative;
   padding-bottom: 5em;
-  @media (max-width: $experienceSplitBreakpoint) {
+  @media (max-width: ${theme.experienceSplitBreakpoint}) {
     text-align: left;
     padding-bottom: 1em;
     padding-left: calc(${timelineWidth}px + 1.5em);
-    border-left: ${timelineWidth}px dotted $accent;
+    border-left: ${timelineWidth}px dotted ${theme.accent};
   }
 `;
 
 const RightPane = styled('div')`
-  @import '../globalStyle';
-
   flex: 2;
   position: relative;
   padding-left: calc(${timelineWidth}px + 1.5em);
-  border-left: ${timelineWidth}px dotted $accent;
+  border-left: ${timelineWidth}px dotted ${theme.accent};
   box-sizing: border-box;
   padding-bottom: 5em;
 `;
@@ -51,8 +45,6 @@ const RightPane = styled('div')`
 const dotSize = 30;
 
 const Dot = styled('span')`
-  @import '../globalStyle';
-
   display: none;
   @media (min-width: 650px) {
     display: block;
@@ -62,7 +54,7 @@ const Dot = styled('span')`
     width: ${dotSize}px;
     height: ${dotSize}px;
     margin-left: ${-dotSize / 2 - timelineWidth / 2}px;
-    background-color: $accent;
+    background-color: ${theme.accent};
     border-radius: 50%;
   }
 `;

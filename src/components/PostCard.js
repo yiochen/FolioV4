@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
+import theme from '../globalStyle';
 
 export const Title = styled('h3')`
-  @import '../globalStyle';
   color: #777;
-  font-family: $secondaryFont;
+  font-family: ${theme.secondaryFont};
   margin: 0;
 `;
 
@@ -15,8 +15,7 @@ export const SubTitle = styled('h5')`
 `;
 
 export const DateLabel = styled('p')`
-  @import '../globalStyle';
-  color: $textNoteColor;
+  color: ${theme.textNoteColor};
 `;
 
 export const Excerpt = styled('p')`
@@ -24,14 +23,12 @@ export const Excerpt = styled('p')`
 `;
 
 const MoarLinkSection = styled('section')`
-  @import '../globalStyle';
-  font-family: $secondaryFont;
+  font-family: ${theme.secondaryFont};
   text-align: right;
 `;
 
 const MoarLinkLink = styled(Link)`
-  @import '../globalStyle';
-  color: $accent;
+  color: ${theme.accent};
 `;
 
 const Card = styled('section')`

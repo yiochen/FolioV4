@@ -1,15 +1,15 @@
 import React from 'react';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
+import theme from '../globalStyle';
 
-const Link = styled('span')`
+const Link = styled.span`
   display: inline-block;
   margin-left: 10px;
 `;
 
-const Icon = styled('span')`
-  @import '../globalStyle';
+const Icon = styled.span`
   margin-right: 5px;
-  color: $accent;
+  color: ${theme.accent};
 `;
 
 export default ({ icon, href, ...props }) => {

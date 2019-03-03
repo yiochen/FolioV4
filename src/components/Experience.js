@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
 import TimelineItem, { TimelineAttribute } from './TimelineItem';
 import CompanyTitle from './CompanyTitle';
 import ToolTag from './ToolTag';
+import theme from '../globalStyle';
 
-const Title = styled('a')`
-  @import '../globalStyle';
-  color: $accent;
+const Title = styled.a`
+  color: ${theme.accent};
 `;
 
 export default ({

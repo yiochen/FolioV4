@@ -1,4 +1,4 @@
-import styled from 'astroturf';
+import { styled } from 'linaria/react';
 
 const MainContent = styled('div')`
   margin: 0 auto;
