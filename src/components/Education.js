@@ -2,7 +2,7 @@ import React from 'react';
 import TimelineItem, { TimelineAttribute } from './TimelineItem';
 import CompanyTitle from './CompanyTitle';
 
-export default ({
+const Eductation = ({
   institution,
   area,
   startDate,
@@ -29,3 +29,5 @@ export default ({
     />
   );
 };
+
+export default Eductation;

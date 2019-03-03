@@ -7,11 +7,12 @@ const { Provider, Consumer } = NodeContext;
 
 export function connect(mapStateToProps = identity) {
   return function(Component) {
-    return props => (
+    const ContextWrapper = props => (
       <Consumer>
         {value => <Component {...mapStateToProps(value)} {...props} />}
       </Consumer>
     );
+    return ContextWrapper;
   };
 }
 

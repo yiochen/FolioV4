@@ -52,7 +52,10 @@
       "es6": true,
       "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
     "globals": {
       "Atomics": "readonly",
       "SharedArrayBuffer": "readonly"
@@ -67,8 +70,13 @@
     "plugins": [
       "react"
     ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
     "rules": {
-      "no-unused-vars": "off"
+      "react/prop-types": "off"
     }
   }
 }

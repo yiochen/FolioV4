@@ -11,7 +11,7 @@ const blurStyle = {
   opacity: '.5',
 };
 
-export default ({ src, name, selected = false, onSelect }) => {
+const SkillIcon = ({ src, name, selected = false, onSelect }) => {
   const style = selected
     ? defaultStyle
     : Object.assign({}, defaultStyle, blurStyle);
@@ -27,3 +27,5 @@ export default ({ src, name, selected = false, onSelect }) => {
     />
   );
 };
+
+export default SkillIcon;

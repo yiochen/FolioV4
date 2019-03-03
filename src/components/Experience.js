@@ -9,7 +9,7 @@ const Title = styled.a`
   color: ${theme.accent};
 `;
 
-export default ({
+const Experience = ({
   company,
   position,
   website,
@@ -48,3 +48,5 @@ export default ({
     />
   );
 };
+
+export default Experience;

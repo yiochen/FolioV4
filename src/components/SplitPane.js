@@ -41,7 +41,7 @@ const RightPane = styled(Pane)`
   }
 `;
 
-export default props => {
+const SplitPane = props => {
   const children = React.Children.toArray(props.children);
   const left = children[0] || null;
   const right = children[1] || null;
@@ -52,3 +52,5 @@ export default props => {
     </Container>
   );
 };
+
+export default SplitPane;

@@ -6,8 +6,6 @@ import SquareDot from '../components/SquareDot';
 import Experience from '../components/ResumeExperience';
 import theme, { rem } from '../resumeTheme';
 
-const ACCENT = '#373d48';
-
 const inlineBlock = css`
   display: inline-block;
 `;

@@ -10,8 +10,10 @@ const style = {
   background: 'rgba(255,255,255,0.3)',
 };
 
-export default props => (
+const Card = props => (
   <div style={style} {...props}>
     {props.children}
   </div>
 );
+
+export default Card;

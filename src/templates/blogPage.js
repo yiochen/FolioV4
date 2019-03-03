@@ -17,7 +17,7 @@ const filler = {
   flexGrow: 1,
 };
 
-export default ({ pageContext, location }) => {
+const BlogPage = ({ pageContext, location }) => {
   const { chunk, page, hasNext } = pageContext;
   return (
     <Layout location={location}>
@@ -55,3 +55,5 @@ export default ({ pageContext, location }) => {
     </Layout>
   );
 };
+
+export default BlogPage;
