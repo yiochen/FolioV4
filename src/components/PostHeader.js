@@ -63,6 +63,7 @@ const SplitedContainer = styled('div')`
 `;
 
 const TitlePane = styled('div')`
+  width: 100vw;
   max-width: 960px;
   margin: auto;
   padding: 30px 0 0 0;
