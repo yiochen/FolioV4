@@ -1,6 +1,7 @@
 import React from 'react';
+import { css } from 'linaria';
 import { styled } from 'linaria/react';
-import theme from '../globalStyle';
+import theme, { displayInLarger, displayInSmaller } from '../globalStyle';
 
 export const TimelineAttribute = styled('p')`
   margin-bottom: 0;
@@ -10,26 +11,28 @@ export const TimelineAttribute = styled('p')`
 const Container = styled('div')`
   display: flex;
   position: relative;
-  flex-direction: row;
-  @media (max-width: ${theme.experienceSplitBreakpoint}) {
-    flex-direction: column;
+  flex-direction: column;
+  @media (min-width: ${theme.experienceSplitBreakpoint}) {
+    flex-direction: row;
   }
 `;
-const timelineWidth = 5;
 
+const timelineWidth = 1;
+const timeLineBorder = `${timelineWidth}px solid ${theme.accent}`;
 const LeftPane = styled('div')`
   flex: 1;
-  overflow-x: hidden;
-  text-align: right;
   margin-right: 1.5em;
   box-sizing: border-box;
   position: relative;
-  padding-bottom: 5em;
-  @media (max-width: ${theme.experienceSplitBreakpoint}) {
-    text-align: left;
-    padding-bottom: 1em;
-    padding-left: calc(${timelineWidth}px + 1.5em);
-    border-left: ${timelineWidth}px dotted ${theme.accent};
+  padding-bottom: 1em;
+  text-align: left;
+  padding-left: calc(${timelineWidth}px + 1.5em);
+  border-left: ${timeLineBorder};
+  @media (min-width: ${theme.experienceSplitBreakpoint}) {
+    text-align: right;
+    padding-bottom: 5em;
+    padding-left: 0;
+    border-left: none;
   }
 `;
 
@@ -37,34 +40,34 @@ const RightPane = styled('div')`
   flex: 2;
   position: relative;
   padding-left: calc(${timelineWidth}px + 1.5em);
-  border-left: ${timelineWidth}px dotted ${theme.accent};
+  border-left: ${timeLineBorder};
   box-sizing: border-box;
   padding-bottom: 5em;
 `;
 
-const dotSize = 30;
+const dotSize = 15;
 
 const Dot = styled('span')`
-  display: none;
-  @media (min-width: 650px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: ${dotSize}px;
-    height: ${dotSize}px;
-    margin-left: ${-dotSize / 2 - timelineWidth / 2}px;
-    background-color: ${theme.accent};
-    border-radius: 50%;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: ${dotSize}px;
+  height: ${dotSize}px;
+  margin-left: ${-dotSize / 2 - timelineWidth / 2}px;
+  background-color: ${theme.accent};
+  box-sizing: border-box;
+  border-radius: 50%;
 `;
 
 export default ({ leftChild, rightChild, ...props }) => {
   return (
     <Container {...props}>
-      <LeftPane>{leftChild}</LeftPane>
+      <LeftPane>
+        <Dot className={displayInSmaller} />
+        {leftChild}
+      </LeftPane>
       <RightPane>
-        <Dot />
+        <Dot className={displayInLarger} />
         {rightChild}
       </RightPane>
     </Container>

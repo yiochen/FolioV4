@@ -1,16 +1,20 @@
 import React from 'react';
+import { styled } from 'linaria/react';
 import me from '../static/me.png';
+import theme from '../globalStyle';
 
-const style = {
-  height: '20em',
-  width: '20em',
-  maxHeight: '80vw',
-  maxWidth: '80vw',
-  backgroundImage: `url(${me})`,
-  backgroundSize: 'cover',
-  borderRadius: '50%',
-  boxSizing: 'border-box',
-  margin: '5em auto 2em auto',
-};
+const Selfie = styled.div`
+  height: 40rem;
+  width: 40rem;
+  max-height: 80vw;
+  max-width: 80vw;
+  background-image: url(${me});
+  background-size: cover;
+  border-radius: 50%;
+  border: 1rem solid white;
+  box-sizing: border-box;
+  margin: 5em auto 2em auto;
+  ${theme.addShadow()};
+`;
 
-export default props => <div style={style} />;
+export default Selfie;

@@ -4,7 +4,7 @@ import theme from '../globalStyle';
 
 const NavButton = styled(Link)`
   background: ${theme.accent};
-  border: 0;
+  ${theme.addShadow(true)};
   box-sizing: border-box;
   top: 2em;
   color: ${theme.textInvertColor};
@@ -20,7 +20,7 @@ const NavButton = styled(Link)`
   margin-right: 1em;
   z-index: 10;
   right: 0;
-  border-radius: 3px;
+  border-radius: ${theme.borderRadius};
 `;
 
 export default NavButton;
