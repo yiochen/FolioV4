@@ -28,7 +28,9 @@ const MainPage = styled('div')`
   background-color: ${theme.background};
 `;
 
-const TemplateWrapper = ({ children, location }) => (
+const defaultFooter = <Footer />;
+
+const TemplateWrapper = ({ children, location, footer = defaultFooter }) => (
   <MainPage>
     <Helmet>
       <title> Yiou </title>
@@ -44,7 +46,7 @@ const TemplateWrapper = ({ children, location }) => (
     </Helmet>
     <Header />
     <ContentContainer>{children}</ContentContainer>
-    <Footer full={location.pathname === '/'} />
+    {footer}
   </MainPage>
 );
 

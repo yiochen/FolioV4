@@ -13,12 +13,13 @@ import Layout from '../components/Layout';
 
 import data from '../resume.json';
 import theme from '../globalStyle';
+import HomePageFooter from '../components/HomePageFooter';
 
 const Summary = styled('p')`
   font-family: ${theme.secondaryFont};
 `;
 const IndexPage = ({ location }) => (
-  <Layout location={location}>
+  <Layout location={location} footer={<HomePageFooter data={data} />}>
     <main>
       <Helmet>
         <meta property="og:description" content={data.basics.summary} />
@@ -31,19 +32,6 @@ const IndexPage = ({ location }) => (
         <SplitPane>
           <div>
             <h1>{data.basics.name.toUpperCase()}</h1>
-            <Contact icon="icon-home">{data.basics.location.address}</Contact>
-            <Contact icon="icon-envelop" href={`mailto:${data.basics.email}`}>
-              {data.basics.email}
-            </Contact>
-            {data.basics.profiles.map(profile => (
-              <Contact
-                icon={profile.icon}
-                href={profile.url}
-                key={profile.network}
-              >
-                {profile.username}
-              </Contact>
-            ))}
           </div>
           <Summary>{data.basics.summary}</Summary>
         </SplitPane>

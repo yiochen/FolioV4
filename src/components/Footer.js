@@ -32,9 +32,8 @@ const legalStyle = {
   transform: 'translateX(-50%)',
   margin: '0',
 };
-export default ({ full }) => (
-  <footer style={full ? styleFull : styleMini}>
-    {full && <h1 style={sloganStyle}>Keep on hacking</h1>}
+export default () => (
+  <footer style={styleMini}>
     <p style={legalStyle}> @ 2019 Yiou Chen.</p>
   </footer>
 );
