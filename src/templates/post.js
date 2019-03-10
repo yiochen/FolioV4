@@ -43,6 +43,7 @@ const PostContent = styled('div')`
   blockquote {
     background: #eee;
     padding: 1em;
+    font-size: inherit;
     p {
       margin: 0;
     }
