@@ -5,6 +5,7 @@ import { styled } from 'linaria/react';
 import Footer from './Footer';
 import theme from '../globalStyle';
 import me from '../static/me.png';
+import '../configureFontAwesome';
 
 import 'yiou-css-base';
 

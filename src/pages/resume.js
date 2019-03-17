@@ -16,6 +16,7 @@ import SquareDot from '../components/SquareDot';
 import Experience from '../components/ResumeExperience';
 import Skills from '../components/ResumeSkills';
 import theme, { rem } from '../resumeTheme';
+import '../configureFontAwesome';
 
 const ACCENT = '#373d48';
 
