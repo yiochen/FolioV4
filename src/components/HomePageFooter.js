@@ -6,21 +6,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 import jumping from '../static/jumping-edited.png';
 import { css } from 'linaria';
-
-const Footer = styled.footer`
-  background: ${theme.accent};
-  color: ${theme.textInvertColor};
-  padding: 2rem 0 1rem 0;
-`;
-
-const sloganStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  color: 'white',
-  fontSize: '3em',
-};
+import Footer from './Footer';
 
 const Spacer = styled.span`
   margin: 0;
@@ -41,13 +27,6 @@ const horizontalSpacing = css`
   &:not(:last-child) {
     margin-right: 2rem;
   }
-`;
-
-const Legal = styled.p`
-  margin: 0;
-  text-align: center;
-
-  font-size: 1.5rem;
 `;
 
 const HomePageFooter = ({ data }) => (
@@ -79,8 +58,6 @@ const HomePageFooter = ({ data }) => (
       ))}
       <Spacer />
     </ContactContainer>
-
-    <Legal> @ 2019 Yiou Chen.</Legal>
   </Footer>
 );
 

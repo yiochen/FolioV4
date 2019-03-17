@@ -1,39 +1,24 @@
 import React from 'react';
-import jumping from '../static/jumping-edited.png';
+import { styled } from 'linaria/react';
+import theme from '../globalStyle';
 
-const styleFull = {
-  paddingBottom: '60%',
-  background: `url(${jumping})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'top',
-  position: 'relative',
-  margin: 0,
-};
+const Footer = styled.footer`
+  background: ${theme.accent};
+  color: ${theme.textInvertColor};
+  padding: 2rem 0 1rem 0;
+`;
 
-const styleMini = {
-  height: '2em',
-  position: 'relative',
-  margin: 0,
-};
+const Legal = styled.p`
+  margin: 0;
+  text-align: center;
+  font-size: 1.5rem;
+`;
 
-const sloganStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  color: 'white',
-  fontSize: '3em',
-};
-
-const legalStyle = {
-  position: 'absolute',
-  bottom: '0',
-  left: '50%',
-  transform: 'translateX(-50%)',
-  margin: '0',
-};
-export default () => (
-  <footer style={styleMini}>
-    <p style={legalStyle}> @ 2019 Yiou Chen.</p>
-  </footer>
+const SimpleFooter = ({ children }) => (
+  <Footer>
+    {children}
+    <Legal>@ 2019 Yiou Chen.</Legal>
+  </Footer>
 );
+
+export default SimpleFooter;
