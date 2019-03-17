@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from 'linaria/react';
 import theme from '../globalStyle';
 import Contact from './ContactLink';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 import jumping from '../static/jumping-edited.png';
 import { css } from 'linaria';
@@ -54,7 +55,7 @@ const HomePageFooter = ({ data }) => (
     <ContactContainer>
       <Spacer />
       <Contact
-        icon="icon-envelop"
+        icon={faEnvelope}
         href={`mailto:${data.basics.email}`}
         color={theme.textInvertColor}
         className={horizontalSpacing}

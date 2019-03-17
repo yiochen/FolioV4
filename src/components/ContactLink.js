@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import theme from '../globalStyle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Link = styled.span`
   display: inline-block;
@@ -45,7 +46,8 @@ const ContactLink = ({ icon, href, color, network, label, ...props }) => {
       title={`${network} ${label}`}
       {...props}
     >
-      <Icon className={icon} />
+      <FontAwesomeIcon icon={icon} />
+      {/* <Icon className={icon} /> */}
       <Label>{props.children}</Label>
     </Link>
   );

@@ -2,7 +2,16 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { css } from 'linaria';
 import { styled } from 'linaria/react';
-import resume from '../resume.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faMapMarkerAlt,
+  faGlobe,
+  faBriefcase,
+  faMagic,
+  faGraduationCap,
+} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import resume from '../resumeData';
 import SquareDot from '../components/SquareDot';
 import Experience from '../components/ResumeExperience';
 import Skills from '../components/ResumeSkills';
@@ -66,18 +75,16 @@ const SubTitle = styled.h2`
   ${theme.h2};
 `;
 
-const Contact = styled.p`
+const Contact = styled.a`
   ${theme.p};
   margin-bottom: 0;
+  display: block;
+  text-decoration: none;
+  color: white;
 `;
 
-const contactIcon = css`
-  vertical-align: text-bottom;
-`;
-const contactInfo = css`
+const ContactInfo = styled.span`
   margin-left: ${rem(1)};
-  color: white;
-  text-decoration: none;
 `;
 
 const Section = styled.section`
@@ -148,24 +155,27 @@ const ResumePage = () => (
       </div>
 
       <div className={inlineBlock}>
-        <Contact>
-          <span className={join('icon-earth', contactIcon)} />
-          <a className={contactInfo} href={resume.basics.website}>
-            {resume.basics.website}
-          </a>
+        <Contact href={resume.basics.website}>
+          <FontAwesomeIcon
+            icon={faGlobe}
+            style={{ verticalAlign: 'text-bottom' }}
+          />
+          <ContactInfo>{resume.basics.website}</ContactInfo>
         </Contact>
-        <Contact>
-          <span className={join('icon-envelop', contactIcon)} />
-          <a className={contactInfo} href={`mailto:${resume.basics.email}`}>
-            {resume.basics.email}
-          </a>
+        <Contact href={`mailto:${resume.basics.email}`}>
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            style={{ verticalAlign: 'text-bottom' }}
+          />
+          <ContactInfo>{resume.basics.email}</ContactInfo>
         </Contact>
         {resume.basics.profiles.map(profile => (
-          <Contact key={profile.network}>
-            <span className={join(profile.icon, contactIcon)} />
-            <a className={contactInfo} href={profile.url}>
-              {profile.username}
-            </a>
+          <Contact key={profile.network} href={profile.url}>
+            <FontAwesomeIcon
+              icon={profile.icon}
+              style={{ verticalAlign: 'text-bottom' }}
+            />
+            <ContactInfo>{profile.username}</ContactInfo>
           </Contact>
         ))}
       </div>
@@ -177,7 +187,7 @@ const ResumePage = () => (
 
     <Sections>
       <Section className="timeline">
-        <SquareDot icon="icon-briefcase" />
+        <SquareDot icon={faBriefcase} />
         <SectionTitle>EXPERIENCE</SectionTitle>
         {resume.work.map(work => (
           <Experience
@@ -192,7 +202,7 @@ const ResumePage = () => (
         ))}
       </Section>
       <Section className="timeline">
-        <SquareDot icon="icon-books" />
+        <SquareDot icon={faGraduationCap} />
         <SectionTitle>EDUCATION</SectionTitle>
         {resume.education.map(education => (
           <Experience
@@ -206,7 +216,7 @@ const ResumePage = () => (
         ))}
       </Section>
       <Section className="timeline">
-        <SquareDot icon="icon-magic-wand" />
+        <SquareDot icon={faMagic} />
         <SectionTitle>TOOLS</SectionTitle>
         <Skills skills={resume.skills} />
       </Section>

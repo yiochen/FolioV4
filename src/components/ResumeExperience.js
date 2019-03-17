@@ -2,11 +2,8 @@ import React from 'react';
 import { styled } from 'linaria/react';
 import theme, { rem } from '../resumeTheme';
 import Dot from './ResumeTimelineDot';
-
-const Icon = styled.span`
-  vertical-align: text-bottom;
-  margin-right: ${rem(0.5)};
-`;
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
   display: flex;
@@ -41,6 +38,10 @@ const Address = styled.p`
   float: right;
 `;
 
+const AddressLabel = styled.span`
+  margin-left: ${rem(0.5)};
+`;
+
 const SubTitle = styled.h4`
   ${theme.h4};
   font-weight: normal;
@@ -69,8 +70,11 @@ const Experience = ({
       <Title>{title}</Title>
       {address && (
         <Address>
-          <Icon className="icon-location" />
-          {address}
+          <FontAwesomeIcon
+            icon={faMapMarkerAlt}
+            style={{ verticalAlign: 'text-bottom' }}
+          />
+          <AddressLabel>{address}</AddressLabel>
         </Address>
       )}
       {subTitle && <SubTitle>{subTitle}</SubTitle>}

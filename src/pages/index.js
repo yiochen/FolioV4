@@ -5,13 +5,14 @@ import Section from '../components/Section';
 import TitleLabel from '../components/TitleLabel';
 import Selfie from '../components/Selfie';
 import SplitPane from '../components/SplitPane';
-import Contact from '../components/ContactLink';
 import Experience from '../components/Experience';
 import Education from '../components/Education';
 import NavButton from '../components/NavButton';
 import Layout from '../components/Layout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
-import data from '../resume.json';
+import data from '../resumeData';
 import theme from '../globalStyle';
 import HomePageFooter from '../components/HomePageFooter';
 
@@ -45,7 +46,7 @@ const IndexPage = ({ location }) => (
           <div>
             <Name>{data.basics.name.toUpperCase()}</Name>
             <Address>
-              <span className="icon-location" />
+              <FontAwesomeIcon icon={faMapMarkerAlt} />
               <AdressLabel>{data.basics.location.address}</AdressLabel>
             </Address>
           </div>

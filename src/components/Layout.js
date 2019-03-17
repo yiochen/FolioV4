@@ -8,11 +8,6 @@ import me from '../static/me.png';
 
 import 'yiou-css-base';
 
-// icons
-import '../static/style.css';
-import '../static/fonts/icomoon.ttf';
-import '../static/fonts/icomoon.woff';
-
 const Header = styled.div`
   width: 100%;
   height: 10px;
