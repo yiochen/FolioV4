@@ -38,7 +38,7 @@ const IndexPage = ({ location }) => (
         <meta property="og:description" content={data.basics.summary} />
         <meta property="og:type" content="website" />
       </Helmet>
-      <NavButton to="/blog/0">BLOG</NavButton>
+      <NavButton.FloatTopRight to="/blog/0">BLOG</NavButton.FloatTopRight>
 
       <Section>
         <Selfie />

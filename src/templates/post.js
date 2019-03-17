@@ -77,7 +77,7 @@ class Post extends React.Component {
     const postTitle = [title, subtitle].filter(Boolean).join(' - ');
     return (
       <Layout location={location}>
-        <NavButton to={backLink}>BLOG</NavButton>
+        <NavButton.FloatTopRight to={backLink}>BLOG</NavButton.FloatTopRight>
         <NodeProvider value={node}>
           <PostHTMLHead />
           <PostHeader />
