@@ -1,9 +1,11 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { css } from 'linaria';
 import { styled } from 'linaria/react';
 import resume from '../resume.json';
 import SquareDot from '../components/SquareDot';
 import Experience from '../components/ResumeExperience';
+import Skills from '../components/ResumeSkills';
 import theme, { rem } from '../resumeTheme';
 
 const ACCENT = '#373d48';
@@ -34,6 +36,8 @@ const Page = styled.main`
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Header = styled.header`
@@ -46,7 +50,9 @@ const Header = styled.header`
   justify-content: space-between;
 `;
 
-const Name = styled.h1``;
+const Name = styled.h1`
+  ${theme.h1};
+`;
 
 const FirstName = styled.span`
   font-weight: normal;
@@ -96,7 +102,14 @@ const Section = styled.section`
 
 const Objective = styled.p`
   ${theme.p};
-  text-align: center;
+  font-style: italic;
+`;
+
+const ObjectiveContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 `;
 
 const SectionTitle = styled.h2`
@@ -107,21 +120,24 @@ const SectionTitle = styled.h2`
   margin-left: ${rem(1)};
 `;
 
-const Skills = styled.ul`
-  list-style: none;
+const Sections = styled.section`
   margin: 0;
-  padding: 0;
-  margin-bottom: ${rem(0.5)};
-  margin-left: calc(${rem(3)} + 1pt);
-`;
-
-const Skill = styled.li`
-  display: inline-block;
-  margin-right: ${rem(0.5)};
+  padding-bottom: ${rem(2)};
 `;
 
 const ResumePage = () => (
   <Page>
+    <Helmet>
+      <title> Yiou's Resume </title>
+      <meta name="theme-color" content={theme.accent} />
+      <link
+        rel="shortcut icon"
+        href="https://github.com/yiochen/common/blob/master/favicon/favicon.png?raw=true"
+      />
+      <meta property="og:title" content="Yiou Chen" />
+      <meta property="og:description" content="Yiou's resume" />
+      <meta property="og:type" content="website" />
+    </Helmet>
     <Header>
       <div className={inlineBlock}>
         <Name>
@@ -154,49 +170,47 @@ const ResumePage = () => (
         ))}
       </div>
     </Header>
-    <Section>
+
+    <ObjectiveContainer>
       <Objective>{resume.basics.objective}</Objective>
-    </Section>
-    <Section className="timeline">
-      <SquareDot icon="icon-briefcase" />
-      <SectionTitle>EXPERIENCE</SectionTitle>
-      {resume.work.map(work => (
-        <Experience
-          key={work.company}
-          title={work.company}
-          subTitle={work.position}
-          startDate={work.startDate}
-          endDate={work.endDate}
-          highlights={work.highlights}
-          address={work.address}
-        />
-      ))}
-    </Section>
-    <Section className="timeline">
-      <SquareDot icon="icon-books" />
-      <SectionTitle>EDUCATION</SectionTitle>
-      {resume.education.map(education => (
-        <Experience
-          key={education.institution}
-          title={education.institution}
-          subTitle={`${education.studyType} of ${education.area}`}
-          startDate={education.startDate}
-          endDate={education.endDate}
-          address={education.address}
-        />
-      ))}
-    </Section>
-    <Section className="timeline">
-      <SquareDot icon="icon-magic-wand" />
-      <SectionTitle>TOOLS</SectionTitle>
-      {Object.values(resume.skills).map((skills, index) => (
-        <Skills key={index}>
-          {skills.map(skill => (
-            <Skill key={skill}>{skill}</Skill>
-          ))}
-        </Skills>
-      ))}
-    </Section>
+    </ObjectiveContainer>
+
+    <Sections>
+      <Section className="timeline">
+        <SquareDot icon="icon-briefcase" />
+        <SectionTitle>EXPERIENCE</SectionTitle>
+        {resume.work.map(work => (
+          <Experience
+            key={work.company}
+            title={work.company}
+            subTitle={work.position}
+            startDate={work.startDate}
+            endDate={work.endDate}
+            highlights={work.highlights}
+            address={work.address}
+          />
+        ))}
+      </Section>
+      <Section className="timeline">
+        <SquareDot icon="icon-books" />
+        <SectionTitle>EDUCATION</SectionTitle>
+        {resume.education.map(education => (
+          <Experience
+            key={education.institution}
+            title={education.institution}
+            subTitle={`${education.studyType} of ${education.area}`}
+            startDate={education.startDate}
+            endDate={education.endDate}
+            address={education.address}
+          />
+        ))}
+      </Section>
+      <Section className="timeline">
+        <SquareDot icon="icon-magic-wand" />
+        <SectionTitle>TOOLS</SectionTitle>
+        <Skills skills={resume.skills} />
+      </Section>
+    </Sections>
   </Page>
 );
 

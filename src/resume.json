@@ -8,7 +8,7 @@
     "email": "yiouc99@gmail.com",
     "phone": "",
     "website": "https://yiou.me",
-    "objective": "Looking for front end engineering opportunies in California Bay Area.",
+    "objective": "Looking for frontend engineering positions in California Bay Area.",
     "summary": "Frontend engineer at Veeva Systems in Pleasanton, CA. Working in UIPlatform team. Doing JavaScript stuff.",
     "location": {
       "address": "Pleasanton, CA",
@@ -36,6 +36,7 @@
     {
       "company": "Veeva Systems",
       "position": "Associate Frontend Engineer",
+      "team": "UI Platform",
       "website": "https://www.veeva.com/",
       "startDate": "06/2017",
       "endDate": "Present",
@@ -53,11 +54,11 @@
         "Sass"
       ],
       "highlights": [
-        "Created a runtime architecture for a domain specific language using JavaScript.",
-        "UI component development in React.",
-        "Designed a suite of routing utilities for managing front end routing of our single page app.",
-        "Evaluated and integrated various UI development tools such as package-lock, prettier, storybook.",
-        "Rebuilt login/password reset flow using React, Redux, Redux Thunk."
+        "Created an interpreter runtime for a domain specific language using JavaScript.",
+        "Developed various UI components in React including select and data grid.",
+        "Developed a suite of URL/location utilities to unify client-side routing in our single page app.",
+        "Evaluated and integrated various UI development tools such as dependency lock, Prettier and Storybook.",
+        "Rebuilt login/password reset flow using React, Redux and Redux Thunk."
       ]
     },
     {
@@ -72,8 +73,8 @@
       "highlights": [
         "Developed customizable data visualization components using D3 and Angular.",
         "Maintained a Angular UI component library.",
-        "Developed a search engine front end using Angular.",
-        "Created and integrated a map widget that handled high-volume real-time data using leaflet."
+        "Developed a search engine frontend using Angular.",
+        "Created and integrated a map widget that handled high-volume real-time data using Leaflet."
       ]
     }
   ],
@@ -94,21 +95,30 @@
   ],
   "awards": [],
   "publications": [],
-  "skills": {
-    "languages": ["JavaScript", "TypeScript", "HTML", "CSS", "Sass"],
-    "libaries": ["React", "Redux", "Immer", "Gatsby"],
-    "utilities": [
-      "Webpack",
-      "Parcel",
-      "Rollup",
-      "Storybook",
-      "Jest",
-      "Enzyme",
-      "Lerna",
-      "Prettier",
-      "Eslint"
-    ]
-  },
+  "skills": [
+    {
+      "category": "Languages",
+      "items": ["JavaScript", "TypeScript", "HTML", "CSS", "Sass"]
+    },
+    {
+      "category": "Libraries",
+      "items": ["React", "Redux", "Immer", "Gatsby"]
+    },
+    {
+      "category": "Dev tools",
+      "items": [
+        "Webpack",
+        "Parcel",
+        "Rollup",
+        "Storybook",
+        "Jest",
+        "Enzyme",
+        "Lerna",
+        "Prettier",
+        "Eslint"
+      ]
+    }
+  ],
   "languages": [
     {
       "language": "English",

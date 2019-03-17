@@ -13,7 +13,8 @@ const textFormat = {
 
 const h1 = {
   ...textFormat,
-  fontSize: rem(2.5),
+  fontSize: rem(3.2),
+  marginBottom: rem(1),
 };
 
 const h2 = {
@@ -36,6 +37,11 @@ const p = {
   fontSize: rem(1),
 };
 
+const span = {
+  ...textFormat,
+  fontSize: rem(1),
+};
+
 export default {
   resumeAccent,
   fontSizeRaw: fontSize,
@@ -45,4 +51,5 @@ export default {
   h3,
   h4,
   p,
+  span,
 };

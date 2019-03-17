@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import theme, { rem } from '../resumeTheme';
+import Dot from './ResumeTimelineDot';
 
 const Icon = styled.span`
   vertical-align: text-bottom;
@@ -11,23 +12,6 @@ const Container = styled.div`
   display: flex;
   align-items: flex-start;
   padding-bottom: ${rem(1)};
-`;
-
-const Dot = styled.span`
-  width: calc(${rem(2)} + 1pt);
-  min-width: calc(${rem(2)} + 1pt);
-  display: block;
-  text-align: center;
-  &::before {
-    content: '';
-    height: ${rem(0.5)};
-    width: ${rem(0.5)};
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: baseline;
-    transform: rotate(45deg);
-    background: black;
-  }
 `;
 
 const Time = styled.span`
