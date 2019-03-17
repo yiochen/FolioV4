@@ -4,20 +4,12 @@ import theme from '../globalStyle';
 import Contact from './ContactLink';
 
 import jumping from '../static/jumping-edited.png';
-
-const styleFull = {
-  paddingBottom: '60%',
-  background: `url(${jumping})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'top',
-  position: 'relative',
-  margin: 0,
-};
+import { css } from 'linaria';
 
 const Footer = styled.footer`
   background: ${theme.accent};
   color: ${theme.textInvertColor};
-  min-height: 20rem;
+  padding: 2rem 0 1rem 0;
 `;
 
 const sloganStyle = {
@@ -29,25 +21,66 @@ const sloganStyle = {
   fontSize: '3em',
 };
 
-const legalStyle = {
-  position: 'absolute',
-  bottom: '0',
-  left: '50%',
-  transform: 'translateX(-50%)',
-  margin: '0',
-};
-export default ({ data }) => (
-  <Footer>
-    <Contact icon="icon-home">{data.basics.location.address}</Contact>
-    <Contact icon="icon-envelop" href={`mailto:${data.basics.email}`}>
-      {data.basics.email}
-    </Contact>
-    {data.basics.profiles.map(profile => (
-      <Contact icon={profile.icon} href={profile.url} key={profile.network}>
-        {profile.username}
-      </Contact>
-    ))}
+const Spacer = styled.span`
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+`;
+const ContactContainer = styled.section`
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+`;
 
-    <p style={legalStyle}> @ 2019 Yiou Chen.</p>
+const horizontalSpacing = css`
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+`;
+
+const Legal = styled.p`
+  margin: 0;
+  text-align: center;
+
+  font-size: 1.5rem;
+`;
+
+const HomePageFooter = ({ data }) => (
+  <Footer>
+    <ContactContainer>
+      <Spacer />
+      <Contact
+        icon="icon-envelop"
+        href={`mailto:${data.basics.email}`}
+        color={theme.textInvertColor}
+        className={horizontalSpacing}
+        label={data.basics.email}
+        network="email"
+      >
+        {data.basics.email}
+      </Contact>
+      {data.basics.profiles.map(profile => (
+        <Contact
+          icon={profile.icon}
+          href={profile.url}
+          key={profile.network}
+          network={profile.network}
+          color={theme.textInvertColor}
+          className={horizontalSpacing}
+          label={profile.username}
+        >
+          {profile.username}
+        </Contact>
+      ))}
+      <Spacer />
+    </ContactContainer>
+
+    <Legal> @ 2019 Yiou Chen.</Legal>
   </Footer>
 );
+
+export default HomePageFooter;

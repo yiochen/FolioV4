@@ -26,5 +26,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-linaria',
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en',
+      },
+    },
   ],
 };

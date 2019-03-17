@@ -18,6 +18,18 @@ import HomePageFooter from '../components/HomePageFooter';
 const Summary = styled('p')`
   font-family: ${theme.secondaryFont};
 `;
+
+const Name = styled.h1`
+  margin-bottom: 1rem;
+`;
+const Address = styled.p`
+  color: ${theme.textNoteColor};
+  margin-bottom: 0;
+`;
+const AdressLabel = styled.span`
+  margin-left: 1rem;
+`;
+
 const IndexPage = ({ location }) => (
   <Layout location={location} footer={<HomePageFooter data={data} />}>
     <main>
@@ -31,7 +43,11 @@ const IndexPage = ({ location }) => (
         <Selfie />
         <SplitPane>
           <div>
-            <h1>{data.basics.name.toUpperCase()}</h1>
+            <Name>{data.basics.name.toUpperCase()}</Name>
+            <Address>
+              <span className="icon-location" />
+              <AdressLabel>{data.basics.location.address}</AdressLabel>
+            </Address>
           </div>
           <Summary>{data.basics.summary}</Summary>
         </SplitPane>
