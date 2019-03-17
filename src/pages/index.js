@@ -5,45 +5,50 @@ import Section from '../components/Section';
 import TitleLabel from '../components/TitleLabel';
 import Selfie from '../components/Selfie';
 import SplitPane from '../components/SplitPane';
-import Contact from '../components/ContactLink';
 import Experience from '../components/Experience';
 import Education from '../components/Education';
 import NavButton from '../components/NavButton';
 import Layout from '../components/Layout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
-import data from '../resume.json';
+import data from '../resumeData';
 import theme from '../globalStyle';
+import HomePageFooter from '../components/HomePageFooter';
 
 const Summary = styled('p')`
   font-family: ${theme.secondaryFont};
 `;
+
+const Name = styled.h1`
+  margin-bottom: 1rem;
+`;
+const Address = styled.p`
+  color: ${theme.textNoteColor};
+  margin-bottom: 0;
+`;
+const AdressLabel = styled.span`
+  margin-left: 1rem;
+`;
+
 const IndexPage = ({ location }) => (
-  <Layout location={location}>
+  <Layout location={location} footer={<HomePageFooter data={data} />}>
     <main>
       <Helmet>
         <meta property="og:description" content={data.basics.summary} />
         <meta property="og:type" content="website" />
       </Helmet>
-      <NavButton to="/blog/0">BLOG</NavButton>
+      <NavButton.FloatTopRight to="/blog/0">BLOG</NavButton.FloatTopRight>
 
       <Section>
         <Selfie />
         <SplitPane>
           <div>
-            <h1>{data.basics.name.toUpperCase()}</h1>
-            <Contact icon="icon-home">{data.basics.location.address}</Contact>
-            <Contact icon="icon-envelop" href={`mailto:${data.basics.email}`}>
-              {data.basics.email}
-            </Contact>
-            {data.basics.profiles.map(profile => (
-              <Contact
-                icon={profile.icon}
-                href={profile.url}
-                key={profile.network}
-              >
-                {profile.username}
-              </Contact>
-            ))}
+            <Name>{data.basics.name.toUpperCase()}</Name>
+            <Address>
+              <FontAwesomeIcon icon={faMapMarkerAlt} />
+              <AdressLabel>{data.basics.location.address}</AdressLabel>
+            </Address>
           </div>
           <Summary>{data.basics.summary}</Summary>
         </SplitPane>

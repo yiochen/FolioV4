@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import theme, { rem } from '../resumeTheme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Square = styled.span`
   height: calc(${rem(2)} + 1pt);
@@ -31,6 +32,7 @@ const Square = styled.span`
 `;
 const SquareDot = ({ icon }) => (
   <Square>
+    <FontAwesomeIcon icon={icon} />
     <span className={icon} />
   </Square>
 );

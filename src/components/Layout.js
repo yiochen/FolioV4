@@ -5,13 +5,9 @@ import { styled } from 'linaria/react';
 import Footer from './Footer';
 import theme from '../globalStyle';
 import me from '../static/me.png';
+import '../configureFontAwesome';
 
 import 'yiou-css-base';
-
-// icons
-import '../static/style.css';
-import '../static/fonts/icomoon.ttf';
-import '../static/fonts/icomoon.woff';
 
 const Header = styled.div`
   width: 100%;
@@ -26,9 +22,15 @@ const ContentContainer = styled.div`
 
 const MainPage = styled('div')`
   background-color: ${theme.background};
+  & *::selection {
+    background: ${theme.accent};
+    color: ${theme.textInvertColor};
+  }
 `;
 
-const TemplateWrapper = ({ children, location }) => (
+const defaultFooter = <Footer />;
+
+const TemplateWrapper = ({ children, location, footer = defaultFooter }) => (
   <MainPage>
     <Helmet>
       <title> Yiou </title>
@@ -44,7 +46,7 @@ const TemplateWrapper = ({ children, location }) => (
     </Helmet>
     <Header />
     <ContentContainer>{children}</ContentContainer>
-    <Footer full={location.pathname === '/'} />
+    {footer}
   </MainPage>
 );
 

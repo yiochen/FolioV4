@@ -22,7 +22,7 @@ export default ({ pageContext, location }) => {
   return (
     <Layout location={location}>
       <MainContent>
-        <NavButton to="/">HOME</NavButton>
+        <NavButton.FloatTopRight to="/">HOME</NavButton.FloatTopRight>
         {chunk.map(blog => {
           const {
             title,
@@ -47,9 +47,17 @@ export default ({ pageContext, location }) => {
         })}
 
         <Pagination>
-          {page > 0 && <Link to={utils.toBlogPage(page - 1)}>Newer posts</Link>}
+          {page > 0 && (
+            <NavButton.Secondary to={utils.toBlogPage(page - 1)}>
+              Newer posts
+            </NavButton.Secondary>
+          )}
           <span style={filler} />
-          {hasNext && <Link to={utils.toBlogPage(page + 1)}>Older posts</Link>}
+          {hasNext && (
+            <NavButton.Secondary to={utils.toBlogPage(page + 1)}>
+              Older posts
+            </NavButton.Secondary>
+          )}
         </Pagination>
       </MainContent>
     </Layout>
