@@ -26,6 +26,10 @@ const ContentContainer = styled.div`
 
 const MainPage = styled('div')`
   background-color: ${theme.background};
+  & *::selection {
+    background: ${theme.accent};
+    color: ${theme.textInvertColor};
+  }
 `;
 
 const defaultFooter = <Footer />;

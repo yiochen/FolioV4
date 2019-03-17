@@ -96,18 +96,17 @@
   "publications": [],
   "skills": {
     "languages": ["JavaScript", "TypeScript", "HTML", "CSS", "Sass"],
-    "libaries": ["react", "redux", "immer", "gatsby"],
+    "libaries": ["React", "Redux", "Immer", "Gatsby"],
     "utilities": [
-      "webpack",
-      "parcel",
-      "rollup",
-      "storybook",
-      "jest",
-      "enzyme",
-      "react-testing-library",
-      "lerna",
-      "prettier",
-      "eslint"
+      "Webpack",
+      "Parcel",
+      "Rollup",
+      "Storybook",
+      "Jest",
+      "Enzyme",
+      "Lerna",
+      "Prettier",
+      "Eslint"
     ]
   },
   "languages": [
