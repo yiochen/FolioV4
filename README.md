@@ -1,8 +1,9 @@
 My personal website, built with Gatsby, React, supported by [contentful](https://www.contentful.com/), hosted on [netlify](https://www.netlify.com/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b29891c2-a3a6-453d-88e3-6fab5cfb0922/deploy-status)](https://app.netlify.com/sites/yiou-folio-v4/deploys)
 ## Resume
 
-Navigate to [https://yiou.me/resume], print the page.
+Navigate to [my resume](https://yiou.me/resume), print the page.
 
 For chrome:
 
