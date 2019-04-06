@@ -39,7 +39,18 @@ export default {
   work: [
     {
       company: 'Veeva Systems',
-      position: 'Associate Frontend Engineer',
+      position: [
+        {
+          name: 'Software Engineer',
+          startDate: '04/2019',
+          endDate: 'Present',
+        },
+        {
+          name: 'Associate Engineer',
+          startDate: '06/2017',
+          endDate: '04/2019',
+        },
+      ],
       team: 'UI Platform',
       website: 'https://www.veeva.com/',
       startDate: '06/2017',

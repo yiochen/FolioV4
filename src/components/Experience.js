@@ -1,5 +1,6 @@
 import React from 'react';
 import { styled } from 'linaria/react';
+import concat from 'lodash/concat';
 import TimelineItem, { TimelineAttribute } from './TimelineItem';
 import CompanyTitle from './CompanyTitle';
 import ToolTag from './ToolTag';
@@ -26,10 +27,23 @@ export default ({
           <Title href={website} target="_blank" rel="noopener noreferrer">
             <CompanyTitle>{company}</CompanyTitle>
           </Title>
-          <TimelineAttribute>{position}</TimelineAttribute>
-          <TimelineAttribute>
-            {startDate} - {endDate}
-          </TimelineAttribute>
+          {typeof position === 'string' ? (
+            <>
+              <TimelineAttribute>{position}</TimelineAttribute>
+              <TimelineAttribute>
+                {startDate} - {endDate}
+              </TimelineAttribute>
+            </>
+          ) : (
+            position.map(singlePosition => (
+              <>
+                <TimelineAttribute>{singlePosition.name}</TimelineAttribute>
+                <TimelineAttribute>
+                  {singlePosition.startDate} - {singlePosition.endDate}
+                </TimelineAttribute>
+              </>
+            ))
+          )}
           {toolset.map(tool => (
             <ToolTag key={tool}>{tool}</ToolTag>
           ))}

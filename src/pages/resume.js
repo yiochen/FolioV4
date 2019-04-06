@@ -4,7 +4,6 @@ import { css } from 'linaria';
 import { styled } from 'linaria/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faMapMarkerAlt,
   faGlobe,
   faBriefcase,
   faMagic,
@@ -17,8 +16,6 @@ import Experience from '../components/ResumeExperience';
 import Skills from '../components/ResumeSkills';
 import theme, { rem } from '../resumeTheme';
 import '../configureFontAwesome';
-
-const ACCENT = '#373d48';
 
 const inlineBlock = css`
   display: inline-block;
@@ -133,6 +130,34 @@ const Sections = styled.section`
   padding-bottom: ${rem(2)};
 `;
 
+const SinglePosition = styled.p`
+  margin: 0;
+  margin-bottom: ${rem(0.5)};
+`;
+
+const PositionName = styled.span`
+  margin-right: ${rem(0.5)};
+`;
+
+const PositionTime = styled.span`
+  font-style: normal;
+  margin-left: ${rem(0.5)};
+`;
+
+const MultiplePositions = ({ positions }) => {
+  return (
+    <>
+      {positions.map(position => (
+        <SinglePosition key={position.name}>
+          <PositionName>{position.name}</PositionName>
+          <PositionTime>{`${position.startDate} - ${
+            position.endDate
+          }`}</PositionTime>
+        </SinglePosition>
+      ))}
+    </>
+  );
+};
 const ResumePage = () => (
   <Page>
     <Helmet>
@@ -194,7 +219,13 @@ const ResumePage = () => (
           <Experience
             key={work.company}
             title={work.company}
-            subTitle={work.position}
+            subTitle={
+              typeof work.position === 'string' ? (
+                <SinglePosition>{work.position}</SinglePosition>
+              ) : (
+                <MultiplePositions positions={work.position} />
+              )
+            }
             startDate={work.startDate}
             endDate={work.endDate}
             highlights={work.highlights}
