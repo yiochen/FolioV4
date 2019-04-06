@@ -173,7 +173,6 @@ const ResumePage = () => (
     <Helmet>
       <title> Yiou's Resume </title>
       <meta name="theme-color" content={theme.accent} />
-
       <meta property="og:title" content="Yiou Chen" />
       <meta property="og:description" content="Yiou's resume" />
       <meta property="og:type" content="website" />

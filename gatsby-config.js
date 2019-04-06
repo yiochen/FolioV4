@@ -1,4 +1,5 @@
 const accent = require('./src/accent');
+const background = require('./src/background');
 module.exports = {
   siteMetadata: {
     title: `Yiou`,
@@ -10,7 +11,7 @@ module.exports = {
         name: 'Yiou.me',
         short_name: 'Yiou',
         start_url: '/',
-        background_color: accent,
+        background_color: background,
         theme_color: accent,
         display: 'standalone',
         icon: 'src/static/favicon.png',

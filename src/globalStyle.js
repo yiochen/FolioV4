@@ -1,6 +1,7 @@
 import { transparentize } from 'polished';
 import { css } from 'linaria';
 import ACCENT from './accent';
+import BACKGROUND from './background';
 
 function opacity(opacity, color) {
   return transparentize(1 - opacity, color);
@@ -10,7 +11,7 @@ const styles = {
   accent: ACCENT,
   textColor: '#555',
   textNoteColor: '#999',
-  background: '#fff',
+  background: BACKGROUND,
   textInvertColor: '#fff',
   textDecorationColor: '#f5f5f5',
   secondaryFont: 'Lato, Helvetica, sans-serif',
