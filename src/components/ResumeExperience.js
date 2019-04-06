@@ -30,6 +30,17 @@ const Title = styled.h3`
   ${theme.h3};
   font-weight: bold;
   display: inline-block;
+  margin-bottom: ${rem(1)};
+
+  &::after {
+    content: '';
+    display: block;
+    width: ${rem(3)};
+    height: 4pt;
+    background: ${theme.resumeAccent};
+    position: absolute;
+    margin-top: 3pt;
+  }
 `;
 
 const Address = styled.p`
@@ -44,8 +55,7 @@ const AddressLabel = styled.span`
 
 const SubTitle = styled.h4`
   ${theme.h4};
-  font-weight: normal;
-  font-style: italic;
+  font-weight: bold;
 `;
 
 const Highlights = styled.ul`

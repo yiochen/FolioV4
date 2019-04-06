@@ -73,7 +73,16 @@ const SubTitle = styled.h2`
   ${theme.h2};
 `;
 
-const Contact = styled.a`
+const SafeAnchor = ({ className, style, ...rest }) => (
+  <a
+    style={style}
+    className={className}
+    {...rest}
+    target="_blank"
+    rel="noopener noreferrer"
+  />
+);
+const Contact = styled(SafeAnchor)`
   ${theme.p};
   margin-bottom: 0;
   display: block;
@@ -108,6 +117,7 @@ const Section = styled.section`
 const Objective = styled.p`
   ${theme.p};
   font-style: italic;
+  text-decoration: underline;
 `;
 
 const ObjectiveContainer = styled.section`
@@ -140,7 +150,7 @@ const PositionName = styled.span`
 `;
 
 const PositionTime = styled.span`
-  font-style: normal;
+  font-weight: normal;
   margin-left: ${rem(0.5)};
 `;
 

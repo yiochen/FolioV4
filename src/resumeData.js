@@ -11,7 +11,7 @@ export default {
     phone: '',
     website: 'https://yiou.me',
     objective:
-      'Looking for frontend engineering positions in California Bay Area.',
+      'Looking for software engineering positions (frontend) in California Bay Area.',
     summary:
       'Frontend engineer at Veeva Systems. Working in UIPlatform team. Doing JavaScript stuff.',
     location: {
@@ -70,10 +70,11 @@ export default {
         'Sass',
       ],
       highlights: [
+        'Set up CDN for frontend static assets on AWS infrastructure.',
         'Created an interpreter runtime for a domain specific language using JavaScript.',
         'Developed various UI components in React including select and data grid.',
-        'Developed a suite of URL/location utilities to unify client-side routing in our single page app.',
-        'Evaluated and integrated various UI development tools such as dependency lock, Prettier and Storybook.',
+        'Developed a suite of URL/location utilities to unify client-side routing in our SPA.',
+        'Evaluated and integrated various UI development tools such as dependency lock, Prettier, and Storybook.',
         'Rebuilt login/password reset flow using React, Redux and Redux Thunk.',
       ],
     },

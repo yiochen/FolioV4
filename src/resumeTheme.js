@@ -29,7 +29,7 @@ const h3 = {
 
 const h4 = {
   ...textFormat,
-  fontSize: rem(1),
+  fontSize: rem(0.9),
 };
 
 const p = {
