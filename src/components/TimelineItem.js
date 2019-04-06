@@ -1,9 +1,26 @@
 import React from 'react';
-import { css } from 'linaria';
 import { styled } from 'linaria/react';
 import theme, { displayInLarger, displayInSmaller } from '../globalStyle';
 
 export const TimelineAttribute = styled('p')`
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  font-family: ${theme.secondaryFont};
+`;
+
+function Date({ start, end, ...rest }) {
+  return (
+    <p {...rest}>
+      <span>{start}</span>
+      {' - '}
+      <span>{end}</span>
+    </p>
+  );
+}
+export const TimelineDate = styled(Date)`
+  font-size: 1.5rem;
+  font-weight: normal;
   margin-bottom: 0;
   font-family: ${theme.secondaryFont};
 `;

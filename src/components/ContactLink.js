@@ -36,6 +36,8 @@ const ContactLink = ({ icon, href, color, network, label, ...props }) => {
   if (typeof href === 'string') {
     hrefProps = {
       href,
+      target: '_blank',
+      rel: 'noopener noreferrer',
     };
   }
   return (

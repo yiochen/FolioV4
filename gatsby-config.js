@@ -1,8 +1,22 @@
+const accent = require('./src/accent');
 module.exports = {
   siteMetadata: {
     title: `Yiou`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Yiou.me',
+        short_name: 'Yiou',
+        start_url: '/',
+        background_color: accent,
+        theme_color: accent,
+        display: 'standalone',
+        icon: 'src/static/favicon.png',
+        crossOrigin: 'use-credentials',
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-polished`,
     {

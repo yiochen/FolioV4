@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import concat from 'lodash/concat';
-import TimelineItem, { TimelineAttribute } from './TimelineItem';
+import TimelineItem, { TimelineAttribute, TimelineDate } from './TimelineItem';
 import CompanyTitle from './CompanyTitle';
 import ToolTag from './ToolTag';
 import theme from '../globalStyle';
@@ -30,17 +30,16 @@ export default ({
           {typeof position === 'string' ? (
             <>
               <TimelineAttribute>{position}</TimelineAttribute>
-              <TimelineAttribute>
-                {startDate} - {endDate}
-              </TimelineAttribute>
+              <TimelineDate start={startDate} end={endDate} />
             </>
           ) : (
             position.map(singlePosition => (
               <>
                 <TimelineAttribute>{singlePosition.name}</TimelineAttribute>
-                <TimelineAttribute>
-                  {singlePosition.startDate} - {singlePosition.endDate}
-                </TimelineAttribute>
+                <TimelineDate
+                  start={singlePosition.startDate}
+                  end={singlePosition.endDate}
+                />
               </>
             ))
           )}

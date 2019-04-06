@@ -1,7 +1,6 @@
 import { transparentize } from 'polished';
 import { css } from 'linaria';
-
-const ACCENT = '#b892e8';
+import ACCENT from './accent';
 
 function opacity(opacity, color) {
   return transparentize(1 - opacity, color);

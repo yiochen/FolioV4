@@ -1,5 +1,5 @@
 import React from 'react';
-import TimelineItem, { TimelineAttribute } from './TimelineItem';
+import TimelineItem, { TimelineAttribute, TimelineDate } from './TimelineItem';
 import CompanyTitle from './CompanyTitle';
 
 export default ({
@@ -20,9 +20,7 @@ export default ({
           </a>
           <TimelineAttribute>{area}</TimelineAttribute>
           <TimelineAttribute>GPA {gpa}</TimelineAttribute>
-          <TimelineAttribute>
-            {startDate} - {endDate}
-          </TimelineAttribute>
+          <TimelineDate start={startDate} end={endDate} />
         </div>
       }
       rightChild={<div>{summary}</div>}
