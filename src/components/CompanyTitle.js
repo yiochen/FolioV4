@@ -7,6 +7,7 @@ const CompanyTitle = styled.h3`
   position: relative;
   padding: 0 1rem;
   font-size: 3rem;
+  margin-bottom: 0;
   transform: translate(-1rem, -1.5rem);
   font-family: ${theme.secondaryFont};
 
