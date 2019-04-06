@@ -35,10 +35,6 @@ const TemplateWrapper = ({ children, location, footer = defaultFooter }) => (
     <Helmet>
       <title> Yiou </title>
       <meta name="theme-color" content={theme.accent} />
-      <link
-        rel="shortcut icon"
-        href="https://github.com/yiochen/common/blob/master/favicon/favicon.png?raw=true"
-      />
       <meta property="og:title" content="Yiou Chen" />
       <meta property="og:image" content={me} />
       <meta property="og:image:height" content="300" />

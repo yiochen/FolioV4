@@ -173,10 +173,7 @@ const ResumePage = () => (
     <Helmet>
       <title> Yiou's Resume </title>
       <meta name="theme-color" content={theme.accent} />
-      <link
-        rel="shortcut icon"
-        href="https://github.com/yiochen/common/blob/master/favicon/favicon.png?raw=true"
-      />
+
       <meta property="og:title" content="Yiou Chen" />
       <meta property="og:description" content="Yiou's resume" />
       <meta property="og:type" content="website" />
