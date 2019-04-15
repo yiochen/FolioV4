@@ -114,19 +114,6 @@ const Section = styled.section`
   }
 `;
 
-const Objective = styled.p`
-  ${theme.p};
-  font-style: italic;
-  text-decoration: underline;
-`;
-
-const ObjectiveContainer = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-`;
-
 const SectionTitle = styled.h2`
   ${theme.h2};
   font-weight: 800;
@@ -137,7 +124,8 @@ const SectionTitle = styled.h2`
 
 const Sections = styled.section`
   margin: 0;
-  padding-bottom: ${rem(2)};
+  padding-top: ${rem(1.5)};
+  /* padding-bottom: ${rem(2)}; */
 `;
 
 const SinglePosition = styled.p`
@@ -212,10 +200,6 @@ const ResumePage = () => (
         ))}
       </div>
     </Header>
-
-    <ObjectiveContainer>
-      <Objective>{resume.basics.objective}</Objective>
-    </ObjectiveContainer>
 
     <Sections>
       <Section className="timeline">

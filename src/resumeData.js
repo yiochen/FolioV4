@@ -5,7 +5,7 @@ export default {
     name: 'Yiou Chen',
     firstname: 'Yiou',
     lastname: 'Chen',
-    label: 'Frontend engineer',
+    label: 'Software engineer',
     picture: '',
     email: 'yiouc99@gmail.com',
     phone: '',
@@ -41,12 +41,12 @@ export default {
       company: 'Veeva Systems',
       position: [
         {
-          name: 'Software Engineer',
+          name: 'Software Engineer • UI Platform',
           startDate: '04/2019',
           endDate: 'Present',
         },
         {
-          name: 'Associate Engineer',
+          name: 'Associate Engineer • UI Platform',
           startDate: '06/2017',
           endDate: '04/2019',
         },
