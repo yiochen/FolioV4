@@ -205,23 +205,25 @@ const ResumePage = () => (
       <Section className="timeline">
         <SquareDot icon={faBriefcase} />
         <SectionTitle>EXPERIENCE</SectionTitle>
-        {resume.work.map(work => (
-          <Experience
-            key={work.company}
-            title={work.company}
-            subTitle={
-              typeof work.position === 'string' ? (
-                <SinglePosition>{work.position}</SinglePosition>
-              ) : (
-                <MultiplePositions positions={work.position} />
-              )
-            }
-            startDate={work.startDate}
-            endDate={work.endDate}
-            highlights={work.highlights}
-            address={work.address}
-          />
-        ))}
+        {resume.work
+          .filter(work => !work.hideInResume)
+          .map(work => (
+            <Experience
+              key={work.company}
+              title={work.company}
+              subTitle={
+                typeof work.position === 'string' ? (
+                  <SinglePosition>{work.position}</SinglePosition>
+                ) : (
+                  <MultiplePositions positions={work.position} />
+                )
+              }
+              startDate={work.startDate}
+              endDate={work.endDate}
+              highlights={work.highlights}
+              address={work.address}
+            />
+          ))}
       </Section>
       <Section className="timeline">
         <SquareDot icon={faGraduationCap} />

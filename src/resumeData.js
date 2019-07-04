@@ -12,8 +12,7 @@ export default {
     website: 'https://yiou.me',
     objective:
       'Looking for software engineering positions (frontend) in California Bay Area.',
-    summary:
-      'Frontend engineer at Veeva Systems. Working in UIPlatform team. Doing JavaScript stuff.',
+    summary: 'Frontend engineer at Google. Working in Google Assistant team.',
     location: {
       address: 'Pleasanton, CA',
       postalCode: '',
@@ -38,12 +37,23 @@ export default {
   },
   work: [
     {
+      company: 'Google',
+      position: 'Software Engineer',
+      startDate: '06/2019',
+      endDate: 'Present',
+      address: 'Mountain View, CA',
+      summary: 'I work in the Google Assistant team.',
+      website: 'https://google.com',
+      toolset: [],
+      highlights: [],
+    },
+    {
       company: 'Veeva Systems',
       position: [
         {
           name: 'Software Engineer • UI Platform',
           startDate: '04/2019',
-          endDate: 'Present',
+          endDate: '05/2019',
         },
         {
           name: 'Associate Engineer • UI Platform',
@@ -57,7 +67,7 @@ export default {
       endDate: 'Present',
       address: 'Pleasanton, CA',
       summary:
-        'I work in the UIPlatform team for Veeva Vault. Our objective is to improve the foundation of our enterprise application using the latest technologies and best practices.',
+        'I worked in the UIPlatform team for Veeva Vault. Our objective was to improve the foundation of our enterprise application using the latest technologies and best practices.',
       toolset: [
         'React',
         'Redux',
@@ -94,6 +104,7 @@ export default {
         'Developed a search engine frontend using Angular.',
         'Created and integrated a map widget that handled high-volume real-time data using Leaflet.',
       ],
+      hideInResume: true,
     },
   ],
   volunteer: [],
