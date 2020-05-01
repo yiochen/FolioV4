@@ -30,7 +30,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "yiou-css-base": "^0.1.0"
+    "yiou-css-base": "^0.1.0",
+    "snyk": "^1.316.1"
   },
   "keywords": [
     "gatsby"
@@ -45,7 +46,9 @@
     "dev": "npm run clean && gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "lint": "eslint .",
-    "test": "echo \"Error: I only test in production\" && exit 1"
+    "test": "echo \"Error: I only test in production\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -85,5 +88,6 @@
     "public",
     ".linaria-cache",
     ".cache"
-  ]
+  ],
+  "snyk": true
 }
