@@ -14,7 +14,7 @@
     "babel-preset-gatsby": "^0.1.11",
     "core-js": "^2.6.5",
     "disqus-react": "^1.0.5",
-    "gatsby": "^2.3.14",
+    "gatsby": "^2.13.79",
     "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-linaria": "^1.1.1",
     "gatsby-plugin-manifest": "^2.0.26",
